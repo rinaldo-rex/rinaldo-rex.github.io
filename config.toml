@@ -12,8 +12,21 @@ highlight_theme = "dracula"
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 
-theme = "book"
+theme = "sam"
 
 [extra]
 # Put all your custom variables here
+# For theme "book"
 book_numbered_chapters = false
+
+# For theme "Sam"
+sam_menu = [
+    { text = "Spills", link = "/spills" },
+    { text = "Code Crumples", link = "/code crumples" },
+    { text = "GitHub", link = "https://github.com/rinaldo-rex" }
+]
+
+home = "Home"
+
+[extra.sam_footer]
+text = "Rambles of Rinaldo. All rights reserved."
