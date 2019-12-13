@@ -1,15 +1,7 @@
-+++
-title = "Another blogging attempt!"
-description = "Trying about yet another static site generator"
-
-in_search_index = true
-+++
-
-### YABA: Yet Another Blogging Attempt
+# YABA: Yet Another Blogging Attempt
 
 ##### Don't Give up!
 People will shout all kinds of things. What do they know? It's hard. But there's much to words than meets the eye, of course. I should know - I write. A lot - Code, fiction, non-fiction. 
-
 
 I've been trying to maintain a blog of my own for a while now. It's hard for vareity of reasons. (People like giving excuses don't they?! 🤣) So here's my not-so-genuine excuse: Analysis Paralysis. There's plenty of options to create your own blog these days, and it's just overwhelming. I've been trying to maintain one since the early days of *blogging* (Indeed, I've had by early blogs in Blogger, WordPress, Tumblr, Knol (Now, I'm sure not even many will know this!) but let's leave the past to it!)
 
