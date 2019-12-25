@@ -7,6 +7,14 @@
 If you're new here, you should probably know a couple of things. 
 
 Yes, this is a **_book_**. An evolving one, if you will. 
+
+![Menu-bar](menu_bar.png)
+
+- Use the menubar to navigate to the chapters of the book. 
+- Use the brush to change the theme of the book!
+- You can use the search function to search for anything across the whole book. 
+  
+
 You can view the CHANGELOG in the appendix to get the posts by day/month/year. You'll see the evolution of the book chronologically.
 
 If you're still here, or already have been here, continue. You might find at least something useful somewhere along the pages. From the unwritten words. Between the pages. And I am genuinely happy about the fact that you wanted to check out this book. 🥰 My [email's](mailto:rinaldorexg@gmail.com) always open if you wanna chat. 
