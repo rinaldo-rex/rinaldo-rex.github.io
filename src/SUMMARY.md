@@ -9,6 +9,8 @@
     - [Pity](./personal/people/experiment/pity_intro.md)
       - [Journey of a thousand miles](./personal/people/experiment/pity_1.md)
       - [The hat trick 🎩](./personal/people/experiment/pity_2.md)
+      - [Patience IS trying](./personal/people/experiment/pity_3.md)
+      - [Yesteryear yearnings](./personal/people/experiment/pity_4.md)
     - [Fear](./personal/people/experiment/fear_1.md)
     - [Catharsis](./personal/people/experiment/catharsis_1.md)
     - [Epilogue](./personal/people/experiment/epilogue.md)

@@ -5,7 +5,7 @@
 
 Riya was listening intently to his enthusiastic face. "I'm not sure where this is going, but I can't dismiss the effort you've done for a year. With little to no support from people. Tell me then, Fred, You're saying those simple, empty pictures mean so many things?"
 
-“Precisely. But it's much more that. For starters, none of my posts are 'blank'  — And moreover, just like everything else I say, or write, this is multilayered. So many layers — Symbols, signs, colors, psychology, philosophy, religion, technology, ethics, morals, science, politics. Each of them are. They will never end in a singular idea and I can guarantee that”
+“Precisely. But it's much more that. For starters, none of my posts are 'blank'  — And moreover, just like everything else I say, or write, this is multilayered. So many layers — Symbols, signs, colors, psychology, philosophy, religion, technology, ethics, morals, science, politics, linguistics, geography, optics, writing. Each of them are. They will never end in a singular idea and I can guarantee that”
 
 “You’re pretty impressed with yourself now aren’t you?” she smirked. 
 “Ha ha, maybe. Maybe not. And among all the points I’m trying to make, is this very crucial one — ”
@@ -25,3 +25,5 @@ Of course, I have and will keep giving hints to people — and it isn’t go
 “Alright. I think I see what you’re aiming for, although I am sure you know better to have high hopes that people will get this. So what’s your contingency plan?” she asked. She cared enough to make sure he doesn’t get upset upon failing in this little year long experiment of his. 
 
 He was quiet for a while. “Well, ever since I started this, I had that question. Or perhaps, I was wondering how to handle the failure. Because I was doubtful. Doubtful that I can do this. And that people can put the trust in me. But that’s one of the goals of this experiment — to be okay with a failed attempt. Imagine an year of failed effort — and imagine the hours and hours of efforts that I had to go through. I’ve always been afraid of failures Riya. Always. And it took me far longer to realize that failure is part of the process. That failure is what gives purpose to success. Failure creates meaning out of futile efforts”
+
+### The sacrifices
