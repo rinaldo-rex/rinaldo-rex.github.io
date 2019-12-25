@@ -20,3 +20,19 @@ I'm *Rinaldo* and I'm...
 Hey, I don't _really_ know _what_ I am. Philosophically speaking, at least. But of course, nobody does (_but wouldn't care to admit, mostly_)
 
 I'm trying to be a better human, developer, and writer. So that's what you'll probably read about throughout. 
+
+## Structure of the site    
+###### (Randomly spread across chapters)
+- ### Spills 
+
+    I write a lot of random things apart from my developer life, and that's what you'll find over here. Especially on random, unintellegible philosophical ideas. 🤷🏻‍♂️
+
+- ### Code Crumples
+        
+    I'm a developer. I encounter a lot of interesting, and weird code patterns and styles of software development that I think more people should consider taking a look at. 
+- ### README/Preface/Foreword
+        
+    *Ping!* You're here. 🤪
+
+
+And this site is subject to evolve, as does everything around us. 
