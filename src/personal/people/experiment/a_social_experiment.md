@@ -20,4 +20,6 @@ This was more *psychological* than *sociological.*
 
 And if you're still wondering at it all, please continue reading. Maybe the next couple of pages will shed some light on this. No matter what you get out of this, remember, this is an *evolving* book.
 
-I thank a lot of people for making this possible. You'll know who I thank the most as you read through the pages. But despite so many things, so many difficulties, a lot of you have stayed with me. And I am genuinely stoked to see people interested in this experiment of mine. Without you, it wouldn't have been possible. Thank you.
+I thank a lot of people for making this possible. You'll know who I thank the most as you read through the pages. But despite so many things, so many difficulties, a lot of you have stayed with me. And I am genuinely stoked to see people interested in this experiment of mine. Without you, it wouldn't have been possible. 
+
+> Thank you, for being with me throughout this.

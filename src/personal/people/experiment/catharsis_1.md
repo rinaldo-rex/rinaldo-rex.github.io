@@ -1,5 +1,5 @@
 ## Catharsis
-> #### On how we could manage to rebel
+> #### *On HOW we can learn to rebel*
 
 
 But guess what, a couple of my friends already found out even with little to no hints. That in itself surprised me… And the fact that they were ready to put in the effort — to believe on someone — the trust that I am not wasting their time, the trust that I had something to say, the trust that I wasn’t playing them, that’s already everything I could have hoped for.

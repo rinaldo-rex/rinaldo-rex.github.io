@@ -1,5 +1,5 @@
 ## Fear
-> #### On what was going on
+> #### *On WHAT was going on*
 
 "A single orchard cannot be a forest - That was a proverb that always bothered me. It took me years to understand that it doesn't really say just that" he smiled as he said that. "A banyan tree that can stand for years still starts as a seed" he winked. 
 
