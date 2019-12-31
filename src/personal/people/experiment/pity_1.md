@@ -15,6 +15,11 @@ He smiled. Wearing the helmet and getting on the bike. 
 “Ag — reed. But…” Riya knew she was stepping into one of his typical conversations — those that satisfy one’s thirst for discussions, but also exhausts their ability to think clearly. This isn’t going to be easy — contradicting of course, but also draining. *You owe me, darling.* She thought as she continued to ponder into his conversation, “But to most people, it really doesn't matter. Not everybody looks for meaning when they do something” She slowed down as she said those words. It was hard to put that into a binary idea of yes or no.
 
 
+### TODO: Change this to sunny image. The bright side of things
+
+![sunny](sunny.jpeg)
+
+---
 “Very true. And that’s where I was going” he slowed down his bike. It was now half past six. It was getting colder. By the looks of it, they were entering a small village. He stopped at a small tea shop — ordering two. 
 Riya didn’t ask anything. She was busy looking around. It’s been long since she saw huts instead of big blocks of concretes. 
 

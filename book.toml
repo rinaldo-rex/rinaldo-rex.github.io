@@ -7,7 +7,7 @@ title = "Rinaldo's stream of consciousness"
 description = "A stream of consciousness of me evolving and exploring life as I live it"
 
 [output.html]
-preferred-dark-theme = "navy"
+preferred-dark-theme = "Navy"
 
 [output.html.fold]
 enabled = true

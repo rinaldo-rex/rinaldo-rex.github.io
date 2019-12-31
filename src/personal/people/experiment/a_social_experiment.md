@@ -4,7 +4,7 @@
 
 To those who don't know, here's the gist of what I've been doing throughout the year.
 
-06 January, 2019 was when this started. I started posting to my social network handles, an image. A series of images, in fact, throughout the year.
+06 January, 2019 (**The first sunday of the year**) was when this started. I started posting to my social network handles, an image. A series of images, in fact, throughout the year.
 
 *Cryptic, you could say.  
 A self-devised puzzle, others would.  
