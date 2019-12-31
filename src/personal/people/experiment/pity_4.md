@@ -8,9 +8,7 @@ Riya remembers him saying about how he used to sit on the portico of his home, a
 
 "But this last year, there wasn't many. The day just… continued. It was a rather normal day and by the end of the day, when I actually realized a new year's beginning, I was actually disappointed. On a lot of fronts. Of course, it included myself too. But nevertheless, the question did not change - 'What have we grown into?'" He took a break trying to recollect the way he felt at that moment. 
 
-She remembered him telling about a lot of things that's bothering him lately regarding how we've grown up to be. It's not uncommon - Moving from our studies into the mythical adulthood where you're independent throwing you off. It's not what was promised to us, neither was it what we imagined or worked towards, but still we carry on. As if nothing is wrong about the way we were looking at it. 
-
-"There's a reason why cultures used to have rituals, and festivals. Me of all people, a psychology fanatic, should be careful about utilizing the potential these cycles of life held within themselves. But why did I not do that? 
+She remembered him telling about a lot of things that's bothering him lately regarding how we've grown up to be. It's not uncommon - Moving from our studies into the mythical adulthood where we're independent, throwing you off mentally. It's neither what was promised to us, nor was it what we imagined or worked towards, but still we carry on. As if nothing is wrong about the way we were looking at it. 
 
 ---
 
