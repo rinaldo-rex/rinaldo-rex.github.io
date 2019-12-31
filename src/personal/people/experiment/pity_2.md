@@ -1,5 +1,11 @@
 ## The hat trick 🎩
 
+He smiled, "It's now deep red" he said pointing at the sky. 
+
+Riya was taken aback for a moment - *How did I not notice this?* It was a beautiful view of the sun painting the sky red. She just laid her head on his shoulders and enjoyed what was before her eyes - unbelievable, yet just absolutely adorable at the same time. It wasn't a question of whether it was real anymore. It's whether she chose to enjoy the moment for what it was - And she certainly was enjoying it. 
+
+![sun-set](sun_set.jpg)
+
 “So you’re really not gonna ask about it?” He initiated. 
 
 “Why? So you can boast?” she smirked. She definitely knew what he was hinting at. 
@@ -8,7 +14,7 @@ Fred smiled. “You think you know me that well huh?”
 
 “Well that and more. For instance, that you’ll pretty much be distracted by the fact that I didn’t ask about it”
 
-Ferdinand was now just staring at her. Already planning counter-measures. You keep me challenged. 
+Ferdinand was now just staring at her. Already planning counter-measures. *You keep me challenged, sweetie!*
 
 “But hey, I’m going to make it easier for you — ” Riya smiled, aware of how anxious he already was, 
 “What’s with those posts?”

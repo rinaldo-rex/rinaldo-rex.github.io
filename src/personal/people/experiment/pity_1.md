@@ -15,13 +15,25 @@ He smiled. Wearing the helmet and getting on the bike. 
 “Ag — reed. But…” Riya knew she was stepping into one of his typical conversations — those that satisfy one’s thirst for discussions, but also exhausts their ability to think clearly. This isn’t going to be easy — contradicting of course, but also draining. *You owe me, darling.* She thought as she continued to ponder into his conversation, “But to most people, it really doesn't matter. Not everybody looks for meaning when they do something” She slowed down as she said those words. It was hard to put that into a binary idea of yes or no.
 
 
-### TODO: Change this to sunny image. The bright side of things
+“Very true. And that’s where I was going” he slowed down his bike. It was now half past two. It was a hard drive on the sun. By the looks of it, they were entering a small village. 
 
 ![sunny](sunny.jpeg)
 
----
-“Very true. And that’s where I was going” he slowed down his bike. It was now half past six. It was getting colder. By the looks of it, they were entering a small village. He stopped at a small tea shop — ordering two. 
+
+They had a pit stop to have their lunch. It's been a rusty road. And them having conversations that were so contradictory for each of them for this long drained them. Both of them needed a break. One that doesn't just physically revive them, but mentally too. They stopped by a road side shop and had their lunch. It was a recipe that was famous in that region. They're now at least two hundred kilometres off their places. It was totally new, and not to forget reviving. But they enjoyed the dish nevertheless. 
+
+"Interesting how *easily adaptable we're* to foods that we haven't tasted in years" Fred said, hinting to something that made no sense to Riya. 
+
+"What's the nearest village after this one?" Riya asked, certainly tired just by hearing her voice. "At least a hundred Kilometres" said the shopkeeper. 
+
+"I'm not moving anywhere until I get my nap" she said, sounding all too serious. Fred was also needing a break. It was peaceful to be in an isolated place despite the weather being sunny. They had their fair share of nap before starting again. 
+
+It was now getting darker - Half past six. And the weather was becoming nicer to them. He stopped at a small tea shop — ordering two. 
+
 Riya didn’t ask anything. She was busy looking around. It’s been long since she saw huts instead of big blocks of concretes. 
+
+They were just enjoying the tea, discussing their lives after college, which took so many turns as one could expect. *Life sure hasn't been easy all this while. I wish it could have been any other way* he thought, taking in the surroundings. 
+
 
 “Stark difference isn’t?” He asked looking at her exclaim at all these. 
 
@@ -32,9 +44,3 @@ Riya didn’t ask anything. She was busy looking around. It’s been long since 
 As they were enjoying the tea, the evening started waving it's good bye. The sky was turning orange. Fred pulled her and walked past a couple of trees behind the hut - It was hindering the view of what was behind the hut. Riya physically gasped when she saw what was in front of her eyes. There was an elephant and its calf. The elephant mahout was the one who prepared the tea for them. 
 
 She exclaimed at him, who was now looking at an other side. She turned to find nothing but plains. And an empty sky. She was confused - "What are you looking at? There's an adorable baby elephant here, you dumbo!" 
-
-He smiled, "It's now deep red" he said pointing at the sky. 
-
-Riya was taken aback for a moment - *How did I not notice this?* It was a beautiful view of the sun painting the sky red. 
-
-![sun-set](sun_set.jpg)

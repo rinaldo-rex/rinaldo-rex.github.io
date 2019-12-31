@@ -20,4 +20,6 @@ There was silence for a few minutes. They didn't talk anything. Thankfully, the 
 
 It was almost half past ten. The sun was setting, and the cold breeze on their face was complementing the warmth of their bodies. 
 
-They stopped for their dinner. Their conversations were diverted for a while and they were catching up on their lives - Their work, friends, family.
+They stopped for their dinner. Their conversations were diverted for a while and they were catching up on their lives - Their work, friends, family. It was now close to midgnight. 
+
+![mid-night](night-clean.jpeg)

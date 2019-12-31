@@ -21,3 +21,5 @@ Riya could sense that he was genuinely upset and disturbed about it. "You should
 She has seen him go on about one of his tangents like this earlier. Multiple times in fact. But he never made her feel bored. She was getting lost in thougts by now. She started remembering the tiny things that people do to piss of others, the bullies she sees daily on her way to work, the people who don't give a crap about what others are going through - Even her work, colleagues shouting at each other as if that's what they were meant to do throughout their lives. Life is a complicated bundle of ropes Ferdinand used to say often. It has helped her stay out of troubles quite a few times. It helps her understand that we know very little about what others are going through. 
 
 "But none of this matters. A single orchard cannot be a forest" he said under his breath. 
+
+![night-moon](night-moon.jpg)
