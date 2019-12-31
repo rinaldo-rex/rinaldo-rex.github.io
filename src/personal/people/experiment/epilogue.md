@@ -14,3 +14,5 @@ Riya didn't even flinch. "The elephants, the beautiful sky at the time and the n
 "Exactly. Life is comprised of both days and nights - But despite the fact that most of your life is full of days and nights, it's the time between the two that makes the beautiful memories. The sunset and the sunrise. That's the allegory to life. No matter what you try to do, you always end up enjoying the moments that touches both the sides of life."
 
 "Like how it makes failures equivalent to success" Riya smiled. 
+
+![yin-yang](yin_yang.jpg)
