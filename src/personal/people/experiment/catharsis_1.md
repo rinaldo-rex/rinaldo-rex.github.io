@@ -56,3 +56,7 @@ Some of them are -
 - Truth being, Along an year, I forgot a couple of other layers I wanted to convey. I may not be consciously aware of it, but my subconscious is - in fact that's what designed this. It shapes me"
 
 Fred was quite impressed with what he did. Riya was confused of course. But she had her own moments of thoughts.
+
+It was now well past the midnight. It was early morning. And Fred woke Riya up, and took her out of the cottage they were staying. 
+
+![sun-rise](sun_rise.jpeg)
