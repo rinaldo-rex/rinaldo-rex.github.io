@@ -15,4 +15,10 @@ Riya didn't even flinch. "The elephants, the beautiful sky at the time and the n
 
 "Like how it makes failures equivalent to success" Riya smiled.  
 
+"Interesting effort though," she said after a moment of thinking. "Not sure if it conveys what it has to, but it's interesting nevertheless" 
+
+Ferdinand smiled, "And finally, like I said, none of my posts/images are empty. If you edit them, you'll be able to see what's in them. But the reason I went with black on white and white on black was to convey the fact that you can only 'see' if you accept that most things are grey. Not black and white. That is to say, when you edit them, the image turns grey. Or you can see it as..."
+
+Riya's eyes widened, "That you can only see if you're aware of both the extremes!" She understood his "allegory to life" comment. 
+
 ![yin-yang](yin_yang.jpg)
