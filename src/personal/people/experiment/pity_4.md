@@ -2,7 +2,7 @@
 
 "So what made you take up this… This year-long puzzle?" she asked.  
 
-He smiled, for the conversation turned to his efforts. It's the end of the year. Exactly one year back, the last day of the past year, I still remember the day very clearly. Certainly not vividly though, there wasn't anything vivid about the day. I was sitting in my room, coding. I didn't receive any wishes at midnight. As a kid, I frequently visited the churches at midnight for the new year celebrations. There were fireworks, and even the last couple of years, it was so lively.  
+He smiled, for the conversation turned to his efforts. "It's the end of the year. Exactly one year back, the last day of the past year, I still remember the day very clearly. Certainly not vividly though, there wasn't anything vivid about the day. I was sitting in my room, coding. I didn't receive any wishes at midnight. As a kid, I frequently visited the churches at midnight for the new year celebrations. There were fireworks, and even the last couple of years, it was so lively."  
 
 Riya remembers him saying about how he used to sit on the portico of his home and be able to look at the fireworks from there. It was clearly visible even though it was coming from the church from a nearby village.  
 
