@@ -6,11 +6,11 @@ Riya was taken aback for a moment - *How did I not notice this?* It was a beauti
 
 ![sun-set](sun_set.jpg)  
 
-“So you’re really not gonna ask about it?” He initiated.  
+“So you’re not gonna ask about it?” He initiated.  
 
-“Why? So you can boast?” she smirked. She definitely knew what he was hinting at.  
+“Why? So you can boast?” she smirked. She knew what he was hinting at.  
 
-Fred smiled. “You think you know me that well huh?”  
+Fred smiled. “You think you know me that well huh?”   
 
 “Well, that and more. For instance, that you’ll pretty much be distracted by the fact that I didn’t ask about it”  
 
@@ -23,7 +23,7 @@ Ferdinand grinned ear-to-ear. *You also know me well enough to not discourage my
 
 Riya rolled her eyes. Here we go. “Because we don’t know how they do a trick?”  
 
-“Not really, no. If you know that the magician is going to take a rabbit out of a hat, there’s nothing exciting about it. You've seen it multiple times, it's almost as if it's a classic act of opening. You still may not know how he does it, but you know what he will do. But what if… What if this trick is different? What if he takes something out of the hat? What if — ”  
+“Not really, no. If you know that the magician is going to take a rabbit out of a hat, nothing is exciting about it. You've seen it multiple times, it's almost as if it's a classic act of opening. You still may not know how he does it, but you know what he will do. But what if… What if this trick is different? What if he takes something out of the hat? What if — ”  
 
 “Of course yes, it’ll be interesting if he changes the trick”  
 
@@ -43,6 +43,6 @@ He knew he had a lot to convey. He was thinking — to describe his attempt at a
 
 “Many. But you still won’t expect the magician to reveal how he did it after the end of every trick, do you?”  
 
-“What? So you’re telling me, you’re not going to tell me anything at all?” her shocked face revealed that she was actually expecting him to say what it was that he was doing. Even though she never asked about it to him, her face said it all - *She was expecting a reveal!*  
+“What? So you’re telling me, you’re not going to tell me anything at all?” her shocked face revealed that she was expecting him to say what it was that he was doing. Even though she never asked about it to him, her face said it all - *She was expecting a reveal!*  
 
 “No, I’ll tell you what the trick is supposed to be. You find out what it is” Fred smiled.  
