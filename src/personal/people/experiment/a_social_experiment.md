@@ -1,6 +1,6 @@
 # Chapter 3: An experiment
 
-> *An year-long perusal of a psychological experiment*
+> *A year-long perusal of a psychological experiment*
 
 To those who don't know, here's the gist of what I've been doing throughout the year.
 
