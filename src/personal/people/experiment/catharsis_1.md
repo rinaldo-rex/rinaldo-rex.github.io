@@ -55,8 +55,8 @@ Some of them are -
 - Life is a bundle of nuances. Just like how there are many layers to this experiment of mine, there are experiments in life that we are not aware of. Imagine that we're part of an experiment that someone else is playing.  
 - Truth being, Along an year, I forgot a couple of other layers I wanted to convey. I may not be consciously aware of it, but my subconscious is - in fact that's what designed this. It shapes me"
 
-Fred was quite impressed with what he did. Riya was confused of course. But she had her own moments of thoughts.
+Fred was quite impressed with what he did. Riya was confused of course. But she had her own moments of thoughts. Thoughtst that helped her drift into sleep. He drove to a place he chose for their stay. 
 
-It was now well past the midnight. It was early morning. And Fred woke Riya up, and took her out of the cottage they were staying. 
+As the day ended and started another, the chirps of the birds woke him up. Ferdinand woke her up, and took her out of the cottage they were staying. 
 
 ![sun-rise](sun_rise.jpeg)
