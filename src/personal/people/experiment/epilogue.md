@@ -1,6 +1,6 @@
 # Epilogue
 
-Our ideologies change and we adopt. Evolution is the only thing that stands throughout.  
+Our ideologies change and we adapt. Evolution is the only thing that stands throughout.  
 
 "I forgot a few other points I was trying to make. But it's alright because the subconscious takes care of it.  
 I made a few mistakes and even learnt to adapt to some strange ways of dealing with them - Correction need not be a single way." Fred reminded Riya.  
