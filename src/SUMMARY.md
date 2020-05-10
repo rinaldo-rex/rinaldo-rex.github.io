@@ -14,6 +14,9 @@
     - [Fear](./personal/people/experiment/fear_1.md)
     - [Catharsis](./personal/people/experiment/catharsis_1.md)
     - [Epilogue](./personal/people/experiment/epilogue.md)
+- [Chapter 4: Global Pandemics](./personal/life/pandemics-overview.md)
+  - [Coronavirus: Covid-19](./personal/life/covid/covid-19.md)
+    - [We don't comprehend it yet!](./personal/life/covid-19.md)
 
 [Appdendix](./appendix.md)
 <!-- [Resume](./professional/resume.md) TODO: Update this--> 
