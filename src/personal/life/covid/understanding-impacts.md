@@ -21,13 +21,15 @@ I'm repeating that again - It's people like you and I. Who go on about our lives
 
 Remember the [Maslow's hierarchy of needs](https://www.wikiwand.com/en/Maslow%27s_hierarchy_of_needs)?
 
+![Maslow's hierarchy of needs](Maslow's_Hierarchy_of_Needs_Pyramid.png)
 
 
 ---
 
-#### References and footnotes
+#### References, footnotes, and credits
 
 ##### 1. Association fallacy
 ##### 2. Second mostly populated? We'll see
 ##### 2. Democracy
 ###### Unfortunately, this is proving to be just another facade by the day. 
+##### Maslow's hierarchy of needs attributed to well... Maslow and [the creator of the image](https://commons.wikimedia.org/wiki/File:Maslow%27s_Hierarchy_of_Needs_Pyramid.png). 

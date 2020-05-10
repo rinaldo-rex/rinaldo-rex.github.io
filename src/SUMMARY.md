@@ -16,7 +16,7 @@
     - [Epilogue](./personal/people/experiment/epilogue.md)
 - [Chapter 4: Global Pandemics](./personal/life/pandemics-overview.md)
   - [Coronavirus: Covid-19](./personal/life/covid/covid-19.md)
-    - [We don't comprehend it yet!](./personal/life/covid-19.md)
+    - [We don't comprehend it yet!](./personal/life/covid/understanding-impacts.md)
 
 [Appdendix](./appendix.md)
 <!-- [Resume](./professional/resume.md) TODO: Update this--> 
