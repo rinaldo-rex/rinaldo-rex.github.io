@@ -26,7 +26,7 @@ Here are some facts that we can't deny or dismiss.
 - We **do not have** enough equipments, or hospitals to handle a pandemic. Or even a large scale peaks of even known diseases in many countries. 
 - Most of the population still doesn't completely understand the severity of the current situation - medically, economically, geographically, politically, and psychopolitically. 
 - We're *capable*(technologically, financially, scientifically) of handling a pandemic.
-- We're still figuring out in getting hold of the situation without thw worst casualities the history of mankind has ever seen. 
+- We're still figuring out in getting hold of the situation without the worst casualities the history of mankind has ever seen. 
 
 But the most important of all, 
 - **We *seriously* underestimate how ignorant we are.**  
