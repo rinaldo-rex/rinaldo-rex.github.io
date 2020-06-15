@@ -18,7 +18,7 @@
 - [Chapter 4: Global Pandemics](./personal/life/pandemics-overview.md)
   - [Coronavirus: Covid-19](./personal/life/covid/covid-19.md)
     - [We don't comprehend it yet!](./personal/life/covid/understanding-impacts.md)
-    <!-- - [What we know](./personal/life/covid/understanding-impacts.md) -->
+    - [What we know](./personal/life/covid/present-pestilences.md)
 
 [Appdendix](./appendix.md)
 <!-- [Resume](./professional/resume.md) TODO: Update this--> 
