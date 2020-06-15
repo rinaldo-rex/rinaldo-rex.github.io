@@ -5,6 +5,7 @@ multilingual = false
 src = "src"
 title = "Rinaldo's stream of consciousness"
 description = "A stream of consciousness of me evolving and exploring life as I live it"
+google_analytics_id = "UA-167980195-1"
 
 [output.html]
 preferred-dark-theme = "Navy"
