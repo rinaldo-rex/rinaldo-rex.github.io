@@ -163,7 +163,7 @@ Having said that, the collaborative efforts of people are just incredibly massiv
 
 - [End Coronavirus](https://www.endcoronavirus.org/) is a beautiful and impressive effort to mitigate/inform people/leaders to take a look at examples of other nations who beat the situation and those who didn't. It helps with the above questions - To replicate what worked for some nations and understanding them instead of simply trying to simulate their results. 
 
-<img src="../../../image/end_coronavirus.png">  
+<img src="../../../images/end_coronavirus.png">  
 
 - I'm appalled at how the Indian govt. is handling the situation (which is only marginally acceptable, people would beg to differ though, towards the cons side of this) and the govt information propagation regarding this situation and the health crisis is worse than poor. But thankfully, a group of individuals took it upon themselves to create [an open, collaborative effort to curate the information](https://www.covid19india.org/) from various departments from various states and gave it in a modern, 21st-century informative website. Please, go ahead and read their "about" page. 
     - But then, of course, we should laud certain things that the govt. managed to do properly - like the example of Kerala's tackling of the situation which was well received by nations of the world (just not Indian politicians, I believe)
