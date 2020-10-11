@@ -262,6 +262,14 @@ Remember [Maslow's hierarchy of needs](https://www.wikiwand.com/en/Maslow%27s_hi
 </center>
 
 And if you noticed the bottom/foundation of the hierarchy being in a lot of difficulties, you'll realize the top is bound to topple. And we're already seeing it manifesting in ways we have no idea how to correlate yet(the protests all over the world over things that really shouldn't happen, and the ridiculous number of people being swayed away from science in general). And in all honesty, it is going to only snowball. We're on the verge of long-term effects, and we should be careful. 
+
+##### Some interesting links
+
+- [Masks work](https://www.youtube.com/watch?v=eAdanPfQdCA&feature=youtu.be). 
+- Face masks are important to handle [the second wave](https://www.sciencefocus.com/news/face-mask-use-needed-to-prevent-covid-19-second-wave/).
+- Second wave in [Europe](https://www.wsj.com/articles/covid-19-appeared-to-be-under-control-in-europe-now-its-surging-again-11597848444)
+- How the coronavirus kills - A very interesting, interactive page that discusses [the progression](https://www.sciencemag.org/news/2020/04/how-does-coronavirus-kill-clinicians-trace-ferocious-rampage-through-body-brain-toes) of the disease's fatality.  
+- If you know me, you'd know I talk much about symbolism. Because, for the greater or worse part of our civilizations are driven by symbols. (As an AI engineer, I can understand them contributing to our 'judgments' because they have weights that are higher than the others due to reinforcement). And a pandemic has their own [symbolic meaning](https://thesymbolicworld.com/articles/coronavirus-the-symbolism-of-epidemics-transcript/) which is unraveling. 
 </div>
 
 ---
