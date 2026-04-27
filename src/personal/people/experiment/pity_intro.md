@@ -1,2 +1,1 @@
-## Pity
-> #### _On WHY it all started_
+# Pity
