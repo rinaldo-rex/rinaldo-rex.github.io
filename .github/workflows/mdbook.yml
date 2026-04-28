@@ -33,6 +33,5 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./book
-        keep_history: false
         destination_dir: /
         force_orphan: true
