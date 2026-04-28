@@ -2,3 +2,7 @@
 title = "Rinaldo's Stream of Consciousness"
 authors = ["Rinaldo Rex"]
 language = "en"
+
+[output.html.fold]
+enable = true    # include support for printable output
+level = 0
