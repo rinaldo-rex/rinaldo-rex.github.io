@@ -1,11 +1,15 @@
 # Summary
 
 [Foreword](./foreword.md)
-[Appdendix](./appendix.md)
-
+- [26. Beginning of a generative era](./2026/generative_era_beginning.md)
+    - [26.5. Writing in the age of slop](./2026/writing_in_the_age_of_slop.md)
+        - [26.5.1.1 Restarting Mark My Words](./2026/mark_my_words.md)
+        - [26.5.1.2 On audio prompting]()
+        - [26.5.1.3 On audio books]()
+[26.5.2 LLMs vs SLMs](./2026/llm_trajectory.md)
 
 ----------
-[Archives](./archives/archives.md)
+- [Archives](./archives/archives.md)
   - [Chapter 1: Coding == Creation](./archives/professional/coding/coding_is_creation.md)
       - [The first ink](./archives/professional/coding/the_first_ink.md)
   - [Chapter 2: The quarter life crisis](./archives/personal/life/quarter_life_crisis.md)
@@ -24,4 +28,3 @@
     - [Coronavirus: Covid-19](./archives/personal/life/covid/covid-19.md)
       - [We don't comprehend it yet!](./archives/personal/life/covid/understanding-impacts.md)
       - [What we (should) know](./archives/personal/life/covid/present-pestilences.md)
-

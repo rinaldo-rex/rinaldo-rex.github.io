@@ -6,3 +6,8 @@ language = "en"
 [output.html.fold]
 enable = true    # include support for printable output
 level = 0
+
+[output.html]
+no-section-label = true
+
+[preprocessor.footnote]
