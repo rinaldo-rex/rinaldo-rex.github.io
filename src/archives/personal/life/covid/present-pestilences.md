@@ -2,10 +2,6 @@
 
 ###### Warning: A long read. Read when you have time. ⏳
 
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v8.0" nonce="i1PWKCZo"></script>
-<div class="article" style="text-align: justify";>
-
 > Your life matters and uncertainty ❓  _(inevitably)_ is part of the future. 
 
 And since it's been established that we know very little about the implications, it becomes easier to narrow down on the fact that we need to be prudent. 
@@ -270,7 +266,6 @@ And if you noticed the bottom/foundation of the hierarchy being in a lot of diff
 - Second wave in [Europe](https://www.wsj.com/articles/covid-19-appeared-to-be-under-control-in-europe-now-its-surging-again-11597848444)
 - How the coronavirus kills - A very interesting, interactive page that discusses [the progression](https://www.sciencemag.org/news/2020/04/how-does-coronavirus-kill-clinicians-trace-ferocious-rampage-through-body-brain-toes) of the disease's fatality.  
 - If you know me, you'd know I talk much about symbolism. Because, for the greater or worse part of our civilizations are driven by symbols. (As an AI engineer, I can understand them contributing to our 'judgments' because they have weights that are higher than the others due to reinforcement). And a pandemic has their own [symbolic meaning](https://thesymbolicworld.com/articles/coronavirus-the-symbolism-of-epidemics-transcript/) which is unraveling. 
-</div>
 
 ---
 
@@ -278,4 +273,4 @@ And if you noticed the bottom/foundation of the hierarchy being in a lot of diff
 
 ##### 1. Quote attribution
 ###### Although often wrongly attributed to Benjamin Disraeli, it was popularised by one of my favourite authors - Mark Twain. If you find it interesting, please, [read more](https://en.wikipedia.org/wiki/Lies,_damned_lies,_and_statistics?oldformat=true) about it.
-##### 2. Maslow's hierarchy of needs attributed to well... Maslow and [the creator of the image] (https://commons.wikimedia.org/wiki/File:Maslow%27s_Hierarchy_of_Needs_Pyramid.png). 
+##### 2. Maslow's hierarchy of needs attributed to well... Maslow and [the creator of the image](https://commons.wikimedia.org/wiki/File:Maslow%27s_Hierarchy_of_Needs_Pyramid.png). 
