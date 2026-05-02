@@ -5,9 +5,10 @@ language = "en"
 
 [output.html.fold]
 enable = true    # include support for printable output
-level = 0
+level = 1
 
 [output.html]
 no-section-label = true
+mathjax-support = true
 
 [preprocessor.footnote]

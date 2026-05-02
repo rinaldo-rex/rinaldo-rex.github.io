@@ -1,4 +1,4 @@
-# 26.5.0 Writing in the age of _slop_
+# Writing in the age of _slop_
 
 2026 is really the year of slop{{footnote: Although the existence of ChatGPT et al. and LLMs have been around for a while, its now that they're used extensively to create content online.}}. 
 
