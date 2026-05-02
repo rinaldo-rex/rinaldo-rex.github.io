@@ -12,3 +12,6 @@ no-section-label = true
 mathjax-support = true
 
 [preprocessor.footnote]
+
+[preprocessor.reading-time]
+words-per-minute = 150

@@ -1,5 +1,8 @@
 # Gravitating towards Calendar Versioning
 
+> ##### Reading time: {{ #reading_time }}.
+
+
 After almost a decade of being a software develoeper - I've noticed that my personal gravitation towards _versioning_ in software should be through Calendric Versioning.
 
 ### A philosophical tangent
