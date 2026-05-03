@@ -16,12 +16,14 @@ And this reasoning permeats all the other reasoning because as you're probably a
 
 I'm sure I'll be writing more about my spiritual standpoint in life - both personal and professsional, but for now I'll limit it to the entity - _time_. 
 
+We don't really have _control_ over time{{footnote: To be frank, I'm not even sure we understand time clearly. The fact that most people can't even comprehend that spacetime is a continuum. That it's not two words as space and time 🤷}}. It proceeds forwards. 
+
 
 ### Reason 3: Makes sense for a blog
 
 I could of course simply add the date of the blog post{{footnote: Or since this is hosted on Github, you can literally just check my commit history}}. But somehow it didn't feel intuitive to me. Primarily because I randomly stop blogging altogether. And it's in an eternal stagnation. People coming to my blog has to search for the date to understand that this older version of me is dumber than the current version of me. 
 
-Basically provides an instant context of time. You see a post of mine under \\(26.5.1.2._{26.5.3}\\)? - You can instantly deduce the seed for that post was 2026 May 1st. And the superscript is basically when it was last revisited/revised (2026, May 3rd). That's all you gotta know about a blog. If you're reading this blog in the future and it hasn't been updated or revisited by me to update my growth in how my perspective has shifted (or hardened), you can safely ignore any strong notions I had about it. 
+Basically provides an instant context of time. You see a post of mine under \\(26.5.1.2._{26.5.3}\\)? - You can instantly deduce the seed for that post was 2026 May 1st. And the superscript is basically when it was last revisited/revised (2026, May 3rd){{footnote: Of course, I have the "last updated" footer enabled on each page - But you can basically skip the post by seeing the date on the TOC. Neat isn't? }}. That's all you gotta know about a blog. If you're reading this blog in the future and it hasn't been updated or revisited by me to update my growth in how my perspective has shifted (or hardened), you can safely ignore any strong notions I had about it. 
 
 | ![](blog_calver.png) | 
 |:--:| 

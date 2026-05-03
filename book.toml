@@ -23,17 +23,19 @@ enable = true
 # choose placement(s)
 header = false   # default: false
 footer = true    # default: true
+align.footer = "right"
+margin.footer = ["3em", "0", "0", "0"]
 
 # common formatting
 font-size   = "0.9em"
 separator   = " • "
-date-format = "%Y-%m-%d"
-time-format = "%H:%M:%S"
-branch      = "main"
+date-format = "%Y %B %d"
+time-format = "| %I:%M %p"
+branch      = "master"
 hyperlink   = true  # make hash/branch clickable when possible
 
 # optional timezone handling
 timezone = "local"   # "local" (default) | "utc" | "source" | "fixed:+02:00"
 
 [preprocessor.gitinfo.message]
-footer = "Last updated: <em>{{date}}</em>"
+footer = '<span style="color:#568262"> Last updated: <em>{{date}}</em> </span>'
