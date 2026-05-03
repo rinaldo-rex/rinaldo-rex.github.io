@@ -10,6 +10,7 @@ level = 2
 [output.html]
 no-section-label = true
 mathjax-support = true
+sidebar-header-nav = false
 
 [preprocessor.footnote]
 
