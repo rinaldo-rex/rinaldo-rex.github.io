@@ -23,7 +23,7 @@ I've said this time and again - Writing __*is*__ thinking{{footnote: And perhaps
 
 People think that writing - when you can _generate_ hoardes of text with just an _Openclaw/Hermes_{{footnote: Or even just plain copy-paste from ChatGPT}} agent makes no sense. But I not only **strongly** disagree - I go explicitly against it. It's at times like this that you should be _writing_ more. Either by hand{{footnote: Writing by hand is still one of the best things you can do for your mind, and hand!}}, or by typing{{footnote: A tangent on "audio" prompting via natural language is warranted}}{{footnote: I've always wanted to write a word or two about audio-books. Maybe this time around, I'll write it. Just maybe. }}.
 
-
+And I've restarted my blog writing as of May 2026.
 <br/>
 <br/>
 <br/>

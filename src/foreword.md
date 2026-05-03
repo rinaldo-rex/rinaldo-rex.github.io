@@ -24,5 +24,8 @@ And maybe this time around - I'll settle down on this. Not because I think I've 
 
 And finally, but most importantly, I'm honoured of your visit! Thank you for spending a chunk of your life reading through a random strangers thoughts!
 
+
+> [!NOTE]
+> If you're confused about the chapter numbering, read [this](./2026/gravitating_towards_calver.html#reason-3-makes-sense-for-a-blog). 
 <br/>
 <br/>
