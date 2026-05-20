@@ -39,3 +39,6 @@ timezone = "local"   # "local" (default) | "utc" | "source" | "fixed:+02:00"
 
 [preprocessor.gitinfo.message]
 footer = '<span style="color:#568262"> Last updated: <em>{{date}}</em> </span>'
+
+[preprocessor.relative-date]
+command = "mdbook-relative-date"
