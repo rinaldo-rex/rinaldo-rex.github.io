@@ -1,6 +1,6 @@
 # Summary
 
-[Foreword](./foreword.md)
+[Foreword \\(_{ \text{ {{relative_to:current}} } }\\)](./foreword.md)
 # [2026 - Beginning of a generative era](./2026/generative_era_beginning.md)
   - [May]()
       - [Writing in the age of slop \\(_{ \text{ {{relative_to:current}} } }\\)](./2026/writing_in_the_age_of_slop.md)
