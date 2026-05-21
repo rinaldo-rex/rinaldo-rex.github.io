@@ -25,19 +25,10 @@ Oftentimes we software engineers are expected to churn too many items in a typic
 
 As Mario Zechner (the creator of Pi coding agent) would like to [reiterate](https://youtu.be/RjfbvDXpFls?si=hihTEzFwqN2EFhSy&t=723), Let's slow the fuck down. Let's just stick to the basic years of "cyclic" memory of our biological clocks. Let's keep it simple. We live by the day, month, and year. So let's synchronize our produce{{footnote: Also produce as in agriculture, which has always been synchronized to seasonal cycles until recent advancements of gene editing!}} to the calendar. 
 
-### Reason 3: Makes sense for a blog
-
-I could ofcourse simply add the date of the blog post{{footnote: Or since this is hosted on Github, you can literally just check my commit history}}. But somehow it didn't feel intuitive to me. Primarily because I randomly stop blogging altogether for a considerably long amount of time(Life happens). And it's in an eternal stagnation. People coming to my blog has to search for the date to understand that this older version of me is dumber than the current version of me{{footnote: I briefly considered my own blog-use versioning called AgeVer where instead of the chapter numbers, or the year/month/day as it is now - I'd basically have my age at the time of writing and age at the time of revising. Sounded like the apt one for a blog - but I just didn't want to reinvent another _slightly_ different wheel.}}. 
-
-Basically provides an instant context of time. You see a post of mine under \\(26.5.1.2._{26.5.3}\\)? - You can instantly deduce the seed for that post was 2026 May 1st. And the superscript is basically when it was _significantly_ last revisited/revised (2026, May 3rd){{footnote: Of course, I have the "last updated" footer enabled on each page - But you can basically skip the post by seeing the date on the TOC. Neat isn't? }}. That's all you gotta know about a blog. If you're reading this blog in the future and it hasn't been updated or revisited by me to update my growth in how my perspective has shifted (or hardened), you can safely ignore any strong notions I had about it. 
-
-| ![](blog_calver.png) | 
-|:--:| 
-| *An example of how I use CalVer on this blog* |
 
 ### Antithesis: Critical software
 
-Now that I've laid out why calendar versioning is relatively more attractive to me over other versioning - here's a reason why any of the above shouldn't matter at all: __*For any critical piece of software or library with frequent changes.*__
+Here's a reason why any of the above shouldn't matter at all: __*For any critical piece of software or library with frequent changes or where you have to maintain multiple versions and backwards compatibility{{footnote: Ever heard of the neat [hyrum's law?](https://www.hyrumslaw.com)}}.*__
 
 Semantic version serves better for those situations. It's much more intuitive to understand _breaking_ changes, _compatibility_ concerns, _security_ implications in semantic versions over other versioning schemes.
 
