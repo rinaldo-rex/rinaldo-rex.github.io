@@ -17,7 +17,8 @@
       - [Paraphrasing \\(_{ \text{ {{relative_to:current}} } }\\)]()
       - [Flow diagrams \\(_{ \text{ {{relative_to:current}} } }\\)]()
       - [Softskills \\(_{ \text{ {{relative_to:current}} } }\\)]()
-# [My Recommendations\\( ^ \text {*}\\) ]()
+  - [Favourite Quotes](./favourite_quotes.md)
+<!--# [My Recommendations\\( ^ \text {*}\\) ]()
   - [Note before](./affiliations.md)
   - [Books]()
     - [Influence - The art of persuasion]()
@@ -25,7 +26,7 @@
     - [Four Thousand Weeks]()
     - [The courage to be disliked]()
   - [Software tools]()
-  - [Household tools]()
+  - [Household tools]()-->
 # [Drafts]()
   - [On audio prompting]()
   - [Moving from coding to prompting]()
