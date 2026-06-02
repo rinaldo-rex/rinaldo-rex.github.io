@@ -5,7 +5,7 @@ language = "en"
 
 [output.html.fold]
 enable = true    # include support for printable output
-level = 1
+level = 2
 
 [output.html]
 no-section-label = true
@@ -43,3 +43,11 @@ footer = '<span style="color:#568262"> Last updated: <em>{{date}}</em> </span>'
 [preprocessor.relative-date]
 command = "mdbook-relative-date"
 short = true
+
+[preprocessor.inplace-note]
+popover-min-width = "40rem"
+popover-font-size = "80%"
+trigger-hit-padding = "3px"
+
+[preprocessor.timeline]
+after = [ "inplace-note" ]

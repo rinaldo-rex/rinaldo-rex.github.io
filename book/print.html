@@ -38,10 +38,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-6f1ce1a6.js";
+            window.path_to_searchindex_js = "searchindex-b462a5ab.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-14405552.js"></script>
+        <script src="toc-ab3f8943.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -177,36 +177,392 @@
 
                 <div id="mdbook-content" class="content">
                     <main>
-                        <h1 id="foreword"><a class="header" href="#foreword">Foreword</a></h1>
+                        <style>
+.inplace-note-trigger {
+  font-size: 0.75em;
+  vertical-align: super;
+  line-height: 1;
+  color: var(--links, #0969da);
+  font-weight: 600;
+  cursor: help;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 3px;
+}
+/* Inline wrapper — surrounds trigger in inline context */
+.inplace-note-inline {
+  position: relative;
+  display: inline-block;
+  vertical-align: baseline;
+}
+/* Invisible hover bridge above trigger (matches popover gap) */
+.inplace-note-inline::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  min-width: 1.5em;
+  height: 10px;
+}
+/* Popover for inline-only notes (no block elements) */
+.inplace-note-inline .inplace-note-popover-inline {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--theme-popup-bg, var(--bg, #fff));
+  color: var(--fg, #000);
+  border: 1px solid var(--theme-popup-border, #d0d7de);
+  border-radius: 8px;
+  padding: 10px 14px;
+  min-width: 40rem;
+  max-width: 380px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  z-index: 1000;
+  font-size: 80%;
+  font-weight: normal;
+  line-height: 1.5;
+  text-align: left;
+  white-space: normal;
+  cursor: auto;
+}
+.inplace-note-inline .inplace-note-popover-inline::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent;
+  border-top-color: var(--theme-popup-bg, var(--bg, #fff));
+}
+.inplace-note-inline .inplace-note-popover-inline::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-top-color: var(--theme-popup-border, #d0d7de);
+}
+.inplace-note-inline:hover .inplace-note-popover-inline {
+  display: block;
+}
+/* Block wrapper — used when note content has block elements */
+.inplace-note-block {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+.inplace-note-block .inplace-note-popover-block {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--theme-popup-bg, var(--bg, #fff));
+  color: var(--fg, #000);
+  border: 1px solid var(--theme-popup-border, #d0d7de);
+  border-radius: 8px;
+  padding: 12px 16px;
+  min-width: 40rem;
+  max-width: 380px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  z-index: 1000;
+  font-size: 80%;
+  font-weight: normal;
+  line-height: 1.5;
+  text-align: left;
+  white-space: normal;
+  cursor: auto;
+}
+.inplace-note-block .inplace-note-popover-block::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent;
+  border-top-color: var(--theme-popup-bg, var(--bg, #fff));
+}
+.inplace-note-block .inplace-note-popover-block::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-top-color: var(--theme-popup-border, #d0d7de);
+}
+.inplace-note-block:hover .inplace-note-popover-block {
+  display: block;
+}
+/* Popover inner content styling */
+.inplace-note-content a {
+  color: var(--links, #0969da);
+}
+.inplace-note-content a:hover {
+  color: var(--links, #0969da);
+}
+.inplace-note-content p {
+  margin: 0.25em 0;
+}
+.inplace-note-content p:first-child {
+  margin-top: 0;
+}
+.inplace-note-content p:last-child {
+  margin-bottom: 0;
+}
+.inplace-note-content pre {
+  margin: 0.5em 0;
+  padding: 8px 12px;
+  font-size: var(--code-font-size, 0.875em);
+  background: var(--quote-bg, #f6f8fa);
+}
+.inplace-note-content code {
+  font-size: var(--code-font-size, 0.875em);
+  color: var(--inline-code-color, #301900);
+}
+.inplace-note-content pre code {
+  color: var(--fg, #000);
+}
+.inplace-note-content ul,
+.inplace-note-content ol {
+  margin: 0.25em 0;
+  padding-left: 1.5em;
+}
+.inplace-note-content blockquote {
+  margin: 0.5em 0;
+  padding: 0 0.75em;
+  border-left: 3px solid var(--theme-popup-border, #d0d7de);
+  color: var(--fg, #656d76);
+}
+.inplace-note-content table {
+  margin: 0.5em 0;
+  border-collapse: collapse;
+  font-size: 0.85em;
+}
+.inplace-note-content th,
+.inplace-note-content td {
+  padding: 4px 8px;
+  border: 1px solid var(--table-border-color, #d0d7de);
+}
+.inplace-note-content th {
+  background: var(--table-header-bg, #f6f8fa);
+}
+.inplace-note-content td {
+  background: var(--theme-popup-bg, var(--bg, #fff));
+}
+</style>
+<h1 id="foreword"><a class="header" href="#foreword">Foreword</a></h1>
 <p>As you can see elsewhere with my writing, it’s easier to write a random, even technical, niche topics. Or even a controversial rage-bait ones.
 However, when it comes to introducing ourself - we often falter.</p>
 <p>Perhaps it’s because we misunderstand, or often too scared to introspect <em>what</em> we are. <em>Who</em> we are - Deep down, if you strip the titles, names, ethnicity, etc.</p>
-<p>Like every other writer, blogger, or a software engineer - my blogging did not start here<sup><a name="to-footnote-1"><a href="#footnote-1">1</a></a></sup>. And even here - it has gone multiple versions of itself. And if you are keen to notice the differences, it’s not just the difference in the technology behind the scenes, but also how I perceive, how I want others to perceive me - Everything is different. We all grow through different phases of life, and every other phase - I somehow completely rethink everything that I am, or maybe everything that I should portray.</p>
+<p>Like every other writer, blogger, or a software engineer - my blogging did not start here<span class="inplace-note-inline"><sup class="inplace-note-trigger">1</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">Nor do I think it’ll end here</span></span></span>. And even here - it has gone multiple versions of itself. And if you are keen to notice the differences, it’s not just the difference in the technology behind the scenes, but also how I perceive, how I want others to perceive me - Everything is different. We all grow through different phases of life, and every other phase - I somehow completely rethink everything that I am, or maybe everything that I should portray.</p>
 <br />
+<blockquote class="blockquote-tag blockquote-tag-tip">
+<p class="blockquote-tag-title"><svg viewbox="0 0 16 16" width="18" height="18"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p>
+<p>Don’t miss the inline notes<span class="inplace-note-inline"><sup class="inplace-note-trigger">2</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">Like this one! 😉</span></span></span>! I think very <em>tangentially</em>, and as the name of this digital book says, it’s a <em>stream of consciousness!</em> - And the footnotes are often interesting(to me) that you might find wild!</p>
+</blockquote>
 <br />
 <p>Maybe as they say -</p>
 <blockquote>
 <p>If you don’t look at your past and be embarrassed about somethings - You’ve never really grown out of your predispositions.</p>
 </blockquote>
-<p>And maybe this time around - I’ll settle down on this. Not because I think I’ve become closed-minded as I’m growing older<sup><a name="to-footnote-2"><a href="#footnote-2">2</a></a></sup>, but because I think I have found an easy way to portray myself with all the flaws<sup><a name="to-footnote-3"><a href="#footnote-3">3</a></a></sup>. Maybe it’s acceptance. Or maybe it’s the balance that I’m willing to show.</p>
-<blockquote class="blockquote-tag blockquote-tag-tip">
-<p class="blockquote-tag-title"><svg viewbox="0 0 16 16" width="18" height="18"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p>
-<p>Don’t miss the footnotes! I think very <em>tangentially</em>, and as the name of this digital book says, it’s a <em>stream of consciousness!</em> - And the footnotes are often interesting(to me) that you might find wild!</p>
-</blockquote>
+<p>And maybe this time around - I’ll settle down on this. Not because I think I’ve become closed-minded as I’m growing older<span class="inplace-note-inline"><sup class="inplace-note-trigger">3</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">I read online long back - <em>You’ll become more conservative as you grow older</em> and I couldn’t help but notice that pattern ring true at almost everything in life. Be it personal relationships, ideologies, technical oscillations, professional relations, financial and even intellectual explorations.</span></span></span>, but because I think I have found an easy way to portray myself with all the flaws<span class="inplace-note-inline"><sup class="inplace-note-trigger">4</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">Alongside all the flaws that I come with - with a pinning to where I am in life</span></span></span>. Maybe it’s acceptance. Or maybe it’s the balance that I’m willing to show.</p>
 <br />
 <br />
 <p>And finally, but most importantly, I’m honoured of your visit! Thank you for spending a chunk of your life reading through a random strangers thoughts!</p>
 <br />
 <p><em>Rinaldo Rex. G</em></p>
-<p />
-<hr />
-<p><a name="footnote-1"><a href="#to-footnote-1">1</a></a>: Nor do I think it’ll end here</p>
-<p><a name="footnote-2"><a href="#to-footnote-2">2</a></a>: I read online long back - <em>You’ll become more conservative as you grow older</em> and I couldn’t help but notice that pattern ring true at almost everything in life. Be it personal relationships, ideologies, technical oscillations, professional relations, financial and even intellectual explorations.</p>
-<p><a name="footnote-3"><a href="#to-footnote-3">3</a></a>: Alongside all the flaws that I come with - with a pinning to where I am in life</p>
 <footer class="gitinfo-footer" style="font-size:0.9em;padding:4px;margin:3em 0 0 0;text-align:right;display:block;"><span style="color:#568262"> Last updated: <em>2026 May 20 | 10:13 PM</em> </span></footer>
-<div style="break-before: page; page-break-before: always;"></div>
+<div style="break-before: page; page-break-before: always;"></div><style>
+.inplace-note-trigger {
+  font-size: 0.75em;
+  vertical-align: super;
+  line-height: 1;
+  color: var(--links, #0969da);
+  font-weight: 600;
+  cursor: help;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 3px;
+}
+/* Inline wrapper — surrounds trigger in inline context */
+.inplace-note-inline {
+  position: relative;
+  display: inline-block;
+  vertical-align: baseline;
+}
+/* Invisible hover bridge above trigger (matches popover gap) */
+.inplace-note-inline::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  min-width: 1.5em;
+  height: 10px;
+}
+/* Popover for inline-only notes (no block elements) */
+.inplace-note-inline .inplace-note-popover-inline {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--theme-popup-bg, var(--bg, #fff));
+  color: var(--fg, #000);
+  border: 1px solid var(--theme-popup-border, #d0d7de);
+  border-radius: 8px;
+  padding: 10px 14px;
+  min-width: 40rem;
+  max-width: 380px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  z-index: 1000;
+  font-size: 80%;
+  font-weight: normal;
+  line-height: 1.5;
+  text-align: left;
+  white-space: normal;
+  cursor: auto;
+}
+.inplace-note-inline .inplace-note-popover-inline::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent;
+  border-top-color: var(--theme-popup-bg, var(--bg, #fff));
+}
+.inplace-note-inline .inplace-note-popover-inline::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-top-color: var(--theme-popup-border, #d0d7de);
+}
+.inplace-note-inline:hover .inplace-note-popover-inline {
+  display: block;
+}
+/* Block wrapper — used when note content has block elements */
+.inplace-note-block {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+.inplace-note-block .inplace-note-popover-block {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--theme-popup-bg, var(--bg, #fff));
+  color: var(--fg, #000);
+  border: 1px solid var(--theme-popup-border, #d0d7de);
+  border-radius: 8px;
+  padding: 12px 16px;
+  min-width: 40rem;
+  max-width: 380px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  z-index: 1000;
+  font-size: 80%;
+  font-weight: normal;
+  line-height: 1.5;
+  text-align: left;
+  white-space: normal;
+  cursor: auto;
+}
+.inplace-note-block .inplace-note-popover-block::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent;
+  border-top-color: var(--theme-popup-bg, var(--bg, #fff));
+}
+.inplace-note-block .inplace-note-popover-block::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-top-color: var(--theme-popup-border, #d0d7de);
+}
+.inplace-note-block:hover .inplace-note-popover-block {
+  display: block;
+}
+/* Popover inner content styling */
+.inplace-note-content a {
+  color: var(--links, #0969da);
+}
+.inplace-note-content a:hover {
+  color: var(--links, #0969da);
+}
+.inplace-note-content p {
+  margin: 0.25em 0;
+}
+.inplace-note-content p:first-child {
+  margin-top: 0;
+}
+.inplace-note-content p:last-child {
+  margin-bottom: 0;
+}
+.inplace-note-content pre {
+  margin: 0.5em 0;
+  padding: 8px 12px;
+  font-size: var(--code-font-size, 0.875em);
+  background: var(--quote-bg, #f6f8fa);
+}
+.inplace-note-content code {
+  font-size: var(--code-font-size, 0.875em);
+  color: var(--inline-code-color, #301900);
+}
+.inplace-note-content pre code {
+  color: var(--fg, #000);
+}
+.inplace-note-content ul,
+.inplace-note-content ol {
+  margin: 0.25em 0;
+  padding-left: 1.5em;
+}
+.inplace-note-content blockquote {
+  margin: 0.5em 0;
+  padding: 0 0.75em;
+  border-left: 3px solid var(--theme-popup-border, #d0d7de);
+  color: var(--fg, #656d76);
+}
+.inplace-note-content table {
+  margin: 0.5em 0;
+  border-collapse: collapse;
+  font-size: 0.85em;
+}
+.inplace-note-content th,
+.inplace-note-content td {
+  padding: 4px 8px;
+  border: 1px solid var(--table-border-color, #d0d7de);
+}
+.inplace-note-content th {
+  background: var(--table-header-bg, #f6f8fa);
+}
+.inplace-note-content td {
+  background: var(--theme-popup-bg, var(--bg, #fff));
+}
+</style>
 <h1 id="writing-in-the-age-of-slop"><a class="header" href="#writing-in-the-age-of-slop">Writing in the age of <em>slop</em></a></h1>
-<p>2026 is really the year of slop<sup><a name="to-footnote-1"><a href="#footnote-1">1</a></a></sup>.</p>
+<p>2026 is really the year of slop<span class="inplace-note-inline"><sup class="inplace-note-trigger">1</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">Although the existence of ChatGPT et al. and LLMs have been around for a while, its now that they’re used extensively to create content online.</span></span></span>.</p>
 <p>I am fascinated by the surge of words that’s been taking refuge of our technical vocabulary in the last few years.
 A few that we’re all aware of by now,</p>
 <ul>
@@ -220,10 +576,10 @@ A few that we’re all aware of by now,</p>
 <blockquote>
 <p><em>Slop</em></p>
 </blockquote>
-<p>Language is <em>weird</em><sup><a name="to-footnote-2"><a href="#footnote-2">2</a></a></sup>. But at the same time - It’s what’s helping us make sense of<sup><a name="to-footnote-3"><a href="#footnote-3">3</a></a></sup> the world around<sup><a name="to-footnote-4"><a href="#footnote-4">4</a></a></sup> us. However <em>limited</em><sup><a name="to-footnote-5"><a href="#footnote-5">5</a></a></sup> that description of the world is.</p>
-<p><em>Slop</em> is a favourite, because it elicits a feeling - an intuition, that something isn’t as worthy as it <em>sounds</em>. Something along the lines of <em>mediocre</em>. Something that says - <em>‘Sure, this is poetically sounding, grammatically correct, and follows the modern mathematical and statistical principles of virality, but it just doesn’t mean anything worthwhile. Of my time, or cognitive energy’</em>. And that’s exactly what LLMs will produce.<sup><a name="to-footnote-6"><a href="#footnote-6">6</a></a></sup></p>
-<p>I’ve said this time and again - Writing <strong><em>is</em></strong> thinking<sup><a name="to-footnote-7"><a href="#footnote-7">7</a></a></sup>.</p>
-<p>People think that writing - when you can <em>generate</em> hoardes of text with just an <em>Openclaw/Hermes</em><sup><a name="to-footnote-8"><a href="#footnote-8">8</a></a></sup> agent makes no sense. But I not only <strong>strongly</strong> disagree - I go explicitly against it. It’s at times like this that you should be <em>writing</em> more. Either by hand<sup><a name="to-footnote-9"><a href="#footnote-9">9</a></a></sup>, or by typing<sup><a name="to-footnote-10"><a href="#footnote-10">10</a></a></sup><sup><a name="to-footnote-11"><a href="#footnote-11">11</a></a></sup>.</p>
+<p>Language is <em>weird</em><span class="inplace-note-inline"><sup class="inplace-note-trigger">2</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content"><a href="https://en.wikipedia.org/wiki/Linguistic_relativity">Sapir Whorf Hypothesis</a> anyone?</span></span></span>. But at the same time - It’s what’s helping us make sense of<span class="inplace-note-inline"><sup class="inplace-note-trigger">3</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content"><a href="https://www.ted.com/talks/lera_boroditsky_how_language_shapes_the_way_we_think">Language shapes the way we think</a></span></span></span> the world around<span class="inplace-note-inline"><sup class="inplace-note-trigger">4</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">A pity, really. Understanding the world is much more than descriptive notions. Buddhists would smile at this message</span></span></span> us. However <em>limited</em><span class="inplace-note-inline"><sup class="inplace-note-trigger">5</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content"><a href="https://en.wikipedia.org/wiki/Bouba/kiki_effect">Bouba | Kiki</a> is a fun excerpt on how limited and “quick-to-conclude” mind ours is!</span></span></span> that description of the world is.</p>
+<p><em>Slop</em> is a favourite, because it elicits a feeling - an intuition, that something isn’t as worthy as it <em>sounds</em>. Something along the lines of <em>mediocre</em>. Something that says - <em>‘Sure, this is poetically sounding, grammatically correct, and follows the modern mathematical and statistical principles of virality, but it just doesn’t mean anything worthwhile. Of my time, or cognitive energy’</em>. And that’s exactly what LLMs will produce.<span class="inplace-note-inline"><sup class="inplace-note-trigger">6</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">If <em>unguided</em></span></span></span></p>
+<p>I’ve said this time and again - Writing <strong><em>is</em></strong> thinking<span class="inplace-note-inline"><sup class="inplace-note-trigger">7</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">And perhaps editing <em>is</em> refining. Or in AI terms, <em>fine-tuning</em>.</span></span></span>.</p>
+<p>People think that writing - when you can <em>generate</em> hoardes of text with just an <em>Openclaw/Hermes</em><span class="inplace-note-inline"><sup class="inplace-note-trigger">8</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">Or even just plain copy-paste from ChatGPT</span></span></span> agent makes no sense. But I not only <strong>strongly</strong> disagree - I go explicitly against it. It’s at times like this that you should be <em>writing</em> more. Either by hand<span class="inplace-note-inline"><sup class="inplace-note-trigger">9</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">Writing by hand is still one of the best things you can do for your mind, and hand!</span></span></span>, or by typing<span class="inplace-note-inline"><sup class="inplace-note-trigger">10</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">A tangent on “audio” prompting via natural language is warranted</span></span></span><span class="inplace-note-inline"><sup class="inplace-note-trigger">11</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">I’ve always wanted to write a word or two about audio-books. Maybe this time around, I’ll write it. Just maybe.</span></span></span>.</p>
 <p>And I’ve restarted my blog writing as of May 2026.
 <br />
 <br />
@@ -231,24 +587,192 @@ A few that we’re all aware of by now,</p>
 <br />
 <br />
 <br /></p>
-<p />
-<hr />
-<p><a name="footnote-1"><a href="#to-footnote-1">1</a></a>: Although the existence of ChatGPT et al. and LLMs have been around for a while, its now that they’re used extensively to create content online.</p>
-<p><a name="footnote-2"><a href="#to-footnote-2">2</a></a>: <a href="https://en.wikipedia.org/wiki/Linguistic_relativity">Sapir Whorf Hypothesis</a> anyone?</p>
-<p><a name="footnote-3"><a href="#to-footnote-3">3</a></a>: <a href="https://www.ted.com/talks/lera_boroditsky_how_language_shapes_the_way_we_think">Language shapes the way we think</a></p>
-<p><a name="footnote-4"><a href="#to-footnote-4">4</a></a>: A pity, really. Understanding the world is much more than descriptive notions. Buddhists would smile at this message</p>
-<p><a name="footnote-5"><a href="#to-footnote-5">5</a></a>: <a href="https://en.wikipedia.org/wiki/Bouba/kiki_effect">Bouba | Kiki</a> is a fun excerpt on how limited and “quick-to-conclude” mind ours is!</p>
-<p><a name="footnote-6"><a href="#to-footnote-6">6</a></a>: If <em>unguided</em></p>
-<p><a name="footnote-7"><a href="#to-footnote-7">7</a></a>: And perhaps editing <em>is</em> refining. Or in AI terms, <em>fine-tuning</em>.</p>
-<p><a name="footnote-8"><a href="#to-footnote-8">8</a></a>: Or even just plain copy-paste from ChatGPT</p>
-<p><a name="footnote-9"><a href="#to-footnote-9">9</a></a>: Writing by hand is still one of the best things you can do for your mind, and hand!</p>
-<p><a name="footnote-10"><a href="#to-footnote-10">10</a></a>: A tangent on “audio” prompting via natural language is warranted</p>
-<p><a name="footnote-11"><a href="#to-footnote-11">11</a></a>: I’ve always wanted to write a word or two about audio-books. Maybe this time around, I’ll write it. Just maybe.</p>
 <footer class="gitinfo-footer" style="font-size:0.9em;padding:4px;margin:3em 0 0 0;text-align:right;display:block;"><span style="color:#568262"> Last updated: <em>2026 May 03 | 09:17 PM</em> </span></footer>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="mark-my-words-mm_w-_-text-2w-ago--"><a href="#mark-my-words-mm_w-_-text-2w-ago--" class="header">Mark My Words (\(M^M_W\)) \(_{ \text{ (2w ago) } }\)</a></h1>
+<h1 id="mark-my-words-mm_w-_-text-4w-ago--"><a href="#mark-my-words-mm_w-_-text-4w-ago--" class="header">Mark My Words (\(M^M_W\)) \(_{ \text{ (4w ago) } }\)</a></h1>
+<style>
+.inplace-note-trigger {
+  font-size: 0.75em;
+  vertical-align: super;
+  line-height: 1;
+  color: var(--links, #0969da);
+  font-weight: 600;
+  cursor: help;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 3px;
+}
+/* Inline wrapper — surrounds trigger in inline context */
+.inplace-note-inline {
+  position: relative;
+  display: inline-block;
+  vertical-align: baseline;
+}
+/* Invisible hover bridge above trigger (matches popover gap) */
+.inplace-note-inline::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  min-width: 1.5em;
+  height: 10px;
+}
+/* Popover for inline-only notes (no block elements) */
+.inplace-note-inline .inplace-note-popover-inline {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--theme-popup-bg, var(--bg, #fff));
+  color: var(--fg, #000);
+  border: 1px solid var(--theme-popup-border, #d0d7de);
+  border-radius: 8px;
+  padding: 10px 14px;
+  min-width: 40rem;
+  max-width: 380px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  z-index: 1000;
+  font-size: 80%;
+  font-weight: normal;
+  line-height: 1.5;
+  text-align: left;
+  white-space: normal;
+  cursor: auto;
+}
+.inplace-note-inline .inplace-note-popover-inline::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent;
+  border-top-color: var(--theme-popup-bg, var(--bg, #fff));
+}
+.inplace-note-inline .inplace-note-popover-inline::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-top-color: var(--theme-popup-border, #d0d7de);
+}
+.inplace-note-inline:hover .inplace-note-popover-inline {
+  display: block;
+}
+/* Block wrapper — used when note content has block elements */
+.inplace-note-block {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+.inplace-note-block .inplace-note-popover-block {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--theme-popup-bg, var(--bg, #fff));
+  color: var(--fg, #000);
+  border: 1px solid var(--theme-popup-border, #d0d7de);
+  border-radius: 8px;
+  padding: 12px 16px;
+  min-width: 40rem;
+  max-width: 380px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  z-index: 1000;
+  font-size: 80%;
+  font-weight: normal;
+  line-height: 1.5;
+  text-align: left;
+  white-space: normal;
+  cursor: auto;
+}
+.inplace-note-block .inplace-note-popover-block::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent;
+  border-top-color: var(--theme-popup-bg, var(--bg, #fff));
+}
+.inplace-note-block .inplace-note-popover-block::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-top-color: var(--theme-popup-border, #d0d7de);
+}
+.inplace-note-block:hover .inplace-note-popover-block {
+  display: block;
+}
+/* Popover inner content styling */
+.inplace-note-content a {
+  color: var(--links, #0969da);
+}
+.inplace-note-content a:hover {
+  color: var(--links, #0969da);
+}
+.inplace-note-content p {
+  margin: 0.25em 0;
+}
+.inplace-note-content p:first-child {
+  margin-top: 0;
+}
+.inplace-note-content p:last-child {
+  margin-bottom: 0;
+}
+.inplace-note-content pre {
+  margin: 0.5em 0;
+  padding: 8px 12px;
+  font-size: var(--code-font-size, 0.875em);
+  background: var(--quote-bg, #f6f8fa);
+}
+.inplace-note-content code {
+  font-size: var(--code-font-size, 0.875em);
+  color: var(--inline-code-color, #301900);
+}
+.inplace-note-content pre code {
+  color: var(--fg, #000);
+}
+.inplace-note-content ul,
+.inplace-note-content ol {
+  margin: 0.25em 0;
+  padding-left: 1.5em;
+}
+.inplace-note-content blockquote {
+  margin: 0.5em 0;
+  padding: 0 0.75em;
+  border-left: 3px solid var(--theme-popup-border, #d0d7de);
+  color: var(--fg, #656d76);
+}
+.inplace-note-content table {
+  margin: 0.5em 0;
+  border-collapse: collapse;
+  font-size: 0.85em;
+}
+.inplace-note-content th,
+.inplace-note-content td {
+  padding: 4px 8px;
+  border: 1px solid var(--table-border-color, #d0d7de);
+}
+.inplace-note-content th {
+  background: var(--table-header-bg, #f6f8fa);
+}
+.inplace-note-content td {
+  background: var(--theme-popup-bg, var(--bg, #fff));
+}
+</style>
 <h2 id="mark-my-words"><a class="header" href="#mark-my-words">Mark My Words!</a></h2>
-<p>A long time ago - Around 2018, It was a calmer period on Instgram. People were’nt as overwhelmed or overstimulated via instgram as much. I was excited by random things that I was coming across - and wanted to add to the stimulation. (Yeap, my bad). I started with something called “Mark my words” - A series of predictions (as if I’m Nostradamus) that I thought would come to fruition. And oh boy did some of those did come true! <sup><a name="to-footnote-1"><a href="#footnote-1">1</a></a></sup> <sup><a name="to-footnote-2"><a href="#footnote-2">2</a></a></sup></p>
+<p>A long time ago - Around 2018, It was a calmer period on Instgram. People were’nt as overwhelmed or overstimulated via instgram as much. I was excited by random things that I was coming across - and wanted to add to the stimulation. (Yeap, my bad). I started with something called “Mark my words” - A series of predictions (as if I’m Nostradamus) that I thought would come to fruition. And oh boy did some of those did come true! <span class="inplace-note-inline"><sup class="inplace-note-trigger">1</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">It’s a hit or miss. Ofcourse I’m gonna talk about only that came true. Duh!</span></span></span> <span class="inplace-note-inline"><sup class="inplace-note-trigger">2</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content"><a href="https://en.wikipedia.org/wiki/Confirmation_bias">Confirmation Bias</a> for those who don’t know about common biases!</span></span></span></p>
 <div class="table-wrapper">
 <table>
 <thead>
@@ -262,37 +786,426 @@ A few that we’re all aware of by now,</p>
 <p>Even though I’m just reading into it - (and simply just trying to boast as if my so called predictions are meaningful) I thought it was something that I should still pursue.</p>
 <h3 id="why"><a class="header" href="#why">Why?</a></h3>
 <p>Because I think that it’s an interesting attempt at understanding the “contemporary times” better for myself. What good is being ahead of the curve if I don’t put that into use?</p>
-<p>I wanted to start a podcast of my own too!<sup><a name="to-footnote-3"><a href="#footnote-3">3</a></a></sup></p>
+<p>I wanted to start a podcast of my own too!<span class="inplace-note-inline"><sup class="inplace-note-trigger">3</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">I even went on a spree of getting a Moano microphone to do that. Alas, I was late to the party!</span></span></span></p>
 <p>And just like most other “incomplete” projects of mine, that stagnated. Today - There’re way too many podcasts out there, that starting one not only feels daunting and more “exploiting”, but also like adding just more noise. Because most podcasts today are nothing but just noise.</p>
 <h3 id="so-what-now"><a class="header" href="#so-what-now">So what now?</a></h3>
 <p>I’m thinking of doing more such interesting predictions under the same series.</p>
-<p>Are they really predictions? Not really<sup><a name="to-footnote-4"><a href="#footnote-4">4</a></a></sup>. But just like I believe that it’ll help me understand the times better, I believe it’ll help others as well. Worst case, it’ll just kickstart a conversation. An ice breaker.</p>
+<p>Are they really predictions? Not really<span class="inplace-note-inline"><sup class="inplace-note-trigger">4</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">For those who takes this too seriously: These aren’t <em>real</em> predictions. They are just observations that I believe people are overseeing at the time of its existance</span></span></span>. But just like I believe that it’ll help me understand the times better, I believe it’ll help others as well. Worst case, it’ll just kickstart a conversation. An ice breaker.</p>
 <p>Stay tuned for some wild predictions! (Not really, since some are going to be plain obvious! 😂)</p>
-<p />
-<hr />
-<p><a name="footnote-1"><a href="#to-footnote-1">1</a></a>: It’s a hit or miss. Ofcourse I’m gonna talk about only that came true. Duh!</p>
-<p><a name="footnote-2"><a href="#to-footnote-2">2</a></a>: <a href="https://en.wikipedia.org/wiki/Confirmation_bias">Confirmation Bias</a> for those who don’t know about common biases!</p>
-<p><a name="footnote-3"><a href="#to-footnote-3">3</a></a>: I even went on a spree of getting a Moano microphone to do that. Alas, I was late to the party!</p>
-<p><a name="footnote-4"><a href="#to-footnote-4">4</a></a>: For those who takes this too seriously: These aren’t <em>real</em> predictions. They are just observations that I believe people are overseeing at the time of its existance</p>
+<p>And finally,</p>
+<h4 id="disclaimer"><a class="header" href="#disclaimer">Disclaimer:</a></h4>
+<h5 id="these-predictions-are-meant-for-entertainment-purposes-only-dont--me-on-these-its-just-a-fun-experiment-that-i-felt-like-writing-about"><a class="header" href="#these-predictions-are-meant-for-entertainment-purposes-only-dont--me-on-these-its-just-a-fun-experiment-that-i-felt-like-writing-about"><em>These predictions are meant for entertainment purposes only. Don’t @ me on these. It’s just a fun experiment that I felt like writing about</em></a></h5>
 <footer class="gitinfo-footer" style="font-size:0.9em;padding:4px;margin:3em 0 0 0;text-align:right;display:block;"><span style="color:#568262"> Last updated: <em>2026 May 03 | 02:42 PM</em> </span></footer>
-<div style="break-before: page; page-break-before: always;"></div>
-<h1 id="gravitating-towards-calendar-versioning-1"><a class="header" href="#gravitating-towards-calendar-versioning-1">Gravitating towards Calendar Versioning <sup><a name="to-footnote-1"><a href="#footnote-1">1</a></a></sup></a></h1>
+<div style="break-before: page; page-break-before: always;"></div><style>
+.inplace-note-trigger {
+  font-size: 0.75em;
+  vertical-align: super;
+  line-height: 1;
+  color: var(--links, #0969da);
+  font-weight: 600;
+  cursor: help;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 3px;
+}
+/* Inline wrapper — surrounds trigger in inline context */
+.inplace-note-inline {
+  position: relative;
+  display: inline-block;
+  vertical-align: baseline;
+}
+/* Invisible hover bridge above trigger (matches popover gap) */
+.inplace-note-inline::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  min-width: 1.5em;
+  height: 10px;
+}
+/* Popover for inline-only notes (no block elements) */
+.inplace-note-inline .inplace-note-popover-inline {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--theme-popup-bg, var(--bg, #fff));
+  color: var(--fg, #000);
+  border: 1px solid var(--theme-popup-border, #d0d7de);
+  border-radius: 8px;
+  padding: 10px 14px;
+  min-width: 40rem;
+  max-width: 380px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  z-index: 1000;
+  font-size: 80%;
+  font-weight: normal;
+  line-height: 1.5;
+  text-align: left;
+  white-space: normal;
+  cursor: auto;
+}
+.inplace-note-inline .inplace-note-popover-inline::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent;
+  border-top-color: var(--theme-popup-bg, var(--bg, #fff));
+}
+.inplace-note-inline .inplace-note-popover-inline::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-top-color: var(--theme-popup-border, #d0d7de);
+}
+.inplace-note-inline:hover .inplace-note-popover-inline {
+  display: block;
+}
+/* Block wrapper — used when note content has block elements */
+.inplace-note-block {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+.inplace-note-block .inplace-note-popover-block {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--theme-popup-bg, var(--bg, #fff));
+  color: var(--fg, #000);
+  border: 1px solid var(--theme-popup-border, #d0d7de);
+  border-radius: 8px;
+  padding: 12px 16px;
+  min-width: 40rem;
+  max-width: 380px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  z-index: 1000;
+  font-size: 80%;
+  font-weight: normal;
+  line-height: 1.5;
+  text-align: left;
+  white-space: normal;
+  cursor: auto;
+}
+.inplace-note-block .inplace-note-popover-block::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent;
+  border-top-color: var(--theme-popup-bg, var(--bg, #fff));
+}
+.inplace-note-block .inplace-note-popover-block::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-top-color: var(--theme-popup-border, #d0d7de);
+}
+.inplace-note-block:hover .inplace-note-popover-block {
+  display: block;
+}
+/* Popover inner content styling */
+.inplace-note-content a {
+  color: var(--links, #0969da);
+}
+.inplace-note-content a:hover {
+  color: var(--links, #0969da);
+}
+.inplace-note-content p {
+  margin: 0.25em 0;
+}
+.inplace-note-content p:first-child {
+  margin-top: 0;
+}
+.inplace-note-content p:last-child {
+  margin-bottom: 0;
+}
+.inplace-note-content pre {
+  margin: 0.5em 0;
+  padding: 8px 12px;
+  font-size: var(--code-font-size, 0.875em);
+  background: var(--quote-bg, #f6f8fa);
+}
+.inplace-note-content code {
+  font-size: var(--code-font-size, 0.875em);
+  color: var(--inline-code-color, #301900);
+}
+.inplace-note-content pre code {
+  color: var(--fg, #000);
+}
+.inplace-note-content ul,
+.inplace-note-content ol {
+  margin: 0.25em 0;
+  padding-left: 1.5em;
+}
+.inplace-note-content blockquote {
+  margin: 0.5em 0;
+  padding: 0 0.75em;
+  border-left: 3px solid var(--theme-popup-border, #d0d7de);
+  color: var(--fg, #656d76);
+}
+.inplace-note-content table {
+  margin: 0.5em 0;
+  border-collapse: collapse;
+  font-size: 0.85em;
+}
+.inplace-note-content th,
+.inplace-note-content td {
+  padding: 4px 8px;
+  border: 1px solid var(--table-border-color, #d0d7de);
+}
+.inplace-note-content th {
+  background: var(--table-header-bg, #f6f8fa);
+}
+.inplace-note-content td {
+  background: var(--theme-popup-bg, var(--bg, #fff));
+}
+</style>
+<h1 id="mm_w-slms-over-llms"><a class="header" href="#mm_w-slms-over-llms">\(M^M_W\): SLMs over LLMs</a></h1>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: center"><img src="2026/imgs/slms_vs_llms.jpeg" alt=""></th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: center">Power of targetted expertise supervised by generalized expertise</td></tr>
+</tbody>
+</table>
+</div>
+<p>We’re all now accustomed to, or at least aware of the potential of LLMs. But there’s a part of me - long interested in Language processing since my school days<span class="inplace-note-inline"><sup class="inplace-note-trigger">1</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">Writing a blog on my journey into AI, which will shine more light on this!</span></span></span> that has been trying to shout into the sea of all these hypemongers<span class="inplace-note-inline"><sup class="inplace-note-trigger">2</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">I had to coin this term because the Crypto/NFT bros have taken the <em>influencer</em> space on the dev world, and ruining it for everyone. <br /><br /><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7447669044033564672?collapsed=0" width="100%" height="200rem" frameborder="0" allowfullscreen="" title="Embedded post"></iframe></span></span></span> - That LLMs are only one of the many huge steps ahead into our search for AI (Read as “<em>artificial</em>” and “<em>intelligence</em>” with each word taking its emphasis). It’s a pity that when we say AI today, we essentially mean LLM based applications.</p>
+<p>Maybe GenAI (with emphasis on <em>generative</em>) could be slightly more apt. But most people don’t bother to differentiate these days. (Thanks to those hypemongers)</p>
+<p>Unlike today - when anyone can mean anything and get away with it<span class="inplace-note-inline"><sup class="inplace-note-trigger">3</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">Did you know that Merriam Webster changed their definition of <em>literally</em> as not <em>literally</em> and rather meaning to say it <em>figuratively</em> while the word <em>figuratively</em> is already existing? 🤦🏻 But that’s the nature of language anyway - Etymology</span></span></span> during the early days of AI, there existed a common understanding for a system of deeply narrow expertise called <em>Expert systems</em> (They’re fascinating to read, FYI). And I believe they’re gonna have their revival, albeit in a much more modern way<span class="inplace-note-inline"><sup class="inplace-note-trigger">4</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">This is where I say we can’t really know <em>how</em> it’ll make a comeback though</span></span></span>.</p>
+<h3 id="general-vs-special"><a class="header" href="#general-vs-special">General VS Special</a></h3>
+<p>And today - We seem to be currently enamoured with LLMs which are basically general in nature. This goes back to the age old distinction of Generalization vs Specialization<span class="inplace-note-inline"><sup class="inplace-note-trigger">5</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">Aritificial Narrow Intelligence (ANI) ⇨ Aritifical General Intelligence (AGI) ⇨ Aritifical Super Intelligence (ASI) is a topic that deserves its own space. Coming soon</span></span></span></p>
+<p>Make no mistake - I’m not dissing on LLMs. I’m only expressing the want of deep fascination with <em>patience</em>. Quoting a <a href="https://www.linkedin.com/posts/rinaldo-rex_this-lack-of-basic-intuition-suggests-that-share-7241691402294697984-_j24/?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAABN3NUcBLC9TKpFWljPEnLvWiLXBTZjgjJM">post</a> I made,</p>
 <blockquote>
-<h5 id="reading-time-6-minutes"><a class="header" href="#reading-time-6-minutes">Reading time: 6 minutes.</a></h5>
+<p>We often misunderstand the point of a “language” model and use it as if it’s a knowledge model. We think it “knows”. It just “has” everything but we have to understand its limitations and come to terms with it for us to productively move beyond that line. We have come a long way, but unless we pay attention to the limitations, we slow ourselves down. Long way to go further. The best simile I can come up with right now<span class="inplace-note-inline"><sup class="inplace-note-trigger">6</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">Can’t remember if I read this somewhere. Credit to the one that came up with this though!</span></span></span> is as if a child is sitting at the front of a humongous library. You can ask anything and it can come up with something. Just not necessarily a meaningful correlation unless you explicitly spell it out for the kid.</p>
 </blockquote>
-<p>After almost a decade of being a software develoeper - I’ve noticed that my personal preference towards <em>versioning</em> in software  gravitates towards Calendric Versioning<sup><a name="to-footnote-2"><a href="#footnote-2">2</a></a></sup>. Although there are multitudes of reasonings for that, I’d like to observe a few worth noting for my own posterity.</p>
+<p>But of course, I could be wrong<span class="inplace-note-inline"><sup class="inplace-note-trigger">7</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">Why you probably shouldn’t be taking this seriously. <br /><br /> - I’m not a linguist or a philosopher of the mind. And English isn’t my native language. (Not that I’m an expert in my Native Tamil anyway!) <br />- I’m not an expert in NLP, NLU, or NLG. I just know <em>of</em> them. As I build applications with foundation models, not build models from scratch.</span></span></span></p>
+<p>Paraphrase:</p>
+<ul>
+<li>Why do I believe that we’re still early on the cycle?</li>
+<li>What do I believe will happen in the next couple of years?</li>
+</ul>
+<h3 id="what-did-llms-unlock"><a class="header" href="#what-did-llms-unlock">What did LLMs unlock?</a></h3>
+<p>Human language as a means of transfer of ideas. It’s a <em>model</em> of the way we use the language trained on a humongous corpus (hence <em>L</em>arge <em>L</em>anguage <em>M</em>odels).</p>
+<h3 id="what-do-i-mean-by-slms-or-even-dslms"><a class="header" href="#what-do-i-mean-by-slms-or-even-dslms">What do I mean by SLMs (<em>or even DSLMs</em>)</a></h3>
+<p>Small Language Models or Domain Specific Language Models are potentially more useful for on-device inferences</p>
+<footer class="gitinfo-footer" style="font-size:0.9em;padding:4px;margin:3em 0 0 0;text-align:right;display:block;"><span style="color:#568262"> Last updated: <em>2026 May 20 | 10:50 AM</em> </span></footer>
+<div style="break-before: page; page-break-before: always;"></div><style>
+.inplace-note-trigger {
+  font-size: 0.75em;
+  vertical-align: super;
+  line-height: 1;
+  color: var(--links, #0969da);
+  font-weight: 600;
+  cursor: help;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 3px;
+}
+/* Inline wrapper — surrounds trigger in inline context */
+.inplace-note-inline {
+  position: relative;
+  display: inline-block;
+  vertical-align: baseline;
+}
+/* Invisible hover bridge above trigger (matches popover gap) */
+.inplace-note-inline::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  min-width: 1.5em;
+  height: 10px;
+}
+/* Popover for inline-only notes (no block elements) */
+.inplace-note-inline .inplace-note-popover-inline {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--theme-popup-bg, var(--bg, #fff));
+  color: var(--fg, #000);
+  border: 1px solid var(--theme-popup-border, #d0d7de);
+  border-radius: 8px;
+  padding: 10px 14px;
+  min-width: 40rem;
+  max-width: 380px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  z-index: 1000;
+  font-size: 80%;
+  font-weight: normal;
+  line-height: 1.5;
+  text-align: left;
+  white-space: normal;
+  cursor: auto;
+}
+.inplace-note-inline .inplace-note-popover-inline::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent;
+  border-top-color: var(--theme-popup-bg, var(--bg, #fff));
+}
+.inplace-note-inline .inplace-note-popover-inline::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-top-color: var(--theme-popup-border, #d0d7de);
+}
+.inplace-note-inline:hover .inplace-note-popover-inline {
+  display: block;
+}
+/* Block wrapper — used when note content has block elements */
+.inplace-note-block {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+.inplace-note-block .inplace-note-popover-block {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--theme-popup-bg, var(--bg, #fff));
+  color: var(--fg, #000);
+  border: 1px solid var(--theme-popup-border, #d0d7de);
+  border-radius: 8px;
+  padding: 12px 16px;
+  min-width: 40rem;
+  max-width: 380px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  z-index: 1000;
+  font-size: 80%;
+  font-weight: normal;
+  line-height: 1.5;
+  text-align: left;
+  white-space: normal;
+  cursor: auto;
+}
+.inplace-note-block .inplace-note-popover-block::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent;
+  border-top-color: var(--theme-popup-bg, var(--bg, #fff));
+}
+.inplace-note-block .inplace-note-popover-block::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-top-color: var(--theme-popup-border, #d0d7de);
+}
+.inplace-note-block:hover .inplace-note-popover-block {
+  display: block;
+}
+/* Popover inner content styling */
+.inplace-note-content a {
+  color: var(--links, #0969da);
+}
+.inplace-note-content a:hover {
+  color: var(--links, #0969da);
+}
+.inplace-note-content p {
+  margin: 0.25em 0;
+}
+.inplace-note-content p:first-child {
+  margin-top: 0;
+}
+.inplace-note-content p:last-child {
+  margin-bottom: 0;
+}
+.inplace-note-content pre {
+  margin: 0.5em 0;
+  padding: 8px 12px;
+  font-size: var(--code-font-size, 0.875em);
+  background: var(--quote-bg, #f6f8fa);
+}
+.inplace-note-content code {
+  font-size: var(--code-font-size, 0.875em);
+  color: var(--inline-code-color, #301900);
+}
+.inplace-note-content pre code {
+  color: var(--fg, #000);
+}
+.inplace-note-content ul,
+.inplace-note-content ol {
+  margin: 0.25em 0;
+  padding-left: 1.5em;
+}
+.inplace-note-content blockquote {
+  margin: 0.5em 0;
+  padding: 0 0.75em;
+  border-left: 3px solid var(--theme-popup-border, #d0d7de);
+  color: var(--fg, #656d76);
+}
+.inplace-note-content table {
+  margin: 0.5em 0;
+  border-collapse: collapse;
+  font-size: 0.85em;
+}
+.inplace-note-content th,
+.inplace-note-content td {
+  padding: 4px 8px;
+  border: 1px solid var(--table-border-color, #d0d7de);
+}
+.inplace-note-content th {
+  background: var(--table-header-bg, #f6f8fa);
+}
+.inplace-note-content td {
+  background: var(--theme-popup-bg, var(--bg, #fff));
+}
+</style>
+<h1 id="gravitating-towards-calendar-versioning-1this-is-not-a-technical-deep-dive-on-choosing-a-versioning-scheme"><a class="header" href="#gravitating-towards-calendar-versioning-1this-is-not-a-technical-deep-dive-on-choosing-a-versioning-scheme">Gravitating towards Calendar Versioning <span class="inplace-note-inline"><sup class="inplace-note-trigger">1</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">This is not a technical deep-dive on choosing a versioning scheme</span></span></span></a></h1>
+<blockquote>
+<h5 id="reading-time-10-minutes"><a class="header" href="#reading-time-10-minutes">Reading time: 10 minutes.</a></h5>
+</blockquote>
+<p>After almost a decade of being a software develoeper - I’ve noticed that my personal preference towards <em>versioning</em> in software  gravitates towards Calendric Versioning<span class="inplace-note-inline"><sup class="inplace-note-trigger">2</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">Technically specified <a href="https://calver.org">CalVer</a>, semantically meaningful <a href="https://semver.org">SemVer</a>, and on-the-nose <a href="https://pridever.org">PrideVer</a> 🤣</span></span></span>. Although there are multitudes of reasonings for that, I’d like to observe a few worth noting for my own posterity.</p>
 <h3 id="reason-1-philosophical"><a class="header" href="#reason-1-philosophical">Reason 1: Philosophical</a></h3>
-<p>Anybody who’s known me throughout my formative years<sup><a name="to-footnote-3"><a href="#footnote-3">3</a></a></sup> would easily point to the fact that I’ve been exploring too many (schools of) philosophies too early<sup><a name="to-footnote-4"><a href="#footnote-4">4</a></a></sup> in life. Maybe that’s why I’m naturally leaning towards the only thing that matters for “comparing” <sup><a name="to-footnote-5"><a href="#footnote-5">5</a></a></sup> the progress of anything that’s describable by human means.</p>
-<p>And this reasoning permeats all the other reasoning because as you’re probably aware, everything eventually leads back to philosophy<sup><a name="to-footnote-6"><a href="#footnote-6">6</a></a></sup></p>
+<p>Anybody who’s known me throughout my formative years<span class="inplace-note-inline"><sup class="inplace-note-trigger">3</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">Higher secondary education through college. Or in other words, throughout my twenties</span></span></span> would easily point to the fact that I’ve been exploring too many (schools of) philosophies too early<span class="inplace-note-inline"><sup class="inplace-note-trigger">4</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">Based on who you talk to, I suppose</span></span></span> in life. Maybe that’s why I’m naturally leaning towards the only thing that matters for “comparing” <span class="inplace-note-inline"><sup class="inplace-note-trigger">5</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">A better word would be <em>observing</em> the change of entropy</span></span></span> the progress of anything that’s describable by human means.</p>
+<p>And this reasoning permeats all the other reasoning because as you’re probably aware, everything eventually leads back to philosophy<span class="inplace-note-inline"><sup class="inplace-note-trigger">6</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">For those who don’t know about XKCD: 903 (Read the caption on image hover) and if you wanna visualize this, check <a href="https://www.xefer.com/wikipedia">this</a> one out!</span></span></span></p>
 <h3 id="reason-2-need-for-pause"><a class="header" href="#reason-2-need-for-pause">Reason 2: Need for pause</a></h3>
 <p>I’m sure I’ll be writing more about my spiritual standpoint in life - both personal and professsional, but for now I’ll limit it to the entity - <em>time</em>.</p>
-<p>We don’t really have <em>control</em> over time<sup><a name="to-footnote-7"><a href="#footnote-7">7</a></a></sup>. It proceeds forwards.</p>
-<p>And unfortunately, we’ve lost track of <em>perceiving</em> time. To be precise - perceiving of <em>worthy</em> time<sup><a name="to-footnote-8"><a href="#footnote-8">8</a></a></sup>. Why do we rush everything these days? It makes no sense - given that the more we know, the more we should slow down to process the surplus of the information<sup><a name="to-footnote-9"><a href="#footnote-9">9</a></a></sup>. Here’s how I believe we should slow down. We’ve somehow narrowed down on this globally recognized and acknowledge Gregorian calendar. And here’s where my intuition ripens - We’ve spent a good number of centuries training ourselves subconsciously to follow and create patterns acknowledging this <em>cycle</em>. So why not use it so we simplify and offload the cognitive overload of “progressing” to the existing cycles and patterns?</p>
+<p>We don’t really have <em>control</em> over time<span class="inplace-note-inline"><sup class="inplace-note-trigger">7</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">To be frank, I’m not even sure we understand time clearly. The fact that most people can’t even comprehend that spacetime is a continuum. That it’s not two words as space and time 🤷</span></span></span>. It proceeds forwards.</p>
+<p>And unfortunately, we’ve lost track of <em>perceiving</em> time. To be precise - perceiving of <em>worthy</em> time<span class="inplace-note-inline"><sup class="inplace-note-trigger">8</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">Kairos vs Chronos</span></span></span>. Why do we rush everything these days? It makes no sense - given that the more we know, the more we should slow down to process the surplus of the information<span class="inplace-note-inline"><sup class="inplace-note-trigger">9</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">at least so far as to filter the noise from the signal</span></span></span>. Here’s how I believe we should slow down. We’ve somehow narrowed down on this globally recognized and acknowledge Gregorian calendar. And here’s where my intuition ripens - We’ve spent a good number of centuries training ourselves subconsciously to follow and create patterns acknowledging this <em>cycle</em>. So why not use it so we simplify and offload the cognitive overload of “progressing” to the existing cycles and patterns?</p>
 <p>Modern software engineering has come a long way. (Especially given that I’m writing this in 2026) And agentic engineering has kickstarted a new era of “superfast” development. We’ve already been plagued with the so-called agile engineering, and being pushed constantly to churn out feature after feature, fix after fix, and versions after versions. It’s not sustainable.
 Oftentimes we software engineers are expected to churn too many items in a typical two-week sprint. Why build on a two week cycle in the first place? Especially in this agentic era? So sticking to the calendar sounds the perfect approach to versioning to me. There’s much more to life than incrementing multiple numbers per day.</p>
-<p>As Mario Zechner (the creator of Pi coding agent) would like to <a href="https://youtu.be/RjfbvDXpFls?si=hihTEzFwqN2EFhSy&amp;t=723">reiterate</a>, Let’s slow the fuck down. Let’s just stick to the basic years of “cyclic” memory of our biological clocks. Let’s keep it simple. We live by the day, month, and year. So let’s synchronize our produce<sup><a name="to-footnote-10"><a href="#footnote-10">10</a></a></sup> to the calendar.</p>
+<p>As Mario Zechner (the creator of Pi coding agent) would like to <a href="https://youtu.be/RjfbvDXpFls?si=hihTEzFwqN2EFhSy&amp;t=723">reiterate</a>, Let’s slow the fuck down. Let’s just stick to the basic years of “cyclic” memory of our biological clocks. Let’s keep it simple. We live by the day, month, and year. So let’s synchronize our produce<span class="inplace-note-inline"><sup class="inplace-note-trigger">10</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">Also produce as in agriculture, which has always been synchronized to seasonal cycles until recent advancements of gene editing!</span></span></span> to the calendar.</p>
 <h3 id="antithesis-critical-software"><a class="header" href="#antithesis-critical-software">Antithesis: Critical software</a></h3>
-<p>Here’s a reason why any of the above shouldn’t matter at all: <strong><em>For any critical piece of software or library with frequent changes or where you have to maintain multiple versions and backwards compatibility<sup><a name="to-footnote-11"><a href="#footnote-11">11</a></a></sup>.</em></strong></p>
+<p>Here’s a reason why any of the above shouldn’t matter at all: <strong><em>For any critical piece of software or library with frequent changes or where you have to maintain multiple versions and backwards compatibility<span class="inplace-note-inline"><sup class="inplace-note-trigger">11</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">Ever heard of the neat <a href="https://www.hyrumslaw.com">hyrum’s law?</a></span></span></span>.</em></strong></p>
 <p>Semantic version serves better for those situations. It’s much more intuitive to understand <em>breaking</em> changes, <em>compatibility</em> concerns, <em>security</em> implications in semantic versions over other versioning schemes.</p>
 <br />
 <br />
@@ -301,64 +1214,9 @@ Oftentimes we software engineers are expected to churn too many items in a typic
 <br />
 <br />
 <br />
-<p />
-<hr />
-<p><a name="footnote-1"><a href="#to-footnote-1">1</a></a>: This is not a technical deep-dive on choosing a versioning scheme</p>
-<p><a name="footnote-2"><a href="#to-footnote-2">2</a></a>: Technically specified <a href="https://calver.org">CalVer</a>, semantically meaningful <a href="https://semver.org">SemVer</a>, and on-the-nose <a href="https://pridever.org">PrideVer</a> 🤣</p>
-<p><a name="footnote-3"><a href="#to-footnote-3">3</a></a>: Higher secondary education through college. Or in other words, throughout my twenties</p>
-<p><a name="footnote-4"><a href="#to-footnote-4">4</a></a>: Based on who you talk to, I suppose</p>
-<p><a name="footnote-5"><a href="#to-footnote-5">5</a></a>: A better word would be <em>observing</em> the change of entropy</p>
-<p><a name="footnote-6"><a href="#to-footnote-6">6</a></a>: For those who don’t know about XKCD: 903 (Read the caption on image hover) and if you wanna visualize this, check <a href="https://www.xefer.com/wikipedia">this</a> one out!</p>
-<p><a name="footnote-7"><a href="#to-footnote-7">7</a></a>: To be frank, I’m not even sure we understand time clearly. The fact that most people can’t even comprehend that spacetime is a continuum. That it’s not two words as space and time 🤷</p>
-<p><a name="footnote-8"><a href="#to-footnote-8">8</a></a>: Kairos vs Chronos</p>
-<p><a name="footnote-9"><a href="#to-footnote-9">9</a></a>: at least so far as to filter the noise from the signal</p>
-<p><a name="footnote-10"><a href="#to-footnote-10">10</a></a>: Also produce as in agriculture, which has always been synchronized to seasonal cycles until recent advancements of gene editing!</p>
-<p><a name="footnote-11"><a href="#to-footnote-11">11</a></a>: Ever heard of the neat <a href="https://www.hyrumslaw.com">hyrum’s law?</a></p>
 <footer class="gitinfo-footer" style="font-size:0.9em;padding:4px;margin:3em 0 0 0;text-align:right;display:block;"><span style="color:#568262"> Last updated: <em>2026 May 21 | 06:11 PM</em> </span></footer>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="1-rise-of-clis"><a class="header" href="#1-rise-of-clis">1. Rise of CLIs</a></h1>
-<footer class="gitinfo-footer" style="font-size:0.9em;padding:4px;margin:3em 0 0 0;text-align:right;display:block;"><span style="color:#568262"> Last updated: <em>2026 May 20 | 10:50 AM</em> </span></footer>
-<div style="break-before: page; page-break-before: always;"></div>
-<h1 id="videos-that-made-great-sense"><a class="header" href="#videos-that-made-great-sense">Videos that made great sense!</a></h1>
-<h3 id="mario-and-armin"><a class="header" href="#mario-and-armin">Mario and Armin</a></h3>
-<p>Mario and Armin talks about how they started (which you can read through on their blogs), how they met each other, and their work history - and how all of it led to them working with AI, and eventually pushing Mario to build <a href="https://pi.dev">Pi</a>.</p>
-<iframe width="100%" height="450 em" src="https://www.youtube.com/embed/n5f51gtuGHE?si=pmAtlyv8xcF8amxY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
-<footer class="gitinfo-footer" style="font-size:0.9em;padding:4px;margin:3em 0 0 0;text-align:right;display:block;"><span style="color:#568262"> Last updated: <em>2026 May 20 | 10:50 AM</em> </span></footer>
-<div style="break-before: page; page-break-before: always;"></div>
-<h1 id="cognitive-debt"><a class="header" href="#cognitive-debt">Cognitive Debt</a></h1>
-<hr />
-<h4 id="bibliography"><a class="header" href="#bibliography">Bibliography</a></h4>
-<ol>
-<li>Fantastic <a href="https://margaretstorey.com/blog/2026/02/18/cognitive-debt-revisited/">write-up</a> on Cognitive Debt by Margaret Storey.</li>
-</ol>
-<footer class="gitinfo-footer" style="font-size:0.9em;padding:4px;margin:3em 0 0 0;text-align:right;display:block;"><span style="color:#568262"> Last updated: <em>2026 May 20 | 10:50 AM</em> </span></footer>
-<div style="break-before: page; page-break-before: always;"></div>
-<h1 id="ai-toggle-_-text-2d-ago--"><a href="#ai-toggle-_-text-2d-ago--" class="header">AI toggle \(_{ \text{ (2d ago) } }\)</a></h1>
-<h2 id="need-of-the-hour-ai-toggle"><a class="header" href="#need-of-the-hour-ai-toggle">Need of the hour: AI toggle</a></h2>
-<p>Given that we’re <em>generating</em> too much content via AI, it’s becoming not only unsustainable for our tiny human brain to ration attention, but also dumbing down our mind.</p>
-<blockquote>
-<p><em>Too much of anything is good for nothing</em></p>
-</blockquote>
-<p>As the proverb says.</p>
-<p>The interesting thing about LLMs are - that they love to extract something out of anything. It’s becuase that’s their inherent nature. You remember that one guy/gal in your friend group that always loves to talk about anything and everything - The <em>pseudo</em> know-it-all?<sup><a name="to-footnote-1"><a href="#footnote-1">1</a></a></sup></p>
-<p>LLMs are like that. Here’s a post I made a while back.</p>
-<div class="table-wrapper">
-<table>
-<thead>
-<tr><th style="text-align: center"><img src="2026/imgs/LLM_vocabulary.png" alt=""></th></tr>
-</thead>
-<tbody>
-<tr><td style="text-align: center"><em>Better articulation doesn’t necessarily mean better wisdom</em></td></tr>
-</tbody>
-</table>
-</div>
-<p>LLMs as amplifier - Language models are statistical regurgitation -</p>
-<p />
-<hr />
-<p><a name="footnote-1"><a href="#to-footnote-1">1</a></a>: Unfortunately, if you don’t know one like that - It’s probably you in the group. Don’t feel bad, for we’re always a know-it-all in some groups than others!</p>
-<footer class="gitinfo-footer" style="font-size:0.9em;padding:4px;margin:3em 0 0 0;text-align:right;display:block;"><span style="color:#568262"> Last updated: <em>2026 May 20 | 10:50 AM</em> </span></footer>
-<div style="break-before: page; page-break-before: always;"></div>
-<h1 id="2-on-llm-tokens"><a class="header" href="#2-on-llm-tokens">2. On LLM Tokens</a></h1>
 <footer class="gitinfo-footer" style="font-size:0.9em;padding:4px;margin:3em 0 0 0;text-align:right;display:block;"><span style="color:#568262"> Last updated: <em>2026 May 20 | 10:50 AM</em> </span></footer>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="favourite-quotes"><a class="header" href="#favourite-quotes">Favourite Quotes</a></h1>
@@ -366,7 +1224,13 @@ Oftentimes we software engineers are expected to churn too many items in a typic
 <blockquote>
 <p><em>Any man can make mistakes, but only an idiot persists in his error</em> ~ Cicero</p>
 </blockquote>
-<footer class="gitinfo-footer" style="font-size:0.9em;padding:4px;margin:3em 0 0 0;text-align:right;display:block;"><span style="color:#568262"> Last updated: <em>unknown</em> </span></footer>
+<blockquote>
+<p><em>Common sense is not so common</em> ~ Voltaire</p>
+</blockquote>
+<blockquote>
+<p><em>Example <strong>is</strong> leadership</em> ~ Albert Schweitzer</p>
+</blockquote>
+<footer class="gitinfo-footer" style="font-size:0.9em;padding:4px;margin:3em 0 0 0;text-align:right;display:block;"><span style="color:#568262"> Last updated: <em>2026 May 22 | 11:58 AM</em> </span></footer>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="archives"><a href="#archives" class="header">Archives</a></h1>
 <p>Following are some of my old attempts at what I’d today call messy writing.</p>

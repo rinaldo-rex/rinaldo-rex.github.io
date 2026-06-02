@@ -5,19 +5,23 @@
   - [May]()
       - [Writing in the age of slop \\(_{ \text{ {{relative_to:current}} } }\\)](./2026/writing_in_the_age_of_slop.md)
       - [Mark My Words (\\(M^M_W\\)) \\(_{ \text{ {{relative_to:current}} } }\\)](./2026/mark_my_words.md)
+        - [ \\(M^M_W\\): SLMs over LLMs](./2026/SLMs_vs_LLMs.md)
     - [Software engineering]()
       - [On Calendar Versioning \\(_{ \text{ {{relative_to:current}} } }\\)](./2026/gravitating_towards_calver.md)
       - [Rise of CLIs \\(_{ \text{ {{relative_to:current}} } }\\)](./2026/rise_of_clis.md)
-    - [Agentic engineering explorations]()
-      - [Videos that made great sense! \\(_{ \text{ {{relative_to:current}} } }\\)](./2026/ai_videos.md)
-      - [Cognitive Debt \\(_{ \text{ {{relative_to:current}} } }\\)](./2026/cognitive_debt.md)
-      - [AI toggle \\(_{ \text{ {{relative_to:current}} } }\\)](./2026/ai_toggle.md)
-      - [On LLM Tokens \\(_{ \text{ {{relative_to:current}} } }\\)](./2026/llm_tokens.md)
     - [Underrated skills]()
       - [Paraphrasing \\(_{ \text{ {{relative_to:current}} } }\\)]()
       - [Flow diagrams \\(_{ \text{ {{relative_to:current}} } }\\)]()
       - [Softskills \\(_{ \text{ {{relative_to:current}} } }\\)]()
+    <!--- [My journey into AI](./2026/my_journey_into_ai.md)-->
   - [Favourite Quotes](./favourite_quotes.md)
+<!--- [Agentic engineering explorations]()
+      - [Videos that made great sense! \\(_{ \text{ {{relative_to:current}} } }\\)](./2026/ai_videos.md)
+      - [Cognitive Debt \\(_{ \text{ {{relative_to:current}} } }\\)](./2026/cognitive_debt.md)
+      - [AI toggle \\(_{ \text{ {{relative_to:current}} } }\\)](./2026/ai_toggle.md)
+      - [On LLM Tokens \\(_{ \text{ {{relative_to:current}} } }\\)](./2026/llm_tokens.md)-->
+
+      
 <!--# [My Recommendations\\( ^ \text {*}\\) ]()
   - [Note before](./affiliations.md)
   - [Books]()
@@ -33,7 +37,6 @@
   - [On audio books]()
   - [Using GenAI for self learning]()
   - [mdbook relative date preprocessor]()
-  <!--- [ \\(M^M_W\\): SLMs over LLMs](./2026/SLMs_vs_LLMs.md)-->
 <!--[26.5.2 LLMs vs SLMs](./2026/llm_trajectory.md)-->
 
 ----------
