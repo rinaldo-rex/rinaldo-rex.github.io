@@ -37,10 +37,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-f30e4898.js";
+            window.path_to_searchindex_js = "searchindex-e4925242.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-23be42f0.js"></script>
+        <script src="toc-ef881c32.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -210,6 +210,10 @@
 /* Popover for inline-only notes (no block elements) */
 .inplace-note-inline .inplace-note-popover-inline {
   display: none;
+  /* Horizontal padding kept between the popover and the viewport edge when
+     the JS clamp nudges an overflowing popover back inside. Override per
+     theme or per element, e.g. `--popover-edge-pad: 20px;`. */
+  --popover-edge-pad: 15px;
   position: absolute;
   bottom: calc(100% + 10px);
   left: 50%;
@@ -221,6 +225,7 @@
   padding: 10px 14px;
   min-width: 60rem;
   max-width: 380px;
+  
   box-shadow: 0 8px 24px rgba(0,0,0,0.15);
   z-index: 1000;
   font-size: 80%;
@@ -234,7 +239,7 @@
   content: "";
   position: absolute;
   top: 100%;
-  left: 50%;
+  left: var(--arrow-left, 50%);
   transform: translateX(-50%);
   border: 7px solid transparent;
   border-top-color: var(--theme-popup-bg, var(--bg, #fff));
@@ -243,7 +248,7 @@
   content: "";
   position: absolute;
   top: 100%;
-  left: 50%;
+  left: var(--arrow-left, 50%);
   transform: translateX(-50%);
   border: 8px solid transparent;
   border-top-color: var(--theme-popup-border, #d0d7de);
@@ -259,6 +264,8 @@
 }
 .inplace-note-block .inplace-note-popover-block {
   display: none;
+  /* See .inplace-note-popover-inline for --popover-edge-pad docs. */
+  --popover-edge-pad: 15px;
   position: absolute;
   bottom: calc(100% + 10px);
   left: 50%;
@@ -270,6 +277,7 @@
   padding: 12px 16px;
   min-width: 60rem;
   max-width: 380px;
+  
   box-shadow: 0 8px 24px rgba(0,0,0,0.15);
   z-index: 1000;
   font-size: 80%;
@@ -283,7 +291,7 @@
   content: "";
   position: absolute;
   top: 100%;
-  left: 50%;
+  left: var(--arrow-left, 50%);
   transform: translateX(-50%);
   border: 7px solid transparent;
   border-top-color: var(--theme-popup-bg, var(--bg, #fff));
@@ -292,7 +300,7 @@
   content: "";
   position: absolute;
   top: 100%;
-  left: 50%;
+  left: var(--arrow-left, 50%);
   transform: translateX(-50%);
   border: 8px solid transparent;
   border-top-color: var(--theme-popup-border, #d0d7de);
@@ -357,6 +365,120 @@
   background: var(--theme-popup-bg, var(--bg, #fff));
 }
 </style>
+<script>
+(function(){
+  function popoverFor(wrap){
+    return wrap.querySelector('.inplace-note-popover-inline,.inplace-note-popover-block');
+  }
+  function readEdgePad(pop){
+    // Read --popover-edge-pad from the popover's computed style. Falls back
+    // to 15 if unset or unparseable. Only px and unitless values are
+    // supported — rem/em would require resolving against the popover's
+    // font-size, which adds complexity for little benefit.
+    var raw = getComputedStyle(pop).getPropertyValue('--popover-edge-pad').trim();
+    if (!raw) return 15;
+    var match = raw.match(/^(-?\d*\.?\d+)\s*(px)?$/);
+    if (!match) return 15;
+    var n = parseFloat(match[1]);
+    return n < 0 ? 0 : n;
+  }
+  function clamp(wrap){
+    var pop = popoverFor(wrap);
+    if (!pop || pop.offsetWidth === 0) {
+      wrap.style.removeProperty('--arrow-left');
+      return;
+    }
+    var r = pop.getBoundingClientRect();
+    var vw = window.innerWidth || document.documentElement.clientWidth;
+    // The custom property is static for the life of the page, so cache it on
+    // the wrapper to avoid calling getComputedStyle on every scroll/resize
+    // frame.
+    var PAD = wrap.__inplaceNotePad;
+    if (PAD == null) {
+      PAD = readEdgePad(pop);
+      wrap.__inplaceNotePad = PAD;
+    }
+    // Positive when the popover overflows that side beyond PAD.
+    var overflowR = r.right - vw + PAD;
+    var overflowL = PAD - r.left;
+    var shift = 0;
+    if (overflowR > 0 && overflowL > 0) {
+      // Popover wider than the viewport: leave it centered. The wrapper
+      // (and therefore the arrow) stays under the trigger.
+      shift = 0;
+    } else if (overflowR > 0) {
+      shift = -overflowR;
+    } else if (overflowL > 0) {
+      shift = overflowL;
+    }
+    if (shift === 0) {
+      pop.style.transform = '';
+      wrap.style.removeProperty('--arrow-left');
+      return;
+    }
+    pop.style.transform = 'translateX(calc(-50% + ' + shift + 'px))';
+    // Wrapper center, in popover-local x, is at popW/2 - shift (positive shift
+    // moves the popover right, so the wrapper sits further left within it).
+    var popW = pop.offsetWidth;
+    var arrowPct = ((popW / 2 - shift) / popW) * 100;
+    if (arrowPct < 0) arrowPct = 0;
+    else if (arrowPct > 100) arrowPct = 100;
+    wrap.style.setProperty('--arrow-left', arrowPct + '%');
+  }
+  function reset(wrap){
+    var pop = popoverFor(wrap);
+    if (pop) pop.style.transform = '';
+    wrap.style.removeProperty('--arrow-left');
+  }
+  function scheduleClamp(wrap){
+    if (wrap.__inplaceNoteRaf) return;
+    wrap.__inplaceNoteRaf = requestAnimationFrame(function(){
+      wrap.__inplaceNoteRaf = 0;
+      clamp(wrap);
+    });
+  }
+  var openWrappers = [];
+  function setup(){
+    var els = document.querySelectorAll('.inplace-note-inline,.inplace-note-block');
+    for (var i = 0; i < els.length; i++) {
+      var wrap = els[i];
+      if (wrap.__inplaceNoteInit) continue;
+      wrap.__inplaceNoteInit = true;
+      (function(w){
+        w.addEventListener('mouseenter', function(){
+          if (openWrappers.indexOf(w) === -1) openWrappers.push(w);
+          scheduleClamp(w);
+        });
+        w.addEventListener('mouseleave', function(){
+          var idx = openWrappers.indexOf(w);
+          if (idx !== -1) openWrappers.splice(idx, 1);
+          if (w.__inplaceNoteRaf) {
+            cancelAnimationFrame(w.__inplaceNoteRaf);
+            w.__inplaceNoteRaf = 0;
+          }
+          reset(w);
+        });
+      })(wrap);
+    }
+  }
+  var scrollRafPending = false;
+  function onViewportChange(){
+    if (scrollRafPending) return;
+    scrollRafPending = true;
+    requestAnimationFrame(function(){
+      scrollRafPending = false;
+      for (var i = 0; i < openWrappers.length; i++) scheduleClamp(openWrappers[i]);
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setup);
+  } else {
+    setup();
+  }
+  window.addEventListener('scroll', onViewportChange, { passive: true });
+  window.addEventListener('resize', onViewportChange, { passive: true });
+})();
+</script>
 <h1 id="foreword"><a class="header" href="#foreword">Foreword</a></h1>
 <p>As you can see elsewhere with my writing, it’s easier to write a random, even technical, niche topics. Or even a controversial rage-bait ones.
 However, when it comes to introducing ourself - we often falter.</p>

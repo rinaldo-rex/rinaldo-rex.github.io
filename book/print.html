@@ -38,10 +38,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-f30e4898.js";
+            window.path_to_searchindex_js = "searchindex-e4925242.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-23be42f0.js"></script>
+        <script src="toc-ef881c32.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -211,6 +211,10 @@
 /* Popover for inline-only notes (no block elements) */
 .inplace-note-inline .inplace-note-popover-inline {
   display: none;
+  /* Horizontal padding kept between the popover and the viewport edge when
+     the JS clamp nudges an overflowing popover back inside. Override per
+     theme or per element, e.g. `--popover-edge-pad: 20px;`. */
+  --popover-edge-pad: 15px;
   position: absolute;
   bottom: calc(100% + 10px);
   left: 50%;
@@ -222,6 +226,7 @@
   padding: 10px 14px;
   min-width: 60rem;
   max-width: 380px;
+  
   box-shadow: 0 8px 24px rgba(0,0,0,0.15);
   z-index: 1000;
   font-size: 80%;
@@ -235,7 +240,7 @@
   content: "";
   position: absolute;
   top: 100%;
-  left: 50%;
+  left: var(--arrow-left, 50%);
   transform: translateX(-50%);
   border: 7px solid transparent;
   border-top-color: var(--theme-popup-bg, var(--bg, #fff));
@@ -244,7 +249,7 @@
   content: "";
   position: absolute;
   top: 100%;
-  left: 50%;
+  left: var(--arrow-left, 50%);
   transform: translateX(-50%);
   border: 8px solid transparent;
   border-top-color: var(--theme-popup-border, #d0d7de);
@@ -260,6 +265,8 @@
 }
 .inplace-note-block .inplace-note-popover-block {
   display: none;
+  /* See .inplace-note-popover-inline for --popover-edge-pad docs. */
+  --popover-edge-pad: 15px;
   position: absolute;
   bottom: calc(100% + 10px);
   left: 50%;
@@ -271,6 +278,7 @@
   padding: 12px 16px;
   min-width: 60rem;
   max-width: 380px;
+  
   box-shadow: 0 8px 24px rgba(0,0,0,0.15);
   z-index: 1000;
   font-size: 80%;
@@ -284,7 +292,7 @@
   content: "";
   position: absolute;
   top: 100%;
-  left: 50%;
+  left: var(--arrow-left, 50%);
   transform: translateX(-50%);
   border: 7px solid transparent;
   border-top-color: var(--theme-popup-bg, var(--bg, #fff));
@@ -293,7 +301,7 @@
   content: "";
   position: absolute;
   top: 100%;
-  left: 50%;
+  left: var(--arrow-left, 50%);
   transform: translateX(-50%);
   border: 8px solid transparent;
   border-top-color: var(--theme-popup-border, #d0d7de);
@@ -358,6 +366,120 @@
   background: var(--theme-popup-bg, var(--bg, #fff));
 }
 </style>
+<script>
+(function(){
+  function popoverFor(wrap){
+    return wrap.querySelector('.inplace-note-popover-inline,.inplace-note-popover-block');
+  }
+  function readEdgePad(pop){
+    // Read --popover-edge-pad from the popover's computed style. Falls back
+    // to 15 if unset or unparseable. Only px and unitless values are
+    // supported — rem/em would require resolving against the popover's
+    // font-size, which adds complexity for little benefit.
+    var raw = getComputedStyle(pop).getPropertyValue('--popover-edge-pad').trim();
+    if (!raw) return 15;
+    var match = raw.match(/^(-?\d*\.?\d+)\s*(px)?$/);
+    if (!match) return 15;
+    var n = parseFloat(match[1]);
+    return n < 0 ? 0 : n;
+  }
+  function clamp(wrap){
+    var pop = popoverFor(wrap);
+    if (!pop || pop.offsetWidth === 0) {
+      wrap.style.removeProperty('--arrow-left');
+      return;
+    }
+    var r = pop.getBoundingClientRect();
+    var vw = window.innerWidth || document.documentElement.clientWidth;
+    // The custom property is static for the life of the page, so cache it on
+    // the wrapper to avoid calling getComputedStyle on every scroll/resize
+    // frame.
+    var PAD = wrap.__inplaceNotePad;
+    if (PAD == null) {
+      PAD = readEdgePad(pop);
+      wrap.__inplaceNotePad = PAD;
+    }
+    // Positive when the popover overflows that side beyond PAD.
+    var overflowR = r.right - vw + PAD;
+    var overflowL = PAD - r.left;
+    var shift = 0;
+    if (overflowR > 0 && overflowL > 0) {
+      // Popover wider than the viewport: leave it centered. The wrapper
+      // (and therefore the arrow) stays under the trigger.
+      shift = 0;
+    } else if (overflowR > 0) {
+      shift = -overflowR;
+    } else if (overflowL > 0) {
+      shift = overflowL;
+    }
+    if (shift === 0) {
+      pop.style.transform = '';
+      wrap.style.removeProperty('--arrow-left');
+      return;
+    }
+    pop.style.transform = 'translateX(calc(-50% + ' + shift + 'px))';
+    // Wrapper center, in popover-local x, is at popW/2 - shift (positive shift
+    // moves the popover right, so the wrapper sits further left within it).
+    var popW = pop.offsetWidth;
+    var arrowPct = ((popW / 2 - shift) / popW) * 100;
+    if (arrowPct < 0) arrowPct = 0;
+    else if (arrowPct > 100) arrowPct = 100;
+    wrap.style.setProperty('--arrow-left', arrowPct + '%');
+  }
+  function reset(wrap){
+    var pop = popoverFor(wrap);
+    if (pop) pop.style.transform = '';
+    wrap.style.removeProperty('--arrow-left');
+  }
+  function scheduleClamp(wrap){
+    if (wrap.__inplaceNoteRaf) return;
+    wrap.__inplaceNoteRaf = requestAnimationFrame(function(){
+      wrap.__inplaceNoteRaf = 0;
+      clamp(wrap);
+    });
+  }
+  var openWrappers = [];
+  function setup(){
+    var els = document.querySelectorAll('.inplace-note-inline,.inplace-note-block');
+    for (var i = 0; i < els.length; i++) {
+      var wrap = els[i];
+      if (wrap.__inplaceNoteInit) continue;
+      wrap.__inplaceNoteInit = true;
+      (function(w){
+        w.addEventListener('mouseenter', function(){
+          if (openWrappers.indexOf(w) === -1) openWrappers.push(w);
+          scheduleClamp(w);
+        });
+        w.addEventListener('mouseleave', function(){
+          var idx = openWrappers.indexOf(w);
+          if (idx !== -1) openWrappers.splice(idx, 1);
+          if (w.__inplaceNoteRaf) {
+            cancelAnimationFrame(w.__inplaceNoteRaf);
+            w.__inplaceNoteRaf = 0;
+          }
+          reset(w);
+        });
+      })(wrap);
+    }
+  }
+  var scrollRafPending = false;
+  function onViewportChange(){
+    if (scrollRafPending) return;
+    scrollRafPending = true;
+    requestAnimationFrame(function(){
+      scrollRafPending = false;
+      for (var i = 0; i < openWrappers.length; i++) scheduleClamp(openWrappers[i]);
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setup);
+  } else {
+    setup();
+  }
+  window.addEventListener('scroll', onViewportChange, { passive: true });
+  window.addEventListener('resize', onViewportChange, { passive: true });
+})();
+</script>
 <h1 id="foreword"><a class="header" href="#foreword">Foreword</a></h1>
 <p>As you can see elsewhere with my writing, it’s easier to write a random, even technical, niche topics. Or even a controversial rage-bait ones.
 However, when it comes to introducing ourself - we often falter.</p>
@@ -414,6 +536,10 @@ However, when it comes to introducing ourself - we often falter.</p>
 /* Popover for inline-only notes (no block elements) */
 .inplace-note-inline .inplace-note-popover-inline {
   display: none;
+  /* Horizontal padding kept between the popover and the viewport edge when
+     the JS clamp nudges an overflowing popover back inside. Override per
+     theme or per element, e.g. `--popover-edge-pad: 20px;`. */
+  --popover-edge-pad: 15px;
   position: absolute;
   bottom: calc(100% + 10px);
   left: 50%;
@@ -425,6 +551,7 @@ However, when it comes to introducing ourself - we often falter.</p>
   padding: 10px 14px;
   min-width: 60rem;
   max-width: 380px;
+  
   box-shadow: 0 8px 24px rgba(0,0,0,0.15);
   z-index: 1000;
   font-size: 80%;
@@ -438,7 +565,7 @@ However, when it comes to introducing ourself - we often falter.</p>
   content: "";
   position: absolute;
   top: 100%;
-  left: 50%;
+  left: var(--arrow-left, 50%);
   transform: translateX(-50%);
   border: 7px solid transparent;
   border-top-color: var(--theme-popup-bg, var(--bg, #fff));
@@ -447,7 +574,7 @@ However, when it comes to introducing ourself - we often falter.</p>
   content: "";
   position: absolute;
   top: 100%;
-  left: 50%;
+  left: var(--arrow-left, 50%);
   transform: translateX(-50%);
   border: 8px solid transparent;
   border-top-color: var(--theme-popup-border, #d0d7de);
@@ -463,6 +590,8 @@ However, when it comes to introducing ourself - we often falter.</p>
 }
 .inplace-note-block .inplace-note-popover-block {
   display: none;
+  /* See .inplace-note-popover-inline for --popover-edge-pad docs. */
+  --popover-edge-pad: 15px;
   position: absolute;
   bottom: calc(100% + 10px);
   left: 50%;
@@ -474,6 +603,7 @@ However, when it comes to introducing ourself - we often falter.</p>
   padding: 12px 16px;
   min-width: 60rem;
   max-width: 380px;
+  
   box-shadow: 0 8px 24px rgba(0,0,0,0.15);
   z-index: 1000;
   font-size: 80%;
@@ -487,7 +617,7 @@ However, when it comes to introducing ourself - we often falter.</p>
   content: "";
   position: absolute;
   top: 100%;
-  left: 50%;
+  left: var(--arrow-left, 50%);
   transform: translateX(-50%);
   border: 7px solid transparent;
   border-top-color: var(--theme-popup-bg, var(--bg, #fff));
@@ -496,7 +626,7 @@ However, when it comes to introducing ourself - we often falter.</p>
   content: "";
   position: absolute;
   top: 100%;
-  left: 50%;
+  left: var(--arrow-left, 50%);
   transform: translateX(-50%);
   border: 8px solid transparent;
   border-top-color: var(--theme-popup-border, #d0d7de);
@@ -561,6 +691,120 @@ However, when it comes to introducing ourself - we often falter.</p>
   background: var(--theme-popup-bg, var(--bg, #fff));
 }
 </style>
+<script>
+(function(){
+  function popoverFor(wrap){
+    return wrap.querySelector('.inplace-note-popover-inline,.inplace-note-popover-block');
+  }
+  function readEdgePad(pop){
+    // Read --popover-edge-pad from the popover's computed style. Falls back
+    // to 15 if unset or unparseable. Only px and unitless values are
+    // supported — rem/em would require resolving against the popover's
+    // font-size, which adds complexity for little benefit.
+    var raw = getComputedStyle(pop).getPropertyValue('--popover-edge-pad').trim();
+    if (!raw) return 15;
+    var match = raw.match(/^(-?\d*\.?\d+)\s*(px)?$/);
+    if (!match) return 15;
+    var n = parseFloat(match[1]);
+    return n < 0 ? 0 : n;
+  }
+  function clamp(wrap){
+    var pop = popoverFor(wrap);
+    if (!pop || pop.offsetWidth === 0) {
+      wrap.style.removeProperty('--arrow-left');
+      return;
+    }
+    var r = pop.getBoundingClientRect();
+    var vw = window.innerWidth || document.documentElement.clientWidth;
+    // The custom property is static for the life of the page, so cache it on
+    // the wrapper to avoid calling getComputedStyle on every scroll/resize
+    // frame.
+    var PAD = wrap.__inplaceNotePad;
+    if (PAD == null) {
+      PAD = readEdgePad(pop);
+      wrap.__inplaceNotePad = PAD;
+    }
+    // Positive when the popover overflows that side beyond PAD.
+    var overflowR = r.right - vw + PAD;
+    var overflowL = PAD - r.left;
+    var shift = 0;
+    if (overflowR > 0 && overflowL > 0) {
+      // Popover wider than the viewport: leave it centered. The wrapper
+      // (and therefore the arrow) stays under the trigger.
+      shift = 0;
+    } else if (overflowR > 0) {
+      shift = -overflowR;
+    } else if (overflowL > 0) {
+      shift = overflowL;
+    }
+    if (shift === 0) {
+      pop.style.transform = '';
+      wrap.style.removeProperty('--arrow-left');
+      return;
+    }
+    pop.style.transform = 'translateX(calc(-50% + ' + shift + 'px))';
+    // Wrapper center, in popover-local x, is at popW/2 - shift (positive shift
+    // moves the popover right, so the wrapper sits further left within it).
+    var popW = pop.offsetWidth;
+    var arrowPct = ((popW / 2 - shift) / popW) * 100;
+    if (arrowPct < 0) arrowPct = 0;
+    else if (arrowPct > 100) arrowPct = 100;
+    wrap.style.setProperty('--arrow-left', arrowPct + '%');
+  }
+  function reset(wrap){
+    var pop = popoverFor(wrap);
+    if (pop) pop.style.transform = '';
+    wrap.style.removeProperty('--arrow-left');
+  }
+  function scheduleClamp(wrap){
+    if (wrap.__inplaceNoteRaf) return;
+    wrap.__inplaceNoteRaf = requestAnimationFrame(function(){
+      wrap.__inplaceNoteRaf = 0;
+      clamp(wrap);
+    });
+  }
+  var openWrappers = [];
+  function setup(){
+    var els = document.querySelectorAll('.inplace-note-inline,.inplace-note-block');
+    for (var i = 0; i < els.length; i++) {
+      var wrap = els[i];
+      if (wrap.__inplaceNoteInit) continue;
+      wrap.__inplaceNoteInit = true;
+      (function(w){
+        w.addEventListener('mouseenter', function(){
+          if (openWrappers.indexOf(w) === -1) openWrappers.push(w);
+          scheduleClamp(w);
+        });
+        w.addEventListener('mouseleave', function(){
+          var idx = openWrappers.indexOf(w);
+          if (idx !== -1) openWrappers.splice(idx, 1);
+          if (w.__inplaceNoteRaf) {
+            cancelAnimationFrame(w.__inplaceNoteRaf);
+            w.__inplaceNoteRaf = 0;
+          }
+          reset(w);
+        });
+      })(wrap);
+    }
+  }
+  var scrollRafPending = false;
+  function onViewportChange(){
+    if (scrollRafPending) return;
+    scrollRafPending = true;
+    requestAnimationFrame(function(){
+      scrollRafPending = false;
+      for (var i = 0; i < openWrappers.length; i++) scheduleClamp(openWrappers[i]);
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setup);
+  } else {
+    setup();
+  }
+  window.addEventListener('scroll', onViewportChange, { passive: true });
+  window.addEventListener('resize', onViewportChange, { passive: true });
+})();
+</script>
 <h1 id="writing-in-the-age-of-slop"><a class="header" href="#writing-in-the-age-of-slop">Writing in the age of <em>slop</em></a></h1>
 <p>2026 is really the year of slop<span class="inplace-note-inline"><sup class="inplace-note-trigger">1</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">Although the existence of ChatGPT et al. and LLMs have been around for a while, its now that they’re used extensively to create content online.</span></span></span>.</p>
 <p>I am fascinated by the surge of words that’s been taking refuge of our technical vocabulary in the last few years.
@@ -589,7 +833,7 @@ A few that we’re all aware of by now,</p>
 <br /></p>
 <footer class="gitinfo-footer" style="font-size:0.9em;padding:4px;margin:3em 0 0 0;text-align:right;display:block;"><span style="color:#568262"> Last updated: <em>2026 June 02 | 09:25 PM</em> </span></footer>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="mark-my-words-mm_w-_-text-2d-ago--"><a href="#mark-my-words-mm_w-_-text-2d-ago--" class="header">Mark My Words (\(M^M_W\)) \(_{ \text{ (2d ago) } }\)</a></h1>
+<h1 id="mark-my-words-mm_w-_-text-today--"><a href="#mark-my-words-mm_w-_-text-today--" class="header">Mark My Words (\(M^M_W\)) \(_{ \text{ (today) } }\)</a></h1>
 <style>
 .inplace-note-trigger {
   font-size: 0.75em;
@@ -624,6 +868,10 @@ A few that we’re all aware of by now,</p>
 /* Popover for inline-only notes (no block elements) */
 .inplace-note-inline .inplace-note-popover-inline {
   display: none;
+  /* Horizontal padding kept between the popover and the viewport edge when
+     the JS clamp nudges an overflowing popover back inside. Override per
+     theme or per element, e.g. `--popover-edge-pad: 20px;`. */
+  --popover-edge-pad: 15px;
   position: absolute;
   bottom: calc(100% + 10px);
   left: 50%;
@@ -635,6 +883,7 @@ A few that we’re all aware of by now,</p>
   padding: 10px 14px;
   min-width: 60rem;
   max-width: 380px;
+  
   box-shadow: 0 8px 24px rgba(0,0,0,0.15);
   z-index: 1000;
   font-size: 80%;
@@ -648,7 +897,7 @@ A few that we’re all aware of by now,</p>
   content: "";
   position: absolute;
   top: 100%;
-  left: 50%;
+  left: var(--arrow-left, 50%);
   transform: translateX(-50%);
   border: 7px solid transparent;
   border-top-color: var(--theme-popup-bg, var(--bg, #fff));
@@ -657,7 +906,7 @@ A few that we’re all aware of by now,</p>
   content: "";
   position: absolute;
   top: 100%;
-  left: 50%;
+  left: var(--arrow-left, 50%);
   transform: translateX(-50%);
   border: 8px solid transparent;
   border-top-color: var(--theme-popup-border, #d0d7de);
@@ -673,6 +922,8 @@ A few that we’re all aware of by now,</p>
 }
 .inplace-note-block .inplace-note-popover-block {
   display: none;
+  /* See .inplace-note-popover-inline for --popover-edge-pad docs. */
+  --popover-edge-pad: 15px;
   position: absolute;
   bottom: calc(100% + 10px);
   left: 50%;
@@ -684,6 +935,7 @@ A few that we’re all aware of by now,</p>
   padding: 12px 16px;
   min-width: 60rem;
   max-width: 380px;
+  
   box-shadow: 0 8px 24px rgba(0,0,0,0.15);
   z-index: 1000;
   font-size: 80%;
@@ -697,7 +949,7 @@ A few that we’re all aware of by now,</p>
   content: "";
   position: absolute;
   top: 100%;
-  left: 50%;
+  left: var(--arrow-left, 50%);
   transform: translateX(-50%);
   border: 7px solid transparent;
   border-top-color: var(--theme-popup-bg, var(--bg, #fff));
@@ -706,7 +958,7 @@ A few that we’re all aware of by now,</p>
   content: "";
   position: absolute;
   top: 100%;
-  left: 50%;
+  left: var(--arrow-left, 50%);
   transform: translateX(-50%);
   border: 8px solid transparent;
   border-top-color: var(--theme-popup-border, #d0d7de);
@@ -771,6 +1023,120 @@ A few that we’re all aware of by now,</p>
   background: var(--theme-popup-bg, var(--bg, #fff));
 }
 </style>
+<script>
+(function(){
+  function popoverFor(wrap){
+    return wrap.querySelector('.inplace-note-popover-inline,.inplace-note-popover-block');
+  }
+  function readEdgePad(pop){
+    // Read --popover-edge-pad from the popover's computed style. Falls back
+    // to 15 if unset or unparseable. Only px and unitless values are
+    // supported — rem/em would require resolving against the popover's
+    // font-size, which adds complexity for little benefit.
+    var raw = getComputedStyle(pop).getPropertyValue('--popover-edge-pad').trim();
+    if (!raw) return 15;
+    var match = raw.match(/^(-?\d*\.?\d+)\s*(px)?$/);
+    if (!match) return 15;
+    var n = parseFloat(match[1]);
+    return n < 0 ? 0 : n;
+  }
+  function clamp(wrap){
+    var pop = popoverFor(wrap);
+    if (!pop || pop.offsetWidth === 0) {
+      wrap.style.removeProperty('--arrow-left');
+      return;
+    }
+    var r = pop.getBoundingClientRect();
+    var vw = window.innerWidth || document.documentElement.clientWidth;
+    // The custom property is static for the life of the page, so cache it on
+    // the wrapper to avoid calling getComputedStyle on every scroll/resize
+    // frame.
+    var PAD = wrap.__inplaceNotePad;
+    if (PAD == null) {
+      PAD = readEdgePad(pop);
+      wrap.__inplaceNotePad = PAD;
+    }
+    // Positive when the popover overflows that side beyond PAD.
+    var overflowR = r.right - vw + PAD;
+    var overflowL = PAD - r.left;
+    var shift = 0;
+    if (overflowR > 0 && overflowL > 0) {
+      // Popover wider than the viewport: leave it centered. The wrapper
+      // (and therefore the arrow) stays under the trigger.
+      shift = 0;
+    } else if (overflowR > 0) {
+      shift = -overflowR;
+    } else if (overflowL > 0) {
+      shift = overflowL;
+    }
+    if (shift === 0) {
+      pop.style.transform = '';
+      wrap.style.removeProperty('--arrow-left');
+      return;
+    }
+    pop.style.transform = 'translateX(calc(-50% + ' + shift + 'px))';
+    // Wrapper center, in popover-local x, is at popW/2 - shift (positive shift
+    // moves the popover right, so the wrapper sits further left within it).
+    var popW = pop.offsetWidth;
+    var arrowPct = ((popW / 2 - shift) / popW) * 100;
+    if (arrowPct < 0) arrowPct = 0;
+    else if (arrowPct > 100) arrowPct = 100;
+    wrap.style.setProperty('--arrow-left', arrowPct + '%');
+  }
+  function reset(wrap){
+    var pop = popoverFor(wrap);
+    if (pop) pop.style.transform = '';
+    wrap.style.removeProperty('--arrow-left');
+  }
+  function scheduleClamp(wrap){
+    if (wrap.__inplaceNoteRaf) return;
+    wrap.__inplaceNoteRaf = requestAnimationFrame(function(){
+      wrap.__inplaceNoteRaf = 0;
+      clamp(wrap);
+    });
+  }
+  var openWrappers = [];
+  function setup(){
+    var els = document.querySelectorAll('.inplace-note-inline,.inplace-note-block');
+    for (var i = 0; i < els.length; i++) {
+      var wrap = els[i];
+      if (wrap.__inplaceNoteInit) continue;
+      wrap.__inplaceNoteInit = true;
+      (function(w){
+        w.addEventListener('mouseenter', function(){
+          if (openWrappers.indexOf(w) === -1) openWrappers.push(w);
+          scheduleClamp(w);
+        });
+        w.addEventListener('mouseleave', function(){
+          var idx = openWrappers.indexOf(w);
+          if (idx !== -1) openWrappers.splice(idx, 1);
+          if (w.__inplaceNoteRaf) {
+            cancelAnimationFrame(w.__inplaceNoteRaf);
+            w.__inplaceNoteRaf = 0;
+          }
+          reset(w);
+        });
+      })(wrap);
+    }
+  }
+  var scrollRafPending = false;
+  function onViewportChange(){
+    if (scrollRafPending) return;
+    scrollRafPending = true;
+    requestAnimationFrame(function(){
+      scrollRafPending = false;
+      for (var i = 0; i < openWrappers.length; i++) scheduleClamp(openWrappers[i]);
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setup);
+  } else {
+    setup();
+  }
+  window.addEventListener('scroll', onViewportChange, { passive: true });
+  window.addEventListener('resize', onViewportChange, { passive: true });
+})();
+</script>
 <h2 id="mark-my-words"><a class="header" href="#mark-my-words">Mark My Words!</a></h2>
 <p>A long time ago - Around 2018, It was a calmer period on Instgram. People were’nt as overwhelmed or overstimulated via instgram as much. I was excited by random things that I was coming across - and wanted to add to the stimulation. (Yeap, my bad). I started with something called “Mark my words” - A series of predictions (as if I’m Nostradamus) that I thought would come to fruition. And oh boy did some of those did come true! <span class="inplace-note-inline"><sup class="inplace-note-trigger">1</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">It’s a hit or miss. Ofcourse I’m gonna talk about only that came true. Duh!</span></span></span> <span class="inplace-note-inline"><sup class="inplace-note-trigger">2</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content"><a href="https://en.wikipedia.org/wiki/Confirmation_bias">Confirmation Bias</a> for those who don’t know about common biases!</span></span></span></p>
 <div class="table-wrapper">
@@ -799,7 +1165,7 @@ A few that we’re all aware of by now,</p>
 <p>And finally,</p>
 <h4 id="disclaimer"><a class="header" href="#disclaimer">Disclaimer:</a></h4>
 <h5 id="these-predictions-are-meant-for-entertainment-purposes-only-dont--me-on-these-its-just-a-fun-experiment-that-i-felt-like-writing-about"><a class="header" href="#these-predictions-are-meant-for-entertainment-purposes-only-dont--me-on-these-its-just-a-fun-experiment-that-i-felt-like-writing-about"><em>These predictions are meant for entertainment purposes only. Don’t @ me on these. It’s just a fun experiment that I felt like writing about</em></a></h5>
-<footer class="gitinfo-footer" style="font-size:0.9em;padding:4px;margin:3em 0 0 0;text-align:right;display:block;"><span style="color:#568262"> Last updated: <em>2026 June 02 | 09:25 PM</em> </span></footer>
+<footer class="gitinfo-footer" style="font-size:0.9em;padding:4px;margin:3em 0 0 0;text-align:right;display:block;"><span style="color:#568262"> Last updated: <em>2026 June 04 | 04:31 PM</em> </span></footer>
 <div style="break-before: page; page-break-before: always;"></div><style>
 .inplace-note-trigger {
   font-size: 0.75em;
@@ -834,6 +1200,10 @@ A few that we’re all aware of by now,</p>
 /* Popover for inline-only notes (no block elements) */
 .inplace-note-inline .inplace-note-popover-inline {
   display: none;
+  /* Horizontal padding kept between the popover and the viewport edge when
+     the JS clamp nudges an overflowing popover back inside. Override per
+     theme or per element, e.g. `--popover-edge-pad: 20px;`. */
+  --popover-edge-pad: 15px;
   position: absolute;
   bottom: calc(100% + 10px);
   left: 50%;
@@ -845,6 +1215,7 @@ A few that we’re all aware of by now,</p>
   padding: 10px 14px;
   min-width: 60rem;
   max-width: 380px;
+  
   box-shadow: 0 8px 24px rgba(0,0,0,0.15);
   z-index: 1000;
   font-size: 80%;
@@ -858,7 +1229,7 @@ A few that we’re all aware of by now,</p>
   content: "";
   position: absolute;
   top: 100%;
-  left: 50%;
+  left: var(--arrow-left, 50%);
   transform: translateX(-50%);
   border: 7px solid transparent;
   border-top-color: var(--theme-popup-bg, var(--bg, #fff));
@@ -867,7 +1238,7 @@ A few that we’re all aware of by now,</p>
   content: "";
   position: absolute;
   top: 100%;
-  left: 50%;
+  left: var(--arrow-left, 50%);
   transform: translateX(-50%);
   border: 8px solid transparent;
   border-top-color: var(--theme-popup-border, #d0d7de);
@@ -883,6 +1254,8 @@ A few that we’re all aware of by now,</p>
 }
 .inplace-note-block .inplace-note-popover-block {
   display: none;
+  /* See .inplace-note-popover-inline for --popover-edge-pad docs. */
+  --popover-edge-pad: 15px;
   position: absolute;
   bottom: calc(100% + 10px);
   left: 50%;
@@ -894,6 +1267,7 @@ A few that we’re all aware of by now,</p>
   padding: 12px 16px;
   min-width: 60rem;
   max-width: 380px;
+  
   box-shadow: 0 8px 24px rgba(0,0,0,0.15);
   z-index: 1000;
   font-size: 80%;
@@ -907,7 +1281,7 @@ A few that we’re all aware of by now,</p>
   content: "";
   position: absolute;
   top: 100%;
-  left: 50%;
+  left: var(--arrow-left, 50%);
   transform: translateX(-50%);
   border: 7px solid transparent;
   border-top-color: var(--theme-popup-bg, var(--bg, #fff));
@@ -916,7 +1290,7 @@ A few that we’re all aware of by now,</p>
   content: "";
   position: absolute;
   top: 100%;
-  left: 50%;
+  left: var(--arrow-left, 50%);
   transform: translateX(-50%);
   border: 8px solid transparent;
   border-top-color: var(--theme-popup-border, #d0d7de);
@@ -981,6 +1355,120 @@ A few that we’re all aware of by now,</p>
   background: var(--theme-popup-bg, var(--bg, #fff));
 }
 </style>
+<script>
+(function(){
+  function popoverFor(wrap){
+    return wrap.querySelector('.inplace-note-popover-inline,.inplace-note-popover-block');
+  }
+  function readEdgePad(pop){
+    // Read --popover-edge-pad from the popover's computed style. Falls back
+    // to 15 if unset or unparseable. Only px and unitless values are
+    // supported — rem/em would require resolving against the popover's
+    // font-size, which adds complexity for little benefit.
+    var raw = getComputedStyle(pop).getPropertyValue('--popover-edge-pad').trim();
+    if (!raw) return 15;
+    var match = raw.match(/^(-?\d*\.?\d+)\s*(px)?$/);
+    if (!match) return 15;
+    var n = parseFloat(match[1]);
+    return n < 0 ? 0 : n;
+  }
+  function clamp(wrap){
+    var pop = popoverFor(wrap);
+    if (!pop || pop.offsetWidth === 0) {
+      wrap.style.removeProperty('--arrow-left');
+      return;
+    }
+    var r = pop.getBoundingClientRect();
+    var vw = window.innerWidth || document.documentElement.clientWidth;
+    // The custom property is static for the life of the page, so cache it on
+    // the wrapper to avoid calling getComputedStyle on every scroll/resize
+    // frame.
+    var PAD = wrap.__inplaceNotePad;
+    if (PAD == null) {
+      PAD = readEdgePad(pop);
+      wrap.__inplaceNotePad = PAD;
+    }
+    // Positive when the popover overflows that side beyond PAD.
+    var overflowR = r.right - vw + PAD;
+    var overflowL = PAD - r.left;
+    var shift = 0;
+    if (overflowR > 0 && overflowL > 0) {
+      // Popover wider than the viewport: leave it centered. The wrapper
+      // (and therefore the arrow) stays under the trigger.
+      shift = 0;
+    } else if (overflowR > 0) {
+      shift = -overflowR;
+    } else if (overflowL > 0) {
+      shift = overflowL;
+    }
+    if (shift === 0) {
+      pop.style.transform = '';
+      wrap.style.removeProperty('--arrow-left');
+      return;
+    }
+    pop.style.transform = 'translateX(calc(-50% + ' + shift + 'px))';
+    // Wrapper center, in popover-local x, is at popW/2 - shift (positive shift
+    // moves the popover right, so the wrapper sits further left within it).
+    var popW = pop.offsetWidth;
+    var arrowPct = ((popW / 2 - shift) / popW) * 100;
+    if (arrowPct < 0) arrowPct = 0;
+    else if (arrowPct > 100) arrowPct = 100;
+    wrap.style.setProperty('--arrow-left', arrowPct + '%');
+  }
+  function reset(wrap){
+    var pop = popoverFor(wrap);
+    if (pop) pop.style.transform = '';
+    wrap.style.removeProperty('--arrow-left');
+  }
+  function scheduleClamp(wrap){
+    if (wrap.__inplaceNoteRaf) return;
+    wrap.__inplaceNoteRaf = requestAnimationFrame(function(){
+      wrap.__inplaceNoteRaf = 0;
+      clamp(wrap);
+    });
+  }
+  var openWrappers = [];
+  function setup(){
+    var els = document.querySelectorAll('.inplace-note-inline,.inplace-note-block');
+    for (var i = 0; i < els.length; i++) {
+      var wrap = els[i];
+      if (wrap.__inplaceNoteInit) continue;
+      wrap.__inplaceNoteInit = true;
+      (function(w){
+        w.addEventListener('mouseenter', function(){
+          if (openWrappers.indexOf(w) === -1) openWrappers.push(w);
+          scheduleClamp(w);
+        });
+        w.addEventListener('mouseleave', function(){
+          var idx = openWrappers.indexOf(w);
+          if (idx !== -1) openWrappers.splice(idx, 1);
+          if (w.__inplaceNoteRaf) {
+            cancelAnimationFrame(w.__inplaceNoteRaf);
+            w.__inplaceNoteRaf = 0;
+          }
+          reset(w);
+        });
+      })(wrap);
+    }
+  }
+  var scrollRafPending = false;
+  function onViewportChange(){
+    if (scrollRafPending) return;
+    scrollRafPending = true;
+    requestAnimationFrame(function(){
+      scrollRafPending = false;
+      for (var i = 0; i < openWrappers.length; i++) scheduleClamp(openWrappers[i]);
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setup);
+  } else {
+    setup();
+  }
+  window.addEventListener('scroll', onViewportChange, { passive: true });
+  window.addEventListener('resize', onViewportChange, { passive: true });
+})();
+</script>
 <h1 id="mm_w-slms-over-llms"><a class="header" href="#mm_w-slms-over-llms">\(M^M_W\): SLMs over LLMs</a></h1>
 <div class="table-wrapper">
 <table>
@@ -1029,7 +1517,7 @@ A few that we’re all aware of by now,</p>
 </tbody>
 </table>
 </div>
-<footer class="gitinfo-footer" style="font-size:0.9em;padding:4px;margin:3em 0 0 0;text-align:right;display:block;"><span style="color:#568262"> Last updated: <em>2026 June 02 | 09:25 PM</em> </span></footer>
+<footer class="gitinfo-footer" style="font-size:0.9em;padding:4px;margin:3em 0 0 0;text-align:right;display:block;"><span style="color:#568262"> Last updated: <em>2026 June 04 | 04:31 PM</em> </span></footer>
 <div style="break-before: page; page-break-before: always;"></div><style>
 .inplace-note-trigger {
   font-size: 0.75em;
@@ -1064,6 +1552,10 @@ A few that we’re all aware of by now,</p>
 /* Popover for inline-only notes (no block elements) */
 .inplace-note-inline .inplace-note-popover-inline {
   display: none;
+  /* Horizontal padding kept between the popover and the viewport edge when
+     the JS clamp nudges an overflowing popover back inside. Override per
+     theme or per element, e.g. `--popover-edge-pad: 20px;`. */
+  --popover-edge-pad: 15px;
   position: absolute;
   bottom: calc(100% + 10px);
   left: 50%;
@@ -1075,6 +1567,7 @@ A few that we’re all aware of by now,</p>
   padding: 10px 14px;
   min-width: 60rem;
   max-width: 380px;
+  
   box-shadow: 0 8px 24px rgba(0,0,0,0.15);
   z-index: 1000;
   font-size: 80%;
@@ -1088,7 +1581,7 @@ A few that we’re all aware of by now,</p>
   content: "";
   position: absolute;
   top: 100%;
-  left: 50%;
+  left: var(--arrow-left, 50%);
   transform: translateX(-50%);
   border: 7px solid transparent;
   border-top-color: var(--theme-popup-bg, var(--bg, #fff));
@@ -1097,7 +1590,7 @@ A few that we’re all aware of by now,</p>
   content: "";
   position: absolute;
   top: 100%;
-  left: 50%;
+  left: var(--arrow-left, 50%);
   transform: translateX(-50%);
   border: 8px solid transparent;
   border-top-color: var(--theme-popup-border, #d0d7de);
@@ -1113,6 +1606,8 @@ A few that we’re all aware of by now,</p>
 }
 .inplace-note-block .inplace-note-popover-block {
   display: none;
+  /* See .inplace-note-popover-inline for --popover-edge-pad docs. */
+  --popover-edge-pad: 15px;
   position: absolute;
   bottom: calc(100% + 10px);
   left: 50%;
@@ -1124,6 +1619,7 @@ A few that we’re all aware of by now,</p>
   padding: 12px 16px;
   min-width: 60rem;
   max-width: 380px;
+  
   box-shadow: 0 8px 24px rgba(0,0,0,0.15);
   z-index: 1000;
   font-size: 80%;
@@ -1137,7 +1633,7 @@ A few that we’re all aware of by now,</p>
   content: "";
   position: absolute;
   top: 100%;
-  left: 50%;
+  left: var(--arrow-left, 50%);
   transform: translateX(-50%);
   border: 7px solid transparent;
   border-top-color: var(--theme-popup-bg, var(--bg, #fff));
@@ -1146,7 +1642,7 @@ A few that we’re all aware of by now,</p>
   content: "";
   position: absolute;
   top: 100%;
-  left: 50%;
+  left: var(--arrow-left, 50%);
   transform: translateX(-50%);
   border: 8px solid transparent;
   border-top-color: var(--theme-popup-border, #d0d7de);
@@ -1211,9 +1707,123 @@ A few that we’re all aware of by now,</p>
   background: var(--theme-popup-bg, var(--bg, #fff));
 }
 </style>
+<script>
+(function(){
+  function popoverFor(wrap){
+    return wrap.querySelector('.inplace-note-popover-inline,.inplace-note-popover-block');
+  }
+  function readEdgePad(pop){
+    // Read --popover-edge-pad from the popover's computed style. Falls back
+    // to 15 if unset or unparseable. Only px and unitless values are
+    // supported — rem/em would require resolving against the popover's
+    // font-size, which adds complexity for little benefit.
+    var raw = getComputedStyle(pop).getPropertyValue('--popover-edge-pad').trim();
+    if (!raw) return 15;
+    var match = raw.match(/^(-?\d*\.?\d+)\s*(px)?$/);
+    if (!match) return 15;
+    var n = parseFloat(match[1]);
+    return n < 0 ? 0 : n;
+  }
+  function clamp(wrap){
+    var pop = popoverFor(wrap);
+    if (!pop || pop.offsetWidth === 0) {
+      wrap.style.removeProperty('--arrow-left');
+      return;
+    }
+    var r = pop.getBoundingClientRect();
+    var vw = window.innerWidth || document.documentElement.clientWidth;
+    // The custom property is static for the life of the page, so cache it on
+    // the wrapper to avoid calling getComputedStyle on every scroll/resize
+    // frame.
+    var PAD = wrap.__inplaceNotePad;
+    if (PAD == null) {
+      PAD = readEdgePad(pop);
+      wrap.__inplaceNotePad = PAD;
+    }
+    // Positive when the popover overflows that side beyond PAD.
+    var overflowR = r.right - vw + PAD;
+    var overflowL = PAD - r.left;
+    var shift = 0;
+    if (overflowR > 0 && overflowL > 0) {
+      // Popover wider than the viewport: leave it centered. The wrapper
+      // (and therefore the arrow) stays under the trigger.
+      shift = 0;
+    } else if (overflowR > 0) {
+      shift = -overflowR;
+    } else if (overflowL > 0) {
+      shift = overflowL;
+    }
+    if (shift === 0) {
+      pop.style.transform = '';
+      wrap.style.removeProperty('--arrow-left');
+      return;
+    }
+    pop.style.transform = 'translateX(calc(-50% + ' + shift + 'px))';
+    // Wrapper center, in popover-local x, is at popW/2 - shift (positive shift
+    // moves the popover right, so the wrapper sits further left within it).
+    var popW = pop.offsetWidth;
+    var arrowPct = ((popW / 2 - shift) / popW) * 100;
+    if (arrowPct < 0) arrowPct = 0;
+    else if (arrowPct > 100) arrowPct = 100;
+    wrap.style.setProperty('--arrow-left', arrowPct + '%');
+  }
+  function reset(wrap){
+    var pop = popoverFor(wrap);
+    if (pop) pop.style.transform = '';
+    wrap.style.removeProperty('--arrow-left');
+  }
+  function scheduleClamp(wrap){
+    if (wrap.__inplaceNoteRaf) return;
+    wrap.__inplaceNoteRaf = requestAnimationFrame(function(){
+      wrap.__inplaceNoteRaf = 0;
+      clamp(wrap);
+    });
+  }
+  var openWrappers = [];
+  function setup(){
+    var els = document.querySelectorAll('.inplace-note-inline,.inplace-note-block');
+    for (var i = 0; i < els.length; i++) {
+      var wrap = els[i];
+      if (wrap.__inplaceNoteInit) continue;
+      wrap.__inplaceNoteInit = true;
+      (function(w){
+        w.addEventListener('mouseenter', function(){
+          if (openWrappers.indexOf(w) === -1) openWrappers.push(w);
+          scheduleClamp(w);
+        });
+        w.addEventListener('mouseleave', function(){
+          var idx = openWrappers.indexOf(w);
+          if (idx !== -1) openWrappers.splice(idx, 1);
+          if (w.__inplaceNoteRaf) {
+            cancelAnimationFrame(w.__inplaceNoteRaf);
+            w.__inplaceNoteRaf = 0;
+          }
+          reset(w);
+        });
+      })(wrap);
+    }
+  }
+  var scrollRafPending = false;
+  function onViewportChange(){
+    if (scrollRafPending) return;
+    scrollRafPending = true;
+    requestAnimationFrame(function(){
+      scrollRafPending = false;
+      for (var i = 0; i < openWrappers.length; i++) scheduleClamp(openWrappers[i]);
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setup);
+  } else {
+    setup();
+  }
+  window.addEventListener('scroll', onViewportChange, { passive: true });
+  window.addEventListener('resize', onViewportChange, { passive: true });
+})();
+</script>
 <h1 id="gravitating-towards-calendar-versioning-1this-is-not-a-technical-deep-dive-on-choosing-a-versioning-scheme"><a class="header" href="#gravitating-towards-calendar-versioning-1this-is-not-a-technical-deep-dive-on-choosing-a-versioning-scheme">Gravitating towards Calendar Versioning <span class="inplace-note-inline"><sup class="inplace-note-trigger">1</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">This is not a technical deep-dive on choosing a versioning scheme</span></span></span></a></h1>
 <blockquote>
-<h5 id="reading-time-10-minutes"><a class="header" href="#reading-time-10-minutes">Reading time: 10 minutes.</a></h5>
+<h5 id="reading-time-13-minutes"><a class="header" href="#reading-time-13-minutes">Reading time: 13 minutes.</a></h5>
 </blockquote>
 <p>After almost a decade of being a software develoeper - I’ve noticed that my personal preference towards <em>versioning</em> in software  gravitates towards Calendric Versioning<span class="inplace-note-inline"><sup class="inplace-note-trigger">2</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">Technically specified <a href="https://calver.org">CalVer</a>, semantically meaningful <a href="https://semver.org">SemVer</a>, and on-the-nose <a href="https://pridever.org">PrideVer</a> 🤣</span></span></span>. Although there are multitudes of reasonings for that, I’d like to observe a few worth noting for my own posterity.</p>
 <h3 id="reason-1-philosophical"><a class="header" href="#reason-1-philosophical">Reason 1: Philosophical</a></h3>
@@ -1248,6 +1858,9 @@ Oftentimes we software engineers are expected to churn too many items in a typic
 </blockquote>
 <blockquote>
 <p><em>Example <strong>is</strong> leadership</em> ~ Albert Schweitzer</p>
+</blockquote>
+<blockquote>
+<p>_Remember that sometimes not getting what you want is a wonderful stroke of luck“ ~ Dalai Lama XIV</p>
 </blockquote>
 <footer class="gitinfo-footer" style="font-size:0.9em;padding:4px;margin:3em 0 0 0;text-align:right;display:block;"><span style="color:#568262"> Last updated: <em>2026 June 02 | 09:25 PM</em> </span></footer>
 <div style="break-before: page; page-break-before: always;"></div>
