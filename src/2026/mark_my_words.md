@@ -13,6 +13,10 @@ Even though I'm just reading into it - (and simply just trying to boast as if my
 
 Because I think that it's an interesting attempt at understanding the "contemporary times" better for myself. What good is being ahead of the curve if I don't put that into use? 
 
+As paraphrased by ThePrimeAgen about what Dax said about _predictions_
+
+> _Predictions often serve the one who makes them more so than the predictions themselves_ ~(Attributed to dax{{note: Dax Raad from Anamoly co building OpenCode. More at [X](https://x.com/thdxr)}})
+
 I wanted to start a podcast of my own too!{{note: I even went on a spree of getting a Moano microphone to do that. Alas, I was late to the party!}}  
 
 And just like most other "incomplete" projects of mine, that stagnated. Today - There're way too many podcasts out there, that starting one not only feels daunting and more "exploiting", but also like adding just more noise. Because most podcasts today are nothing but just noise. 

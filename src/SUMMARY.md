@@ -5,10 +5,10 @@
   - [May]()
       - [Writing in the age of slop \\(_{ \text{ {{relative_to:current}} } }\\)](./2026/writing_in_the_age_of_slop.md)
       - [Mark My Words (\\(M^M_W\\)) \\(_{ \text{ {{relative_to:current}} } }\\)](./2026/mark_my_words.md)
-        - [ \\(M^M_W\\): SLMs over LLMs](./2026/SLMs_vs_LLMs.md)
+        - [ \\(M^M_W\\): SLMs over LLMs \\(_{ \text{ {{relative_to:current}} } }\\)](./2026/SLMs_vs_LLMs.md)
     - [Software engineering]()
       - [On Calendar Versioning \\(_{ \text{ {{relative_to:current}} } }\\)](./2026/gravitating_towards_calver.md)
-      - [Rise of CLIs \\(_{ \text{ {{relative_to:current}} } }\\)](./2026/rise_of_clis.md)
+      <!--- [Rise of CLIs \\(_{ \text{ {{relative_to:current}} } }\\)](./2026/rise_of_clis.md)-->
     - [Underrated skills]()
       - [Paraphrasing \\(_{ \text{ {{relative_to:current}} } }\\)]()
       - [Flow diagrams \\(_{ \text{ {{relative_to:current}} } }\\)]()

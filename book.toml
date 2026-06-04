@@ -45,7 +45,7 @@ command = "mdbook-relative-date"
 short = true
 
 [preprocessor.inplace-note]
-popover-min-width = "40rem"
+popover-min-width = "60rem"
 popover-font-size = "80%"
 trigger-hit-padding = "3px"
 
