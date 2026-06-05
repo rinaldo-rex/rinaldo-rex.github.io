@@ -27,7 +27,7 @@ I'm thinking of doing more such interesting predictions under the same series.
 
 Are they really predictions? Not really{{note: For those who takes this too seriously: These aren't _real_ predictions. They are just observations that I believe people are overseeing at the time of its existance}}. But just like I believe that it'll help me understand the times better, I believe it'll help others as well. Worst case, it'll just kickstart a conversation. An ice breaker. 
 
-Stay tuned for some wild predictions! (Not really, since some are going to be plain obvious! 😂) 
+Stay tuned for some wild predictions{{note: When I feel intuitively about something, but can't yet place my finger on why I feel something strongly - You won't see any observations. Otherwise you'll definitely see some insights that I feel confident about}}! (Not really, since some are going to be plain obvious! 😂) 
 
 And finally, 
 
