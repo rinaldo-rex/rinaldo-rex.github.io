@@ -37,10 +37,10 @@
             const path_to_root = "../../../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../../../searchindex-1070894f.js";
+            window.path_to_searchindex_js = "../../../../searchindex-b0b26386.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../../../toc-bc6c5abe.js"></script>
+        <script src="../../../../toc-b1a48980.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -188,8 +188,119 @@
 <p>She has seen him go on about one of his tangents like this earlier. Multiple times. But he never made her feel bored. She was getting lost in thoughts by now. She started remembering the tiny things that people do to piss off others, the bullies she sees daily on her way to work, the people who don’t give a crap about what others are going through - Even her work, colleagues shouting at each other as if that’s what they were meant to do throughout their lives. Life is a complicated bundle of ropes Ferdinand used to say often. It has helped her stay out of troubles quite a few times. It helps her understand that we know very little about what others are going through.</p>
 <p>“But none of this matters. A single orchard cannot be a forest” he said under his breath.</p>
 <p><img src="night-moon.jpg" alt="night-moon"></p>
-<footer class="gitinfo-footer" style="font-size:0.9em;padding:4px;margin:3em 0 0 0;text-align:right;display:block;"><span style="color:#568262"> Last updated: <em>2026 April 27 | 10:36 PM</em> </span></footer>
+<footer class="gitinfo-footer" style="font-size:0.9em;padding:4px;margin:3em 0 0 0;text-align:right;display:block;"><span style="color:#568262"> Last updated: <em><span class="last-updated" data-date="2026-04-27" data-short="true" data-style="superscript">2026-04-27</span></em> </span></footer>
+<script>
+(function() {
+  if (window.__mdbookLastUpdatedInit) return;
+  window.__mdbookLastUpdatedInit = true;
 
+  function plural(value, unit) {
+    return value === 1 ? '1 ' + unit : value + ' ' + unit + 's';
+  }
+
+  function shortUnit(value, unit) {
+    var suffixes = {day: 'd', week: 'w', month: 'mo', year: 'y'};
+    return value + (suffixes[unit] || unit);
+  }
+
+  function coarseUnit(absDays, short) {
+    var value, unit;
+    if (absDays < 14) { value = absDays; unit = 'day'; }
+    else if (absDays < 60) { value = Math.floor(absDays / 7); unit = 'week'; }
+    else if (absDays < 365) { value = Math.floor(absDays / 30); unit = 'month'; }
+    else { value = Math.floor(absDays / 365); unit = 'year'; }
+    return short ? shortUnit(value, unit) : plural(value, unit);
+  }
+
+  function relativeText(targetDate, short) {
+    var now = new Date();
+    var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    var target = new Date(targetDate + 'T00:00:00');
+    var diff = Math.round((today - target) / 86400000);
+    var abs = Math.abs(diff);
+    if (abs === 0) return 'today';
+    var unitText = coarseUnit(abs, short === 'true');
+    if (diff > 0) return unitText + ' ago';
+    if (diff < 0) return 'in ' + unitText;
+    return 'today';
+  }
+
+  function applyStyle(el, text, style) {
+    el.textContent = '';
+    if (style === 'subscript') {
+      var sub = document.createElement('sub');
+      sub.textContent = text;
+      el.appendChild(sub);
+    } else if (style === 'superscript') {
+      var sup = document.createElement('sup');
+      sup.textContent = text;
+      el.appendChild(sup);
+    } else {
+      el.textContent = text;
+    }
+  }
+
+  var MARKER_RE = /\u27e6lu:([^:\u27e6]+):([^:\u27e6]+):([^\u27e7]+)\u27e7/g;
+
+  function upgradeMarkers(root) {
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    var textNodes = [];
+    while (walker.nextNode()) textNodes.push(walker.currentNode);
+
+    textNodes.forEach(function(node) {
+      var text = node.textContent;
+      if (text.indexOf('\u27e6lu:') === -1) return;
+
+      var frag = document.createDocumentFragment();
+      var last = 0;
+      var match;
+      MARKER_RE.lastIndex = 0;
+      while ((match = MARKER_RE.exec(text)) !== null) {
+        if (match.index > last) {
+          frag.appendChild(document.createTextNode(text.slice(last, match.index)));
+        }
+        var span = document.createElement('span');
+        span.className = 'last-updated';
+        span.setAttribute('data-date', match[1]);
+        span.setAttribute('data-short', match[2]);
+        span.setAttribute('data-style', match[3]);
+        span.textContent = match[1];
+        frag.appendChild(span);
+        last = match.index + match[0].length;
+      }
+      if (last < text.length) {
+        frag.appendChild(document.createTextNode(text.slice(last)));
+      }
+      node.parentNode.replaceChild(frag, node);
+    });
+  }
+
+  function replaceMarkersInString(text) {
+    return text.replace(MARKER_RE, function(_, date, short, style) {
+      return relativeText(date, short);
+    });
+  }
+
+  function refresh() {
+    upgradeMarkers(document.body);
+    if (document.title.indexOf('\u27e6lu:') !== -1) {
+      document.title = replaceMarkersInString(document.title);
+    }
+    document.querySelectorAll('.last-updated').forEach(function(el) {
+      var dateStr = el.getAttribute('data-date');
+      if (!dateStr) return;
+      var text = relativeText(dateStr, el.getAttribute('data-short'));
+      applyStyle(el, text, el.getAttribute('data-style') || 'normal');
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', refresh);
+  } else {
+    refresh();
+  }
+})();
+</script>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">

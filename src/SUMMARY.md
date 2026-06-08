@@ -1,21 +1,21 @@
 # Summary
 
-[Foreword \\(_{ \text{ {{relative_to:current}} } }\\)](./foreword.md)
+[Foreword {{last-updated}}](./foreword.md)
 # [2026 - Beginning of a generative era](./2026/generative_era_beginning.md)
   - [May]()
-      - [Writing in the age of slop \\(_{ \text{ {{relative_to:current}} } }\\)](./2026/writing_in_the_age_of_slop.md)
-      - [Mark My Words (\\(M^M_W\\)) \\(_{ \text{ {{relative_to:current}} } }\\)](./2026/mark_my_words.md)
-        - [ \\(M^M_W\\): SLMs over LLMs \\(_{ \text{ {{relative_to:current}} } }\\)](./2026/SLMs_vs_LLMs.md)
+      - [Writing in the age of slop {{last-updated}}](./2026/writing_in_the_age_of_slop.md)
+      - [Mark My Words (\\(M^M_W\\)) {{last-updated}}](./2026/mark_my_words.md)
+        - [ \\(M^M_W\\): SLMs over LLMs {{last-updated}}](./2026/SLMs_vs_LLMs.md)
           - [Observations](./2026/SLMs_vs_LLMs_observations.md)
-        - [ \\(M^M_W\\): Causal Learning \\(_{ \text{ {{relative_to:current}} } }\\)](./2026/causal_learning.md)
+        - [ \\(M^M_W\\): Causal Learning {{last-updated}}](./2026/causal_learning.md)
           <!--- [Observations](./2026/causal_learning_observations.md)-->
     - [Software engineering]()
-      - [On Calendar Versioning \\(_{ \text{ {{relative_to:current}} } }\\)](./2026/gravitating_towards_calver.md)
+      - [On Calendar Versioning {{last-updated}}](./2026/gravitating_towards_calver.md)
       <!--- [Rise of CLIs \\(_{ \text{ {{relative_to:current}} } }\\)](./2026/rise_of_clis.md)-->
     - [Underrated skills]()
-      - [Paraphrasing \\(_{ \text{ {{relative_to:current}} } }\\)]()
-      - [Flow diagrams \\(_{ \text{ {{relative_to:current}} } }\\)]()
-      - [Softskills \\(_{ \text{ {{relative_to:current}} } }\\)]()
+      - [Paraphrasing ]()
+      - [Flow diagrams ]()
+      - [Softskills ]()
     <!--- [My journey into AI](./2026/my_journey_into_ai.md)-->
   <!--- [Crazy ideas](./2026/crazy_ideas.md)-->
   - [Favourite Quotes](./favourite_quotes.md)

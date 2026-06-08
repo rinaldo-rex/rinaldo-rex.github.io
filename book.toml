@@ -38,7 +38,7 @@ hyperlink   = true  # make hash/branch clickable when possible
 timezone = "local"   # "local" (default) | "utc" | "source" | "fixed:+02:00"
 
 [preprocessor.gitinfo.message]
-footer = '<span style="color:#568262"> Last updated: <em>{{date}}</em> </span>'
+footer = '<span style="color:#568262"> Last updated: <em>{{last-updated}}</em> </span>'
 
 [preprocessor.relative-date]
 command = "mdbook-relative-date"
@@ -55,3 +55,7 @@ popover-width = "max-content"
 
 [preprocessor.timeline]
 after = [ "inplace-note" ]
+
+[preprocessor.last-updated]
+short = true
+superscript = true
