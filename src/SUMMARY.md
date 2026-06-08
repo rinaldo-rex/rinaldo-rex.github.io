@@ -17,6 +17,7 @@
       - [Flow diagrams ]()
       - [Softskills ]()
     <!--- [My journey into AI](./2026/my_journey_into_ai.md)-->
+  - [June]()
   <!--- [Crazy ideas](./2026/crazy_ideas.md)-->
   - [Favourite Quotes](./favourite_quotes.md)
 <!--- [Agentic engineering explorations]()
