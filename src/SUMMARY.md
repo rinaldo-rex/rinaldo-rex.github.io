@@ -18,8 +18,9 @@
       - [Softskills ]()
     
   - [Aug]()
-    - [Career timeline: My journey into AI](./2026/my_journey_into_ai.md)
+    - [Career timeline: My journey into AI {{last-updated}}](./2026/my_journey_into_ai.md)
     - [Working with me](./2026/working_with_me.md)
+    - [Surfing against the slop {{last-updated}}](./2026/surfing_against_the_slop.md)
   <!--- [Crazy ideas](./2026/crazy_ideas.md)-->
   - [Favourite Quotes](./favourite_quotes.md)
 <!--- [Agentic engineering explorations]()
