@@ -2,8 +2,7 @@
 
 # Career Timeline
 
-A chronological record of strategic growth, key achievements, and the evolution of
-a career spanning two decades of innovation.
+A short journey about where I started, and my calling to AI and Language processing and into the unknown future for the next interesting challenge!
 
 {{timeline}}
 
