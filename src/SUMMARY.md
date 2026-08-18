@@ -1,6 +1,6 @@
 # Summary
 
-[Foreword {{last-updated}}](./foreword.md)
+[Foreword {{last-updated}}](./2026/foreword.md)
 # [2026 - Beginning of a generative era](./2026/generative_era_beginning.md)
   - [May]()
       - [Writing in the age of slop {{last-updated}}](./2026/writing_in_the_age_of_slop.md)
@@ -16,8 +16,10 @@
       - [Paraphrasing ]()
       - [Flow diagrams ]()
       - [Softskills ]()
-    <!--- [My journey into AI](./2026/my_journey_into_ai.md)-->
-  - [June]()
+    
+  - [Aug]()
+    - [Career timeline: My journey into AI](./2026/my_journey_into_ai.md)
+    - [Working with me](./2026/working_with_me.md)
   <!--- [Crazy ideas](./2026/crazy_ideas.md)-->
   - [Favourite Quotes](./favourite_quotes.md)
 <!--- [Agentic engineering explorations]()

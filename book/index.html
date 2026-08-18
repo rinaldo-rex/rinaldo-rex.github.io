@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Foreword ⟦lu:2026-06-02:true:superscript⟧ - Rinaldo&#x27;s Stream of Consciousness</title>
+        <title>Foreword ⟦lu:2026-08-18:true:superscript⟧ - Rinaldo&#x27;s Stream of Consciousness</title>
 
 
         <!-- Custom HTML head -->
@@ -37,10 +37,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-b0b26386.js";
+            window.path_to_searchindex_js = "searchindex-36be0c80.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-c0489303.js"></script>
+        <script src="toc-d40eb720.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -176,7 +176,90 @@
 
                 <div id="mdbook-content" class="content">
                     <main>
-                        <style>
+                        <script>
+(function () {
+  var ALL = ["2026/foreword.html","2026/writing_in_the_age_of_slop.html","2026/mark_my_words.html","2026/SLMs_vs_LLMs.html","2026/SLMs_vs_LLMs_observations.html","2026/causal_learning.html","2026/gravitating_towards_calver.html","2026/my_journey_into_ai.html","2026/working_with_me.html","favourite_quotes.html","archives/archives.html","archives/professional/coding/coding_is_creation.html","archives/professional/coding/the_first_ink.html","archives/personal/life/quarter_life_crisis.html","archives/personal/life/the_certainty_of_uncertainty.html","archives/personal/people/experiment/a_social_experiment.html","archives/personal/people/experiment/prologue.html","archives/personal/people/experiment/pity_intro.html","archives/personal/people/experiment/pity_1.html","archives/personal/people/experiment/pity_2.html","archives/personal/people/experiment/pity_3.html","archives/personal/people/experiment/pity_4.html","archives/personal/people/experiment/fear_1.html","archives/personal/people/experiment/catharsis_1.html","archives/personal/people/experiment/epilogue.html","archives/personal/life/pandemics-overview.html","archives/personal/life/covid/covid-19.html","archives/personal/life/covid/understanding-impacts.html","archives/personal/life/covid/present-pestilences.html"];
+  var PRIVATE = ["2026/working_with_me.html"];
+  var HIDE_SIDEBAR = true;
+  var HIDE_NAV = true;
+  function toAbs(key) { return new URL(path_to_root + key, document.baseURI).href; }
+  var privAbs = {};
+  for (var i = 0; i < PRIVATE.length; i++) privAbs[toAbs(PRIVATE[i])] = true;
+  document.addEventListener('DOMContentLoaded', function () {
+    var ci = -1, cur = location.href;
+    for (var i = 0; i < ALL.length; i++) {
+      if (toAbs(ALL[i]) === cur) { ci = i; break; }
+    }
+    // index.html is an alias copy of the first chapter.
+    if (ci < 0 && /\/index\.html$/.test(cur)) ci = 0;
+    if (HIDE_SIDEBAR) {
+      var links = document.querySelectorAll('#mdbook-sidebar a');
+      for (var j = 0; j < links.length; j++) {
+        if (privAbs[links[j].href]) {
+          var li = links[j].closest('li');
+          if (li) li.parentNode.removeChild(li);
+        }
+      }
+    }
+    if (HIDE_NAV && ci >= 0) {
+      var p = ci - 1; while (p >= 0 && privAbs[toAbs(ALL[p])]) p--;
+      var n = ci + 1; while (n < ALL.length && privAbs[toAbs(ALL[n])]) n++;
+      var prevs = document.querySelectorAll('a[rel^="prev"]');
+      for (var k = 0; k < prevs.length; k++) {
+        if (p >= 0) prevs[k].setAttribute('href', toAbs(ALL[p]));
+        else prevs[k].parentNode.removeChild(prevs[k]);
+      }
+      var nexts = document.querySelectorAll('a[rel^="next"]');
+      for (var m = 0; m < nexts.length; m++) {
+        if (n < ALL.length) nexts[m].setAttribute('href', toAbs(ALL[n]));
+        else nexts[m].parentNode.removeChild(nexts[m]);
+      }
+    }
+  });
+})();
+</script>
+<style>
+.util-banner {
+  background: var(--util-banner-bg, hsl(48, 88%, 92%));
+  color: var(--util-banner-fg, hsl(30, 60%, 22%));
+  border: 1px solid var(--util-banner-border, hsl(45, 90%, 50%));
+  border-left-width: 4px;
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  border-radius: 4px;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+.util-banner-content {
+  flex: 1;
+  min-width: 0;
+}
+.util-banner-content > p:first-child { margin-top: 0; }
+.util-banner-content > p:last-child  { margin-bottom: 0; }
+.util-banner-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.3rem;
+  line-height: 1;
+  padding: 0 0.25rem;
+  color: var(--util-banner-fg, inherit);
+  opacity: 0.55;
+  flex-shrink: 0;
+}
+.util-banner-close:hover { opacity: 1; }
+</style>
+<div class="util-banner" id="util-banner-0">
+  
+<div class="util-banner-content">
+<p>If you're building AI-Assisted product development and looking for someone to lead your team without AI compromising your engineering quality and <em>craftsmanship</em>, Let's talk<span class="inplace-note-inline"><sup class="inplace-note-trigger">1</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">My <a href="./my_journey_into_ai.html">career timeline</a> and maybe let me convince you <a href="./working_with_me.html"><em>what working with me is like</em></a> and what we can accomplish together</span></span></span>.</p>
+
+</div>
+
+</div>
+
+<style>
 .inplace-note-trigger {
   font-size: 0.75em;
   vertical-align: super;
@@ -223,8 +306,8 @@
   border: 1px solid var(--theme-popup-border, #d0d7de);
   border-radius: 8px;
   padding: 10px 14px;
-  min-width: 40vw;
-  max-width: 60vw;
+  min-width: 100%;
+  max-width: 30vw;
     width: max-content;
   box-shadow: 0 8px 24px rgba(0,0,0,0.15);
   z-index: 1000;
@@ -275,8 +358,8 @@
   border: 1px solid var(--theme-popup-border, #d0d7de);
   border-radius: 8px;
   padding: 12px 16px;
-  min-width: 40vw;
-  max-width: 60vw;
+  min-width: 100%;
+  max-width: 30vw;
     width: max-content;
   box-shadow: 0 8px 24px rgba(0,0,0,0.15);
   z-index: 1000;
@@ -306,6 +389,60 @@
   border-top-color: var(--theme-popup-border, #d0d7de);
 }
 .inplace-note-block:hover .inplace-note-popover-block {
+  display: block;
+}
+/* Flipped orientation: popover appears below the trigger when there isn't
+   room above (e.g. a note in the first viewport-height of the page). The
+   JS toggles `.inplace-note-below` on the wrapper based on the trigger's
+   position relative to the viewport top. */
+.inplace-note-inline.inplace-note-below .inplace-note-popover-inline {
+  bottom: auto;
+  top: calc(100% + 10px);
+}
+.inplace-note-inline.inplace-note-below .inplace-note-popover-inline::after {
+  top: auto;
+  bottom: 100%;
+  border-top-color: transparent;
+  border-bottom-color: var(--theme-popup-bg, var(--bg, #fff));
+}
+.inplace-note-inline.inplace-note-below .inplace-note-popover-inline::before {
+  top: auto;
+  bottom: 100%;
+  border-top-color: transparent;
+  border-bottom-color: var(--theme-popup-border, #d0d7de);
+}
+.inplace-note-block.inplace-note-below .inplace-note-popover-block {
+  bottom: auto;
+  top: calc(100% + 10px);
+}
+.inplace-note-block.inplace-note-below .inplace-note-popover-block::after {
+  top: auto;
+  bottom: 100%;
+  border-top-color: transparent;
+  border-bottom-color: var(--theme-popup-bg, var(--bg, #fff));
+}
+.inplace-note-block.inplace-note-below .inplace-note-popover-block::before {
+  top: auto;
+  bottom: 100%;
+  border-top-color: transparent;
+  border-bottom-color: var(--theme-popup-border, #d0d7de);
+}
+/* Below-hover-bridge for the inline wrapper: keeps the wrapper :hover'ed
+   while the mouse crosses the 10px gap below the trigger toward a
+   below-positioned popover (mirrors the above-bridge `::after`). Hidden
+   in the default (above) state so it doesn't affect layout. */
+.inplace-note-inline::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  min-width: 1.5em;
+  height: 10px;
+  display: none;
+}
+.inplace-note-inline.inplace-note-below::before {
   display: block;
 }
 /* Popover inner content styling */
@@ -382,22 +519,80 @@
     var n = parseFloat(match[1]);
     return n < 0 ? 0 : n;
   }
+  function readTopPad(pop){
+    // Resolve the vertical pad used to decide whether the popover should
+    // flip below the trigger. The popover, positioned above, overlaps any
+    // sticky/fixed element at the top of the viewport (typically mdBook's
+    // menu bar) even when it's not cut off by the viewport edge, so the
+    // threshold must account for those elements. Order of precedence:
+    //   1. The --popover-top-pad custom property on the popover (px or
+    //      unitless). Lets users override per theme or per element.
+    //   2. The bottom edge of #mdbook-menu-bar if it's present and still
+    //      on-screen. Catches the common case out of the box.
+    //   3. 0: flip only when the popover would actually be cut off.
+    var raw = getComputedStyle(pop).getPropertyValue('--popover-top-pad').trim();
+    if (raw) {
+      var match = raw.match(/^(-?\d*\.?\d+)\s*(px)?$/);
+      if (match) {
+        var n = parseFloat(match[1]);
+        if (n >= 0) return n;
+      }
+    }
+    var menuBar = document.getElementById('mdbook-menu-bar');
+    if (menuBar) {
+      var rect = menuBar.getBoundingClientRect();
+      if (rect.bottom > 0) return rect.bottom;
+    }
+    return 0;
+  }
   function clamp(wrap){
     var pop = popoverFor(wrap);
     if (!pop || pop.offsetWidth === 0) {
       wrap.style.removeProperty('--arrow-left');
+      wrap.classList.remove('inplace-note-below');
       return;
     }
-    var r = pop.getBoundingClientRect();
-    var vw = window.innerWidth || document.documentElement.clientWidth;
-    // The custom property is static for the life of the page, so cache it on
-    // the wrapper to avoid calling getComputedStyle on every scroll/resize
+    // The edge pad is static for the life of the page, so cache it on the
+    // wrapper to avoid calling getComputedStyle on every scroll/resize
     // frame.
     var PAD = wrap.__inplaceNotePad;
     if (PAD == null) {
       PAD = readEdgePad(pop);
       wrap.__inplaceNotePad = PAD;
     }
+    // The top pad depends on the menu bar height, which can change on
+    // resize, so we cache it too but invalidate the cache in
+    // onViewportChange.
+    var topPad = wrap.__inplaceNoteTopPad;
+    if (topPad == null) {
+      topPad = readTopPad(pop);
+      wrap.__inplaceNoteTopPad = topPad;
+    }
+    // Orientation: if the popover, positioned above, would be cut off by
+    // the viewport top OR overlap with a sticky element at the top
+    // (typically the mdBook menu bar), flip it below the trigger via
+    // .inplace-note-below. The browser re-lays-out on the next frame, so
+    // we schedule a follow-up clamp to apply the horizontal shift in the
+    // new orientation.
+    var trigger = wrap.querySelector('.inplace-note-trigger');
+    if (trigger) {
+      var tr = trigger.getBoundingClientRect();
+      var aboveTop = tr.top - 10 - pop.offsetHeight;
+      var wantBelow = aboveTop < topPad;
+      var isBelow = wrap.classList.contains('inplace-note-below');
+      if (wantBelow !== isBelow) {
+        if (wantBelow) wrap.classList.add('inplace-note-below');
+        else wrap.classList.remove('inplace-note-below');
+        // Clear any inline shift from the previous orientation; the
+        // re-queued clamp will recompute it.
+        pop.style.transform = '';
+        wrap.style.removeProperty('--arrow-left');
+        scheduleClamp(wrap);
+        return;
+      }
+    }
+    var r = pop.getBoundingClientRect();
+    var vw = window.innerWidth || document.documentElement.clientWidth;
     // Positive when the popover overflows that side beyond PAD.
     var overflowR = r.right - vw + PAD;
     var overflowL = PAD - r.left;
@@ -429,6 +624,8 @@
     var pop = popoverFor(wrap);
     if (pop) pop.style.transform = '';
     wrap.style.removeProperty('--arrow-left');
+    // Drop the flipped-orientation class so the next hover starts above.
+    wrap.classList.remove('inplace-note-below');
   }
   function scheduleClamp(wrap){
     if (wrap.__inplaceNoteRaf) return;
@@ -467,7 +664,13 @@
     scrollRafPending = true;
     requestAnimationFrame(function(){
       scrollRafPending = false;
-      for (var i = 0; i < openWrappers.length; i++) scheduleClamp(openWrappers[i]);
+      // Invalidate cached top pads: the menu bar height can change on
+      // resize, and even on scroll the cached value is stale by one frame
+      // (cheap to clear).
+      for (var i = 0; i < openWrappers.length; i++) {
+        openWrappers[i].__inplaceNoteTopPad = null;
+        scheduleClamp(openWrappers[i]);
+      }
     });
   }
   if (document.readyState === 'loading') {
@@ -483,24 +686,23 @@
 <p>As you can see elsewhere with my writing, it’s easier to write a random, even technical, niche topics. Or even a controversial rage-bait ones.
 However, when it comes to introducing ourself - we often falter.</p>
 <p>Perhaps it’s because we misunderstand, or often too scared to introspect <em>what</em> we are. <em>Who</em> we are - Deep down, if you strip the titles, names, ethnicity, etc.</p>
-<p>Like every other writer, blogger, or a software engineer - my blogging did not start here<span class="inplace-note-inline"><sup class="inplace-note-trigger">1</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">Nor do I think it’ll end here</span></span></span>. And even here - it has gone multiple versions of itself. And if you are keen to notice the differences, it’s not just the difference in the technology behind the scenes, but also how I perceive, how I want others to perceive me - Everything is different. We all grow through different phases of life, and every other phase - I somehow completely rethink everything that I am, or maybe everything that I should portray.</p>
+<p>Like every other writer, blogger, or a software engineer - my blogging did not start here<span class="inplace-note-inline"><sup class="inplace-note-trigger">2</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">Nor do I think it’ll end here</span></span></span>. And even here - it has gone multiple versions of itself. And if you are keen to notice the differences, it’s not just the difference in the technology behind the scenes, but also how I perceive, how I want others to perceive me - Everything is different. We all grow through different phases of life, and every other phase - I somehow completely rethink everything that I am, or maybe everything that I should portray.</p>
 <br />
 <blockquote class="blockquote-tag blockquote-tag-tip">
 <p class="blockquote-tag-title"><svg viewbox="0 0 16 16" width="18" height="18"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p>
-<p>Don’t miss the inline notes<span class="inplace-note-inline"><sup class="inplace-note-trigger">2</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">Like this one! 😉</span></span></span>! I think very <em>tangentially</em>, and as the name of this digital book says, it’s a <em>stream of consciousness!</em> - And the footnotes are often interesting(to me) that you might find wild!</p>
+<p>Don’t miss the inline notes<span class="inplace-note-inline"><sup class="inplace-note-trigger">3</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">Like this one! 😉</span></span></span>! I think very <em>tangentially</em>, and as the name of this digital book says, it’s a <em>stream of consciousness!</em> - And the footnotes are often interesting(to me) that you might find wild!</p>
 </blockquote>
 <br />
 <p>Maybe as they say -</p>
 <blockquote>
 <p>If you don’t look at your past and be embarrassed about somethings - You’ve never really grown out of your predispositions.</p>
 </blockquote>
-<p>And maybe this time around - I’ll settle down on this. Not because I think I’ve become closed-minded as I’m growing older<span class="inplace-note-inline"><sup class="inplace-note-trigger">3</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">I read online long back - <em>You’ll become more conservative as you grow older</em> and I couldn’t help but notice that pattern ring true at almost everything in life. Be it personal relationships, ideologies, technical oscillations, professional relations, financial and even intellectual explorations.</span></span></span>, but because I think I have found an easy way to portray myself with all the flaws<span class="inplace-note-inline"><sup class="inplace-note-trigger">4</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">Alongside all the flaws that I come with - with a pinning to where I am in life</span></span></span>. Maybe it’s acceptance. Or maybe it’s the balance that I’m willing to show.</p>
+<p>And maybe this time around - I’ll settle down on this. Not because I think I’ve become closed-minded as I’m growing older<span class="inplace-note-inline"><sup class="inplace-note-trigger">4</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">I read online long back - <em>You’ll become more conservative as you grow older</em> and I couldn’t help but notice that pattern ring true at almost everything in life. Be it personal relationships, ideologies, technical oscillations, professional relations, financial and even intellectual explorations.</span></span></span>, but because I think I have found an easy way to portray myself with all the flaws<span class="inplace-note-inline"><sup class="inplace-note-trigger">5</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">Alongside all the flaws that I come with - with a pinning to where I am in life</span></span></span>. Maybe it’s acceptance. Or maybe it’s the balance that I’m willing to show.</p>
 <br />
 <br />
 <p>And finally, but most importantly, I’m honoured of your visit! Thank you for spending a chunk of your life reading through a random strangers thoughts!</p>
 <br />
 <p><em>Rinaldo Rex. G</em></p>
-<footer class="gitinfo-footer" style="font-size:0.9em;padding:4px;margin:3em 0 0 0;text-align:right;display:block;"><span style="color:#568262"> Last updated: <em><span class="last-updated" data-date="2026-06-02" data-short="true" data-style="superscript">2026-06-02</span></em> </span></footer>
 <script>
 (function() {
   if (window.__mdbookLastUpdatedInit) return;

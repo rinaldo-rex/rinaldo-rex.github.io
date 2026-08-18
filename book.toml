@@ -18,7 +18,7 @@ sidebar-header-nav = false
 words-per-minute = 150
 
 [preprocessor.gitinfo]
-enable = true
+enable = false
 
 # choose placement(s)
 header = false   # default: false
@@ -43,8 +43,8 @@ footer = '<span style="color:#568262"> Last updated: <em>{{last-updated}}</em> <
 [preprocessor.inplace-note]
 popover-font-size = "80%"
 trigger-hit-padding = "3px"
-popover-max-width = "60vw"
-popover-min-width = "40vw"
+popover-max-width = "30vw"
+popover-min-width = "100%"
 popover-width = "max-content"
 
 
@@ -55,3 +55,16 @@ after = [ "inplace-note" ]
 [preprocessor.last-updated]
 short = true
 superscript = true
+
+[build]
+build-dir = "book"
+
+[preprocessor.util-banner]
+command = "mdutils"
+position = "right"
+sticky = true
+
+[preprocessor.util-private-page]
+command = "mdutils"
+hide_sidebar = true
+hide_nav_buttons = true

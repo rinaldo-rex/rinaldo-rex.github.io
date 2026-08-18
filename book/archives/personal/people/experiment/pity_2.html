@@ -37,10 +37,10 @@
             const path_to_root = "../../../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../../../searchindex-b0b26386.js";
+            window.path_to_searchindex_js = "../../../../searchindex-36be0c80.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../../../toc-c0489303.js"></script>
+        <script src="../../../../toc-d40eb720.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -176,7 +176,90 @@
 
                 <div id="mdbook-content" class="content">
                     <main>
-                        <h2 id="the-hat-trick-"><a class="header" href="#the-hat-trick-">The hat trick 🎩</a></h2>
+                        <script>
+(function () {
+  var ALL = ["2026/foreword.html","2026/writing_in_the_age_of_slop.html","2026/mark_my_words.html","2026/SLMs_vs_LLMs.html","2026/SLMs_vs_LLMs_observations.html","2026/causal_learning.html","2026/gravitating_towards_calver.html","2026/my_journey_into_ai.html","2026/working_with_me.html","favourite_quotes.html","archives/archives.html","archives/professional/coding/coding_is_creation.html","archives/professional/coding/the_first_ink.html","archives/personal/life/quarter_life_crisis.html","archives/personal/life/the_certainty_of_uncertainty.html","archives/personal/people/experiment/a_social_experiment.html","archives/personal/people/experiment/prologue.html","archives/personal/people/experiment/pity_intro.html","archives/personal/people/experiment/pity_1.html","archives/personal/people/experiment/pity_2.html","archives/personal/people/experiment/pity_3.html","archives/personal/people/experiment/pity_4.html","archives/personal/people/experiment/fear_1.html","archives/personal/people/experiment/catharsis_1.html","archives/personal/people/experiment/epilogue.html","archives/personal/life/pandemics-overview.html","archives/personal/life/covid/covid-19.html","archives/personal/life/covid/understanding-impacts.html","archives/personal/life/covid/present-pestilences.html"];
+  var PRIVATE = ["2026/working_with_me.html"];
+  var HIDE_SIDEBAR = true;
+  var HIDE_NAV = true;
+  function toAbs(key) { return new URL(path_to_root + key, document.baseURI).href; }
+  var privAbs = {};
+  for (var i = 0; i < PRIVATE.length; i++) privAbs[toAbs(PRIVATE[i])] = true;
+  document.addEventListener('DOMContentLoaded', function () {
+    var ci = -1, cur = location.href;
+    for (var i = 0; i < ALL.length; i++) {
+      if (toAbs(ALL[i]) === cur) { ci = i; break; }
+    }
+    // index.html is an alias copy of the first chapter.
+    if (ci < 0 && /\/index\.html$/.test(cur)) ci = 0;
+    if (HIDE_SIDEBAR) {
+      var links = document.querySelectorAll('#mdbook-sidebar a');
+      for (var j = 0; j < links.length; j++) {
+        if (privAbs[links[j].href]) {
+          var li = links[j].closest('li');
+          if (li) li.parentNode.removeChild(li);
+        }
+      }
+    }
+    if (HIDE_NAV && ci >= 0) {
+      var p = ci - 1; while (p >= 0 && privAbs[toAbs(ALL[p])]) p--;
+      var n = ci + 1; while (n < ALL.length && privAbs[toAbs(ALL[n])]) n++;
+      var prevs = document.querySelectorAll('a[rel^="prev"]');
+      for (var k = 0; k < prevs.length; k++) {
+        if (p >= 0) prevs[k].setAttribute('href', toAbs(ALL[p]));
+        else prevs[k].parentNode.removeChild(prevs[k]);
+      }
+      var nexts = document.querySelectorAll('a[rel^="next"]');
+      for (var m = 0; m < nexts.length; m++) {
+        if (n < ALL.length) nexts[m].setAttribute('href', toAbs(ALL[n]));
+        else nexts[m].parentNode.removeChild(nexts[m]);
+      }
+    }
+  });
+})();
+</script>
+<style>
+.util-banner {
+  background: var(--util-banner-bg, hsl(48, 88%, 92%));
+  color: var(--util-banner-fg, hsl(30, 60%, 22%));
+  border: 1px solid var(--util-banner-border, hsl(45, 90%, 50%));
+  border-left-width: 4px;
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  border-radius: 4px;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+.util-banner-content {
+  flex: 1;
+  min-width: 0;
+}
+.util-banner-content > p:first-child { margin-top: 0; }
+.util-banner-content > p:last-child  { margin-bottom: 0; }
+.util-banner-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.3rem;
+  line-height: 1;
+  padding: 0 0.25rem;
+  color: var(--util-banner-fg, inherit);
+  opacity: 0.55;
+  flex-shrink: 0;
+}
+.util-banner-close:hover { opacity: 1; }
+</style>
+<div class="util-banner" id="util-banner-0">
+  
+<div class="util-banner-content">
+<p>If you're building AI-Assisted product development and looking for someone to lead your team without AI compromising your engineering quality and <em>craftsmanship</em>, Let's talk<span class="inplace-note-inline"><sup class="inplace-note-trigger">1</sup><span class="inplace-note-popover-inline"><span class="inplace-note-content">My <a href="./my_journey_into_ai.html">career timeline</a> and maybe let me convince you <a href="./working_with_me.html"><em>what working with me is like</em></a> and what we can accomplish together</span></span></span>.</p>
+
+</div>
+
+</div>
+
+<h2 id="the-hat-trick-"><a class="header" href="#the-hat-trick-">The hat trick 🎩</a></h2>
 <p>He smiled, “It’s now deep red,” he said pointing at the sky.</p>
 <p>Riya was taken aback for a moment - <em>How did I not notice this?</em> It was a beautiful view of the sun painting the sky red. She just laid her head on his shoulders and enjoyed what was before her eyes - unbelievable, yet just absolutely adorable at the same time. It wasn’t a question of whether it was real anymore. It’s whether she chose to enjoy the moment for what it was - And she certainly was enjoying it.</p>
 <p><img src="sun_set.jpg" alt="sun-set"></p>
@@ -201,7 +284,6 @@
 <p>“Many. But you still won’t expect the magician to reveal how he did it after the end of every trick, do you?”</p>
 <p>“What? So you’re telling me, you’re not going to tell me anything at all?” her shocked face revealed that she was expecting him to say what it was that he was doing. Even though she never asked about it to him, her face said it all - <em>She was expecting a reveal!</em></p>
 <p>“No, I’ll tell you what the trick is supposed to be. You find out what it is” Fred smiled.</p>
-<footer class="gitinfo-footer" style="font-size:0.9em;padding:4px;margin:3em 0 0 0;text-align:right;display:block;"><span style="color:#568262"> Last updated: <em><span class="last-updated" data-date="2026-04-27" data-short="true" data-style="superscript">2026-04-27</span></em> </span></footer>
 <script>
 (function() {
   if (window.__mdbookLastUpdatedInit) return;

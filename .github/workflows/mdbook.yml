@@ -41,6 +41,7 @@ jobs:
           cargo install --version ${MDBOOK_VERSION} mdbook
           cargo install mdbook-footnote mdbook-reading-time mdbook-gitinfo mdbook-inplace-notes mdbook-timeline
           cargo install mdbook-last-updated
+          cargo install mdutils
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
