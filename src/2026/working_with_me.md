@@ -38,7 +38,8 @@ Here's an updated{{note: As of Aug 2026}} version of my [resume](./Rinaldo_Rex_G
 
 TL;DR: My expertise is on the backend with Python ecosystem with design, and product thinking with architectural ideation{{note: _"His mastery of Python is exceptional, and his architectural knowledge consistently goes beyond expectations. Rinaldo not only builds robust and scalable systems but also brings clarity and innovative thinking to every challenge. His ability to push beyond limitations and deliver high-quality solutions makes him a standout professional."_ <br/><br/> ~ Sachin TK, Colleague, Urbint <br/> <br/> _"Rinaldo is an amazing backend engineer. He is very passionate about his work and always studies best way to solve backend work."_ <br/> <br/> ~ Sehee Son, Colleague, Ixlayer <br/> <br/> _"Rinaldo has a remarkable ability to identify opportunities for meaningful technical improvements and drive them forward with both rigor and pragmatism. A perfect example was his initiative to migrate our team from Poetry to uv—he didn't just propose the change, but took ownership of building a proof of concept that demonstrated clear value and paved the way for successful adoption. This kind of forward-thinking technical leadership, backed by hands-on execution, is exactly what sets him apart."_ <br/><br/> ~ Sourav Basu, Team lead, Urbint(Itron)}}. But I'm able to deliver usable, meaningful, and interesting solutions to engineering problems outside of that. 
 
-Here's the long version of some of my work highlights from recent times.
+<details>
+    <summary>Here's a longer version of some of my work highlights from recent times. _Click to expand_</summary>
 
 I bring about ten years of experience as a backend engineer and technical lead, with a strong focus on building production-grade AI and data-intensive platforms with Python. 
 
@@ -51,6 +52,9 @@ My background is rooted in designing and stabilizing complex backend systems, an
 - I have also worked in regulated domains, particularly healthcare (IXLayer) where I helped enforce HL7, and HIPAA-compliant data handling and auditability by ensuring logs are free from PHI.
 
 Importantly, my profile is not that of a research-focused ML engineer. I operate as a hands-on technical leader who designs system-level intelligence: how agents coordinate, how context is governed, how failures are handled, and how probabilistic models can be made production-safe. I design agent lifecycles, state machines, fallback logic, and escalation paths, and I approach human-in-the-loop and guardrail systems by applying proven distributed systems patterns (validation layers, circuit breakers, auditability, and policy enforcement) to LLM-driven workflows. I regularly mentor senior engineers, define engineering standards, and take ownership of architecture-level decisions in complex systems.
+</details>
+
+<br/>
 
 ___
 

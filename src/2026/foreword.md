@@ -1,6 +1,6 @@
 
 {{util-banner}}
-If you're building AI-Assisted product development and looking for someone to lead your team without AI compromising your engineering quality and _craftsmanship_, Let's talk{{note: My [career timeline](./my_journey_into_ai.md) and maybe let me convince you [_what working with me is like_](./working_with_me.md) and what we can accomplish together}}. 
+Building AI-assisted products without compromising engineering quality and _craftsmanship_ is hard. If you're looking for someone to lead that effort, let's talk.{{note: My [career timeline](./my_journey_into_ai.md) and maybe let me convince you [_what working with me is like_](./working_with_me.md) and what we can accomplish together}}
 
 {{/util-banner}}
 
