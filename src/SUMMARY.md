@@ -21,12 +21,16 @@
     - [Career timeline: My journey into AI {{last-updated}}](./2026/my_journey_into_ai.md)
     - [Working with me](./2026/working_with_me.md)
     - [Surfing against the slop {{last-updated}}](./2026/surfing_against_the_slop.md)
+  - [Sep]()
+    - [Agentic engineering]()
+      - [Creative ways to talk with your LLMs](./2026/talking_to_your_agents.md)
   <!--- [Crazy ideas](./2026/crazy_ideas.md)-->
   - [Favourite Quotes](./favourite_quotes.md)
 <!--- [Agentic engineering explorations]()
       - [Videos that made great sense! \\(_{ \text{ {{relative_to:current}} } }\\)](./2026/ai_videos.md)
       - [Cognitive Debt \\(_{ \text{ {{relative_to:current}} } }\\)](./2026/cognitive_debt.md)
       - [AI toggle \\(_{ \text{ {{relative_to:current}} } }\\)](./2026/ai_toggle.md)
+      - [Analogies of AI-Assisted software development](./2026/analogies_of_ai_dev.md)
       - [On LLM Tokens \\(_{ \text{ {{relative_to:current}} } }\\)](./2026/llm_tokens.md)-->
 
       
