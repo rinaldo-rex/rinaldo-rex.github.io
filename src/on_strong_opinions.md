@@ -8,10 +8,6 @@ As William Shakespeare says,
 
 > _Brevity is the soul of wit._
 
-In the world of _Software Engineering_, it's far too common to have too many opinions - Especially since there are so many ways of doing anything within Software. Its very nature is _malleability_ - That which is often taken for granted. 
-
-But that also enables democracy in software far too easily. Now that gen AI and LLMs have taken the software world by storm, _personal_ software has a whole new meaning. 
-
 Another favourite quote of mine is the Pauli's Exclusion Principle. 
 
 > _No two electrons in an atom can have the same four quantum numbers_
@@ -34,3 +30,18 @@ What LLMs have done today - to the world of "knowledge" that can be represented 
 - Most of the news articles are AI generated. I don't watch news{{note: One of the best things I've done for my mental health!}} and yet - the ones that somehow "appears" on my feed, are often rambles from LLMs.
 
 I've been a very strong advocate of AI, and the above isn't because of AI - It's still because of the age-old _human greed_ {{note: Eg: To produce content, get views, to get monetary benefits.}} - Which was the case even before AI, and it's only been amplified by LLMs. GenAI is a really good tool - But when you've got a hammer for a tool - You keep seeing nails everywhere. And I'm starting to get tired of it.
+
+
+### Personal Anecdote: Software engineering
+
+In the world of _Software Engineering_, it’s far too common to have too many opinions - Especially since there are so many ways of doing anything within Software. Its very nature is _malleability_ - That which is often taken for granted.
+
+But that also enables democracy in software far too easily. Now that gen AI and LLMs have taken the software world by storm, _personal_ software has a whole new meaning.
+
+It redefines what _personal_ is - What works for one may not necessarily work for others. And tbh - It shouldn't have to. 
+
+We see a lot of reverse engineering of software, especially of the proprietary kind and that's shocking to everyone - Both the producers and the consumers because neither have been exposed to such a vulnerability. And it's time we learn to move onto the higher "societal" problems. Software is evolving. It was never meant to be _rigid_. 
+
+There's a saying in the software development community:
+
+> Disagree but commit.
