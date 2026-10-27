@@ -42,10 +42,16 @@ It redefines what _personal_ is - What works for one may not necessarily work fo
 
 We see a lot of reverse engineering of software, especially of the proprietary kind and that's shocking to everyone - Both the producers and the consumers because neither have been exposed to such a vulnerability. And it's time we learn to move onto the higher "societal" problems. Software is evolving. It was never meant to be _rigid_. 
 
-There's a saying in the software development community:
+There're a couple of aphorisms in the software development community:
+
+> High cohesion, and low coupling
+
+Which is beautiful engineering principle used when we design systems that interact and interface with multiple pieces of code, services, and tech stacks. _High cohesion_ just means that any peice of code/module that you're designing, should be built in such a way that it can interact with any other piece. On the other hand, _Low coupling_ means that a piece of code/module that you're designing should be self-sustainable on its own. i.e its functional ability shouldn't be blocked by some other piece of code. {{note: This is part of the S.O.L.I.D design patterns, but that's too jargony}}
 
 > Disagree but commit.
 
-It signifies that when we're working in a team towards a common goal of solving a business problem - engineers often have conflicting ideas and thought process. But if we have to get anywhere with the product at all, it's important that disagree but commit (both in terms of code, and the work surrounding it) onto an agreed decision even if we would've personally done it a differently. It's important to do that. And that's a real life experience of having strong opinions about how something is being done, or supposed to be done, and yet being ready to let go of it for the progress towards something bigger. Whether it works out well in the end isn't the point here. 
+It signifies that when we're working in a team towards a common goal of solving a business problem - engineers often have conflicting ideas and thought process. But if we have to get anywhere with the product at all, it's important that disagree but commit (both in terms of code, and the work surrounding it) onto an agreed decision even if we would've personally done it a differently. It's important to do that. 
+
+And these are real life experiences of having strong opinions about how something is being done, or supposed to be done, and yet being ready to let go of it for the progress towards something bigger. Whether it works out well in the end isn't the point here. 
 
 And I believe that's a very healthy perspective to have in life in general. Although it's easier to experience and learn in our domain because of how fast something changes, it's generally a good principle to have in life.
