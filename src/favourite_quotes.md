@@ -13,3 +13,5 @@
 > _Try to learn something about everything, and everything about something"_ ~ Thomas H. Huxley
 
 > _A great many people think they are thinking when they are really rearranging their prejudices_ ~ William James.
+
+[Strong Opinions, Loosely held.](on_strong_opinions.md)

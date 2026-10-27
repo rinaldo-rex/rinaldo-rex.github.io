@@ -26,6 +26,7 @@
       - [Creative ways to talk with your LLMs](./2026/talking_to_your_agents.md)
   <!--- [Crazy ideas](./2026/crazy_ideas.md)-->
   - [Favourite Quotes](./favourite_quotes.md)
+    - [On opinions](./on_strong_opinions.md)
 <!--- [Agentic engineering explorations]()
       - [Videos that made great sense! \\(_{ \text{ {{relative_to:current}} } }\\)](./2026/ai_videos.md)
       - [Cognitive Debt \\(_{ \text{ {{relative_to:current}} } }\\)](./2026/cognitive_debt.md)
