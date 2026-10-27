@@ -45,3 +45,7 @@ We see a lot of reverse engineering of software, especially of the proprietary k
 There's a saying in the software development community:
 
 > Disagree but commit.
+
+It signifies that when we're working in a team towards a common goal of solving a business problem - engineers often have conflicting ideas and thought process. But if we have to get anywhere with the product at all, it's important that disagree but commit (both in terms of code, and the work surrounding it) onto an agreed decision even if we would've personally done it a differently. It's important to do that. And that's a real life experience of having strong opinions about how something is being done, or supposed to be done, and yet being ready to let go of it for the progress towards something bigger. Whether it works out well in the end isn't the point here. 
+
+And I believe that's a very healthy perspective to have in life in general. Although it's easier to experience and learn in our domain because of how fast something changes, it's generally a good principle to have in life.
