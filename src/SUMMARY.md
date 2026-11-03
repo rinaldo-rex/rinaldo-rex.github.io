@@ -24,6 +24,8 @@
   - [Sep]()
     - [Agentic engineering]()
       - [Creative ways to talk with your LLMs](./2026/talking_to_your_agents.md)
+  - [Nov]()
+    - [On Normalization | GPT 6.1 Sol vs Opus 5.5](./2026/human_normalization_of_sota.md)
   <!--- [Crazy ideas](./2026/crazy_ideas.md)-->
   - [Favourite Quotes](./favourite_quotes.md)
     - [On opinions](./on_strong_opinions.md)
